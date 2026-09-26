@@ -18,6 +18,8 @@ SITE = ("habitat", "vector_presence", "predator_deficit", "host_signal")
 def _weighted(xs: list[f.Factor], weights: dict[str, float]) -> tuple[float | None, float, float, float]:
     """(mean over present, share of weight present, lower bound, upper bound) with missing in [0, 1]."""
     total_w = sum(weights[x.name] for x in xs)
+    if total_w == 0:  # no factors of this part were passed at all
+        return None, 0.0, 0.0, 1.0
     present = [x for x in xs if x.value is not None]
     pw = sum(weights[x.name] for x in present)
     known = sum(weights[x.name] * x.value for x in present)  # type: ignore[operator]

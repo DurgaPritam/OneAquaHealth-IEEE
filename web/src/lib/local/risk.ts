@@ -140,6 +140,7 @@ export function hostSignal(dead: DeadBirdReport[] | null, cfg: RiskConfig): F {
 
 function weighted(xs: F[], w: Record<string, number>) {
   const total = xs.reduce((s, x) => s + w[x.name], 0)
+  if (total === 0) return { mean: null, cov: 0, lo: 0, hi: 1 }
   const present = xs.filter((x) => x.value !== null)
   const pw = present.reduce((s, x) => s + w[x.name], 0)
   const known = present.reduce((s, x) => s + w[x.name] * (x.value as number), 0)

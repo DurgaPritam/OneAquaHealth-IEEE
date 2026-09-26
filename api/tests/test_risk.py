@@ -208,3 +208,8 @@ def test_weather_failure_means_no_data(session: Session, tmp_path, monkeypatch) 
 def test_risk_endpoints(client, site) -> None:  # type: ignore[no-untyped-def]
     assert client.get("/api/risk/latest").json() == []
     assert client.get("/api/risk/history/C1").json() == []
+
+
+def test_combine_with_weather_factors_only_does_not_divide_by_zero() -> None:
+    out = combine([f.Factor("temperature", "T", 1.0, ""), f.Factor("dry_spell", "D", 1.0, "")], CFG)
+    assert out["total"] == 0.0 and out["needs_data"] and not out["alert"]
