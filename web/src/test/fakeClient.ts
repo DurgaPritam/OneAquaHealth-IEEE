@@ -67,8 +67,32 @@ export class FakeClient implements DataClient {
     return []
   }
 
-  async listRiskScores() {
+  async latestRisk() {
     return []
+  }
+
+  async computeRisk() {
+    return []
+  }
+
+  async riskHistory() {
+    return []
+  }
+
+  async measures() {
+    return { source: '', source_url: '', drivers: {}, measures: {} }
+  }
+
+  async draftActions() {
+    return []
+  }
+
+  async editAction(): Promise<never> {
+    throw new Error('not in fake')
+  }
+
+  async decideAction(): Promise<never> {
+    throw new Error('not in fake')
   }
 
   async listActions() {

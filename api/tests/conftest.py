@@ -30,6 +30,7 @@ def client(engine, tmp_path, monkeypatch) -> Iterator[TestClient]:  # type: igno
     from api import photos
 
     monkeypatch.setattr(photos, "PHOTO_DIR", tmp_path)
+    monkeypatch.setenv("RISK_ON_SUBMIT", "0")  # no network in tests
 
     def override() -> Iterator[Session]:
         with Session(engine) as s:

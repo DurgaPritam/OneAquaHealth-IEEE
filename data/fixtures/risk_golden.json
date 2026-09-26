@@ -1,0 +1,507 @@
+{
+ "as_of": "2026-09-20",
+ "rows": [
+  {
+   "site_id": "C1",
+   "total": 0.7386,
+   "band": "very_high",
+   "season": 1.0,
+   "site": 0.7386,
+   "dominant": "vector_presence",
+   "coverage": 1.0,
+   "range_low": 0.7386,
+   "range_high": 0.7386,
+   "needs_data": false,
+   "alert": true,
+   "checkin_ids": [
+    114,
+    136
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.3904,
+    "vector_presence": 0.9874,
+    "predator_deficit": 0.8795,
+    "host_signal": 0.6667
+   }
+  },
+  {
+   "site_id": "C2",
+   "total": 0.533,
+   "band": "high",
+   "season": 1.0,
+   "site": 0.533,
+   "dominant": "vector_presence",
+   "coverage": 1.0,
+   "range_low": 0.533,
+   "range_high": 0.533,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    137,
+    138
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.5447,
+    "vector_presence": 0.7699,
+    "predator_deficit": 0.5006,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C3",
+   "total": 0.1925,
+   "band": "low",
+   "season": 1.0,
+   "site": 0.1925,
+   "dominant": "predator_deficit",
+   "coverage": 1.0,
+   "range_low": 0.1925,
+   "range_high": 0.1925,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    115,
+    116,
+    117,
+    139
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.1888,
+    "vector_presence": 0.0,
+    "predator_deficit": 0.6792,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C4",
+   "total": 0.4683,
+   "band": "moderate",
+   "season": 0.9863,
+   "site": 0.4748,
+   "dominant": "vector_presence",
+   "coverage": 1.0,
+   "range_low": 0.4683,
+   "range_high": 0.4683,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    140
+   ],
+   "factors": {
+    "temperature": 0.9817,
+    "dry_spell": 1.0,
+    "habitat": 0.5065,
+    "vector_presence": 0.5796,
+    "predator_deficit": 0.6,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C5",
+   "total": 0.2103,
+   "band": "low",
+   "season": 1.0,
+   "site": 0.2103,
+   "dominant": "predator_deficit",
+   "coverage": 1.0,
+   "range_low": 0.2103,
+   "range_high": 0.2103,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    118,
+    119,
+    120,
+    141
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.2875,
+    "vector_presence": 0.0,
+    "predator_deficit": 0.6201,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C6",
+   "total": 0.5241,
+   "band": "high",
+   "season": 1.0,
+   "site": 0.5241,
+   "dominant": "vector_presence",
+   "coverage": 1.0,
+   "range_low": 0.5241,
+   "range_high": 0.5241,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    142,
+    143,
+    144
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.4619,
+    "vector_presence": 0.6063,
+    "predator_deficit": 0.8666,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C7",
+   "total": 0.5502,
+   "band": "high",
+   "season": 1.0,
+   "site": 0.5502,
+   "dominant": "vector_presence",
+   "coverage": 1.0,
+   "range_low": 0.5502,
+   "range_high": 0.5502,
+   "needs_data": false,
+   "alert": true,
+   "checkin_ids": [
+    121
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.7616,
+    "vector_presence": 0.7364,
+    "predator_deficit": 0.32,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C8",
+   "total": 0.0936,
+   "band": "low",
+   "season": 0.9945,
+   "site": 0.0941,
+   "dominant": "predator_deficit",
+   "coverage": 1.0,
+   "range_low": 0.0936,
+   "range_high": 0.0936,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    122,
+    123
+   ],
+   "factors": {
+    "temperature": 0.9927,
+    "dry_spell": 1.0,
+    "habitat": 0.1293,
+    "vector_presence": 0.0333,
+    "predator_deficit": 0.2185,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C9",
+   "total": 0.2525,
+   "band": "low",
+   "season": 0.9863,
+   "site": 0.256,
+   "dominant": "habitat",
+   "coverage": 1.0,
+   "range_low": 0.2525,
+   "range_high": 0.2525,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    124,
+    125
+   ],
+   "factors": {
+    "temperature": 0.9817,
+    "dry_spell": 1.0,
+    "habitat": 0.5996,
+    "vector_presence": 0.0,
+    "predator_deficit": 0.3806,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C10",
+   "total": 0.0813,
+   "band": "low",
+   "season": 1.0,
+   "site": 0.0813,
+   "dominant": "habitat",
+   "coverage": 1.0,
+   "range_low": 0.0813,
+   "range_high": 0.0813,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    126
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.1909,
+    "vector_presence": 0.0,
+    "predator_deficit": 0.12,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C11",
+   "total": 0.3106,
+   "band": "moderate",
+   "season": 1.0,
+   "site": 0.3106,
+   "dominant": "vector_presence",
+   "coverage": 1.0,
+   "range_low": 0.3106,
+   "range_high": 0.3106,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    127,
+    128,
+    129,
+    145
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.2509,
+    "vector_presence": 0.5887,
+    "predator_deficit": 0.1463,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C12",
+   "total": 0.0,
+   "band": "low",
+   "season": 0.9945,
+   "site": null,
+   "dominant": null,
+   "coverage": 0.0,
+   "range_low": 0.0,
+   "range_high": 0.9945,
+   "needs_data": true,
+   "alert": false,
+   "checkin_ids": [],
+   "factors": {
+    "temperature": 0.9927,
+    "dry_spell": 1.0,
+    "habitat": null,
+    "vector_presence": null,
+    "predator_deficit": null,
+    "host_signal": null
+   }
+  },
+  {
+   "site_id": "C13",
+   "total": 0.1001,
+   "band": "low",
+   "season": 0.9787,
+   "site": 0.1023,
+   "dominant": "habitat",
+   "coverage": 1.0,
+   "range_low": 0.1001,
+   "range_high": 0.1001,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    146,
+    147
+   ],
+   "factors": {
+    "temperature": 0.9716,
+    "dry_spell": 1.0,
+    "habitat": 0.1558,
+    "vector_presence": 0.0329,
+    "predator_deficit": 0.2203,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C14",
+   "total": 0.6735,
+   "band": "high",
+   "season": 0.9945,
+   "site": 0.6772,
+   "dominant": "vector_presence",
+   "coverage": 1.0,
+   "range_low": 0.6735,
+   "range_high": 0.6735,
+   "needs_data": false,
+   "alert": true,
+   "checkin_ids": [
+    130,
+    131
+   ],
+   "factors": {
+    "temperature": 0.9927,
+    "dry_spell": 1.0,
+    "habitat": 0.5516,
+    "vector_presence": 0.9364,
+    "predator_deficit": 0.92,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C15",
+   "total": 0.1624,
+   "band": "low",
+   "season": 1.0,
+   "site": 0.1624,
+   "dominant": "predator_deficit",
+   "coverage": 1.0,
+   "range_low": 0.1624,
+   "range_high": 0.1624,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    148,
+    149,
+    150
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.0802,
+    "vector_presence": 0.0223,
+    "predator_deficit": 0.6528,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C16",
+   "total": 0.518,
+   "band": "high",
+   "season": 1.0,
+   "site": 0.518,
+   "dominant": "vector_presence",
+   "coverage": 1.0,
+   "range_low": 0.518,
+   "range_high": 0.518,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    132
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.311,
+    "vector_presence": 0.9392,
+    "predator_deficit": 0.48,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C17",
+   "total": 0.4375,
+   "band": "moderate",
+   "season": 1.0,
+   "site": 0.4375,
+   "dominant": "vector_presence",
+   "coverage": 1.0,
+   "range_low": 0.4375,
+   "range_high": 0.4375,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    133,
+    151,
+    152,
+    153
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.4919,
+    "vector_presence": 0.4854,
+    "predator_deficit": 0.6,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C18",
+   "total": 0.2466,
+   "band": "low",
+   "season": 0.9904,
+   "site": 0.249,
+   "dominant": "habitat",
+   "coverage": 1.0,
+   "range_low": 0.2466,
+   "range_high": 0.2466,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    154,
+    155
+   ],
+   "factors": {
+    "temperature": 0.9872,
+    "dry_spell": 1.0,
+    "habitat": 0.509,
+    "vector_presence": 0.0,
+    "predator_deficit": 0.4814,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C19",
+   "total": 0.1961,
+   "band": "low",
+   "season": 1.0,
+   "site": 0.1961,
+   "dominant": "habitat",
+   "coverage": 1.0,
+   "range_low": 0.1961,
+   "range_high": 0.1961,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    134
+   ],
+   "factors": {
+    "temperature": 1.0,
+    "dry_spell": 1.0,
+    "habitat": 0.4136,
+    "vector_presence": 0.0,
+    "predator_deficit": 0.36,
+    "host_signal": 0.0
+   }
+  },
+  {
+   "site_id": "C20",
+   "total": 0.1316,
+   "band": "low",
+   "season": 0.9945,
+   "site": 0.1323,
+   "dominant": "predator_deficit",
+   "coverage": 1.0,
+   "range_low": 0.1316,
+   "range_high": 0.1316,
+   "needs_data": false,
+   "alert": false,
+   "checkin_ids": [
+    135,
+    156
+   ],
+   "factors": {
+    "temperature": 0.9927,
+    "dry_spell": 1.0,
+    "habitat": 0.1557,
+    "vector_presence": 0.0974,
+    "predator_deficit": 0.2575,
+    "host_signal": 0.0
+   }
+  }
+ ]
+}

@@ -23,5 +23,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "../data/*.json"]
+  "include": ["src", "../data/**/*.json", "public/demo/*.json"]
 }

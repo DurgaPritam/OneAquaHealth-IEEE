@@ -1,24 +1,23 @@
-import { useTranslation } from 'react-i18next'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import type { DataClient } from './lib/client'
 import { AppProvider } from './lib/context'
 import type { LocalDb } from './lib/db'
 import { CheckInWizard } from './pages/checkin/CheckInWizard'
+import { City } from './pages/City'
 import { Home } from './pages/Home'
+import { Me } from './pages/Me'
 import { Practice } from './pages/Practice'
-import { Placeholder } from './pages/Placeholder'
 
 export function AppRoutes() {
-  const { t } = useTranslation()
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="check" element={<CheckInWizard />} />
         <Route path="practice" element={<Practice />} />
-        <Route path="me" element={<Placeholder title={t('nav.feed')} />} />
-        <Route path="city" element={<Placeholder title={t('nav.city')} />} />
+        <Route path="me" element={<Me />} />
+        <Route path="city" element={<City />} />
       </Route>
     </Routes>
   )

@@ -1,0 +1,86 @@
+{
+  "source": "OneAquaHealth Catalogue of measures for urban aquatic ecosystems rehabilitation (D2.4, Dias, Serra, Feio, 2025)",
+  "source_url": "https://doi.org/10.5281/zenodo.20040211",
+  "licence": "CC-BY-4.0",
+  "synthetic": false,
+  "notes": "Page numbers are PDF pages of the Zenodo file. Operational steps that are not Catalogue measures are marked catalogue: false. No measure uses chemical vector control; AquaSentinel does not recommend insecticides.",
+  "drivers": {
+    "stagnation": { "label": "Standing water", "measures": ["verification_visit", "M4.3.1", "M4.3.5"] },
+    "organic_pollution": { "label": "Organic pollution or sewage signs", "measures": ["M4.2.2", "M4.2.1"] },
+    "vector_presence": { "label": "Mosquito larvae found", "measures": ["verification_visit", "M4.3.1"] },
+    "predator_deficit": { "label": "Missing mosquito predators", "measures": ["M4.1.2", "M4.1.1", "M4.1.4"] },
+    "host_signal": { "label": "Dead birds reported", "measures": ["veterinary_notification"] }
+  },
+  "measures": {
+    "verification_visit": {
+      "title": "Verification visit: find and remove standing water at the margins",
+      "catalogue": false,
+      "service": "vector-habitat-verification",
+      "detail": "A city or public health technician confirms the volunteer reports, maps standing pools and removes small breeding sites (blocked grates, containers). No insecticides.",
+      "section": null, "page": null
+    },
+    "veterinary_notification": {
+      "title": "Notify the veterinary team about dead birds",
+      "catalogue": false,
+      "service": "veterinary-notification",
+      "detail": "Forward the dead-bird reports (count, place, time, photo taken without touching) to the regional veterinary service, which decides whether to collect and test. AquaSentinel makes no diagnosis.",
+      "section": null, "page": null
+    },
+    "M4.3.1": {
+      "title": "Remove obsolete barriers (weirs) that hold stagnant water",
+      "catalogue": true, "service": "flow-restoration",
+      "section": "4.3.1 Removing barriers", "page": 49,
+      "quote": "during drought periods, low-head barriers may retain stagnant water, providing favourable conditions for mosquito breeding"
+    },
+    "M4.3.5": {
+      "title": "Constructed riffles to restore flow",
+      "catalogue": true, "service": "flow-restoration",
+      "section": "4.3.5 Constructed riffles", "page": 56,
+      "quote": "Mosquito reduction."
+    },
+    "M4.2.2": {
+      "title": "Sewer system and point-source inspection",
+      "catalogue": true, "service": "sewage-inspection",
+      "section": "4.2.2 Sewer system and point-source improvements", "page": 44
+    },
+    "M4.2.1": {
+      "title": "Enhance in-stream self-purification",
+      "catalogue": true, "service": "water-quality",
+      "section": "4.2.1 In-stream self-purification enhancement", "page": 43
+    },
+    "M4.1.2": {
+      "title": "Active riparian vegetation restoration",
+      "catalogue": true, "service": "riparian-restoration",
+      "section": "4.1.2 Active riparian vegetation restoration", "page": 35,
+      "note": "Policy Brief p.7: keeping insectivorous birds in cities through riparian vegetation and less light at night may help regulate disease vectors."
+    },
+    "M4.1.1": {
+      "title": "Passive riparian vegetation (allow natural regeneration)",
+      "catalogue": true, "service": "riparian-restoration",
+      "section": "4.1.1 Passive riparian vegetation", "page": 34
+    },
+    "M4.1.4": {
+      "title": "Vegetated corridors promoting connectedness",
+      "catalogue": true, "service": "riparian-restoration",
+      "section": "4.1.4 Vegetated corridors promoting connectedness", "page": 41
+    },
+    "M4.6.1": {
+      "title": "Rain gardens",
+      "catalogue": true, "service": "water-retention",
+      "section": "4.6.1 Rain gardens", "page": 99,
+      "mosquito_warning": "The Catalogue warns that poorly drained rain gardens can create stagnant water pockets that support mosquito larvae; it asks for well-draining substrate, no standing water for more than 48 hours, and regular maintenance."
+    },
+    "M4.6.6": {
+      "title": "Vegetated swales",
+      "catalogue": true, "service": "water-retention",
+      "section": "4.6.6 Vegetated swales", "page": 104,
+      "mosquito_warning": "The Catalogue warns that poorly designed or unmaintained swales may retain stagnant water, leading to mosquito breeding."
+    },
+    "M4.6.7": {
+      "title": "Retention ponds and floodable parks",
+      "catalogue": true, "service": "water-retention",
+      "section": "4.6.7 Retention ponds and floodable parks", "page": 105,
+      "mosquito_warning": "The Catalogue warns that poorly designed or unmaintained ponds may retain stagnant water, leading to mosquito breeding."
+    }
+  }
+}

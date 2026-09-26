@@ -1,6 +1,6 @@
 import type { AiResponse, AiStatus, VisionType } from './ai'
 import type { CalibrationResult } from './calibration'
-import type { Action, CheckInDraft, CheckInResult, Message, Observer, RiskScore, Site } from './types'
+import type { Action, CheckInDraft, CheckInResult, DecisionResult, MeasureCatalogue, Message, Observer, RiskScore, Site } from './types'
 
 /**
  * Everything the UI needs from a backend. HttpClient talks to the FastAPI
@@ -13,8 +13,14 @@ export interface DataClient {
   submitCheckIn(draft: CheckInDraft): Promise<CheckInResult>
   uploadPhoto(blob: Blob, findingId: number): Promise<void>
   listMessages(observerId: string): Promise<Message[]>
-  listRiskScores(week?: string): Promise<RiskScore[]>
+  latestRisk(cityId: string): Promise<RiskScore[]>
+  computeRisk(cityId: string): Promise<RiskScore[]>
+  riskHistory(siteId: string): Promise<RiskScore[]>
   listActions(status?: string): Promise<Action[]>
+  measures(): Promise<MeasureCatalogue>
+  draftActions(cityId: string): Promise<Action[]>
+  editAction(id: number, edit: { title?: string; rationale?: string; measure_id?: string }): Promise<Action>
+  decideAction(id: number, approve: boolean, officer: string, note?: string): Promise<DecisionResult>
   aiStatus(): Promise<AiStatus>
   suggest(photo: Blob, type: VisionType, siteId?: string, keyResult?: string): Promise<AiResponse>
   submitCalibration(observerId: string, answers: Record<string, string>): Promise<CalibrationResult>
@@ -68,8 +74,32 @@ export class HttpClient implements DataClient {
     return this.request<Message[]>(`/api/messages?observer_id=${encodeURIComponent(observerId)}`)
   }
 
-  listRiskScores(week?: string) {
-    return this.request<RiskScore[]>(`/api/risk-scores${week ? `?week=${week}` : ''}`)
+  latestRisk(cityId: string) {
+    return this.request<RiskScore[]>(`/api/risk/latest?city_id=${encodeURIComponent(cityId)}`)
+  }
+
+  computeRisk(cityId: string) {
+    return this.request<RiskScore[]>(`/api/risk/compute?city_id=${encodeURIComponent(cityId)}`, { method: 'POST' })
+  }
+
+  riskHistory(siteId: string) {
+    return this.request<RiskScore[]>(`/api/risk/history/${encodeURIComponent(siteId)}`)
+  }
+
+  measures() {
+    return this.request<MeasureCatalogue>('/api/actions/measures')
+  }
+
+  draftActions(cityId: string) {
+    return this.request<Action[]>(`/api/actions/draft?city_id=${encodeURIComponent(cityId)}`, { method: 'POST' })
+  }
+
+  editAction(id: number, edit: { title?: string; rationale?: string; measure_id?: string }) {
+    return this.json<Action>(`/api/actions/${id}/edit`, 'POST', edit)
+  }
+
+  decideAction(id: number, approve: boolean, officer: string, note?: string) {
+    return this.json<DecisionResult>(`/api/actions/${id}/${approve ? 'approve' : 'dismiss'}`, 'POST', { officer, note })
   }
 
   listActions(status?: string) {

@@ -9,7 +9,7 @@
 | 4 | Calibration and reliability | Built | 19-item reference set (illustrations generated from their answers; synthetic; pending team panel review), practice round with per-question Cohen kappa, rule-based bias feedback, tiers New/Calibrated/Trusted; MAP Dawid-Skene with calibration prior; simulation report shows plain ML Dawid-Skene loses to majority vote on small panels and how the priors fix it (tuned on a separate seed); TS scoring pinned to Python by golden fixtures |
 | 5 | Risk index | Built | index = seasonal suitability (Open-Meteo, Reisen 2006 and Shocket 2020 thresholds) x site conditions (DS-weighted habitat, larvae, predator deficit, dead-bird signal); missing data widens a reported range and blocks alerts; full trace per score; sensitivity report; docs/RISK_MODEL.md |
 | 6 | Backtest | Not started | |
-| 7 | City dashboard and actions | Not started | |
+| 7 | City dashboard and actions | Built | Leaflet map plus ranked table (index, range, band with icon, coverage, data age), site panel with every factor and weekly trend chart, alert queue with officer approval/edit/dismissal, measures mapped to OAH Catalogue sections and pages, maladaptation warnings, volunteer messages; full loop tested end to end (also runs in-browser via LocalClient) |
 | 8 | FHIR | Not started | |
 | 9 | Engagement | Not started | |
 | 10 | Hardening and deployment | Not started | |

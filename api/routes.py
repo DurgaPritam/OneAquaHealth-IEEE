@@ -27,6 +27,24 @@ class CheckInResult(BaseModel):
     checkin: m.CheckIn
     findings: list[m.Finding]
     duplicate: bool
+    risk_updated: bool = False
+
+
+def _recompute_after_checkin(session: Session, checkin: m.CheckIn) -> bool:
+    """Best effort: refresh the city's risk so the dashboard reflects the new evidence. Off when RISK_ON_SUBMIT=0."""
+    import os
+
+    if os.environ.get("RISK_ON_SUBMIT", "1") == "0":
+        return False
+    from api.risk.service import compute_city
+
+    site = session.get(m.Site, checkin.site_id)
+    try:
+        compute_city(session, site.city_id, checkin.observed_at.date())
+        return True
+    except Exception:  # weather or maths failure must never lose a check-in
+        session.rollback()
+        return False
 
 
 sync = APIRouter(tags=["checkins"])
@@ -60,7 +78,8 @@ def submit_checkin(payload: m.CheckInCreate, session: Session = Depends(get_sess
     session.refresh(checkin)
     for row in rows:
         session.refresh(row)
-    return CheckInResult(checkin=checkin, findings=rows, duplicate=False)
+    updated = _recompute_after_checkin(session, checkin)
+    return CheckInResult(checkin=checkin, findings=rows, duplicate=False, risk_updated=updated)
 
 
 @sync.put("/api/observers/{observer_id}", response_model=m.Observer)
@@ -224,4 +243,67 @@ def risk_history(site_id: str, session: Session = Depends(get_session)) -> list[
     return list(session.exec(select(m.RiskScore).where(m.RiskScore.site_id == site_id).order_by(m.RiskScore.week)).all())
 
 
-ALL_ROUTERS = [risk, calibration, ai, sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]
+workflow = APIRouter(prefix="/api/actions", tags=["actions"])
+
+
+class Decision(BaseModel):
+    officer: str
+    note: str | None = None
+
+
+class ActionEdit(BaseModel):
+    title: str | None = None
+    rationale: str | None = None
+    measure_id: str | None = None
+
+
+@workflow.get("/measures")
+def list_measures() -> dict:
+    """The measure catalogue (data/measures.json) with OAH Catalogue sections and pages."""
+    from api.actions.drafting import measures
+
+    return measures()
+
+
+@workflow.post("/draft", response_model=list[m.Action])
+def draft_actions(city_id: str, session: Session = Depends(get_session)) -> list[m.Action]:
+    """Draft actions for alerting sites. Drafts wait for an officer; nothing is sent."""
+    from api.actions.drafting import draft_for_city
+
+    return draft_for_city(session, city_id)
+
+
+@workflow.post("/{action_id}/edit", response_model=m.Action)
+def edit_action(action_id: int, payload: ActionEdit, session: Session = Depends(get_session)) -> m.Action:
+    from api.actions import drafting
+
+    try:
+        return drafting.edit(session, get_or_404(session, m.Action, action_id), payload.title, payload.rationale, payload.measure_id)
+    except ValueError as exc:
+        raise HTTPException(409, str(exc)) from exc
+
+
+def _decide(action_id: int, payload: Decision, approve: bool, session: Session) -> dict:
+    from api.actions import drafting
+
+    action = get_or_404(session, m.Action, action_id)
+    try:
+        msgs = drafting.decide(session, action, approve, payload.officer, payload.note)
+    except ValueError as exc:
+        raise HTTPException(409, str(exc)) from exc
+    session.refresh(action)
+    return {"action": action.model_dump(mode="json"), "messages": [x.model_dump(mode="json") for x in msgs]}
+
+
+@workflow.post("/{action_id}/approve")
+def approve_action(action_id: int, payload: Decision, session: Session = Depends(get_session)) -> dict:
+    """Officer approval. Only now is the action issued (FHIR ServiceRequest) and volunteers told."""
+    return _decide(action_id, payload, True, session)
+
+
+@workflow.post("/{action_id}/dismiss")
+def dismiss_action(action_id: int, payload: Decision, session: Session = Depends(get_session)) -> dict:
+    return _decide(action_id, payload, False, session)
+
+
+ALL_ROUTERS = [workflow, risk, calibration, ai, sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]

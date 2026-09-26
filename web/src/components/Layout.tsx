@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { NavLink, Outlet } from 'react-router-dom'
 import { changeLanguage, LANGUAGES, type LanguageCode } from '../i18n'
 import { useApp } from '../lib/context'
+import { LocalClient } from '../lib/local/LocalClient'
 
 const NAV = [
   { to: '/', key: 'nav.home', end: true },
@@ -50,8 +51,8 @@ export function Layout() {
             </select>
           </div>
         </div>
-        <nav aria-label={t('nav.label')} className="mx-auto max-w-5xl overflow-x-auto px-2">
-          <ul className="flex gap-1">
+        <nav aria-label={t('nav.label')} className="mx-auto max-w-5xl px-2">
+          <ul className="flex flex-wrap gap-x-1">
             {NAV.map((n) => (
               <li key={n.to}>
                 <NavLink
@@ -75,10 +76,32 @@ export function Layout() {
           {t('lang.machineTranslated')}
         </p>
       )}
+      <DemoBanner />
       <StatusBar />
       <main id="main" tabIndex={-1} className="mx-auto w-full max-w-5xl flex-1 px-4 py-6">
         <Outlet />
       </main>
+    </div>
+  )
+}
+
+function DemoBanner() {
+  const { t } = useTranslation()
+  const { client } = useApp()
+  const [date, setDate] = useState<string | null>(null)
+  useEffect(() => {
+    if (client instanceof LocalClient) void client.demoDate().then(setDate)
+  }, [client])
+  if (!(client instanceof LocalClient) || !date) return null
+  return (
+    <div className="border-b border-violet-200 bg-violet-50">
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-3 px-4 py-2 text-sm text-violet-950">
+        <span className="font-semibold">{t('demo.banner')}</span>
+        <span>{t('demo.clock', { date })}</span>
+        <button type="button" className="btn-ghost ml-auto text-sm text-violet-950" onClick={() => void client.reset().then(() => window.location.reload())}>
+          {t('demo.reset')}
+        </button>
+      </div>
     </div>
   )
 }

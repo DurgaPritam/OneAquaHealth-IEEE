@@ -73,7 +73,7 @@ export interface CheckInResult {
 export interface RiskFactor {
   name: string
   label: string
-  value: number
+  value: number | null
   weight: number
   contribution: number
   inputs: Record<string, unknown>
@@ -81,16 +81,50 @@ export interface RiskFactor {
   data_age_days: number | null
 }
 
+export type Band = 'low' | 'moderate' | 'high' | 'very_high'
+
 export interface RiskScore {
   id?: number
   site_id: string
   week: string
+  as_of?: string | null
   total: number
-  band: string
+  band: Band
   factors: RiskFactor[]
   explanation: string
   config_version: string
+  dominant: string | null
+  coverage: number
+  range_low: number
+  range_high: number
+  needs_data: boolean
+  alert: boolean
+  checkin_ids: number[]
   synthetic: boolean
+}
+
+export interface MeasureDef {
+  title: string
+  catalogue: boolean
+  service: string
+  section: string | null
+  page: number | null
+  detail?: string
+  quote?: string
+  note?: string
+  mosquito_warning?: string
+}
+
+export interface MeasureCatalogue {
+  source: string
+  source_url: string
+  drivers: Record<string, { label: string; measures: string[] }>
+  measures: Record<string, MeasureDef>
+}
+
+export interface DecisionResult {
+  action: Action
+  messages: Message[]
 }
 
 export interface Action {
