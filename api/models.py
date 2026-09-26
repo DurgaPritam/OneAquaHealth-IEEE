@@ -138,6 +138,14 @@ class RiskScore(SQLModel, table=True):
     factors: list[dict[str, Any]] = Field(default_factory=list, sa_column=Column(JSON))
     explanation: str
     config_version: str
+    dominant: Optional[str] = None
+    coverage: float = 1.0
+    range_low: float = 0.0
+    range_high: float = 1.0
+    needs_data: bool = False
+    alert: bool = False
+    as_of: Optional[str] = None
+    checkin_ids: list[int] = Field(default_factory=list, sa_column=Column(JSON))
     computed_at: datetime = Field(default_factory=utcnow)
     synthetic: bool = False
 

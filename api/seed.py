@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +16,7 @@ from sqlmodel import Session, SQLModel, select
 from api import models as m
 from api import synthetic
 from api.db import engine, init_db
+from api.risk.service import compute_city
 
 ROOT = Path(__file__).resolve().parent.parent
 SITES_FILE = ROOT / "data" / "sites.json"
@@ -60,10 +61,17 @@ def seed_synthetic(session: Session, sites: list[dict[str, Any]], city_id: str) 
     return len(profiles), n
 
 
+def season_weeks(weeks: int = 6) -> list[date]:
+    """Sundays of the synthetic season, matching api.synthetic.scenario's end date."""
+    end = date(2026, 9, 20)
+    return [end - timedelta(weeks=weeks - 1 - i) for i in range(weeks)]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--city", default="CO", help="ENORA city id for the synthetic season")
     parser.add_argument("--reset", action="store_true", help="drop all tables first")
+    parser.add_argument("--no-risk", action="store_true", help="skip computing weekly risk scores (needs network for weather)")
     args = parser.parse_args()
     if args.reset:
         SQLModel.metadata.drop_all(engine)
@@ -72,7 +80,12 @@ def main() -> None:
     with Session(engine) as session:
         added = seed_sites(session, sites)
         observers, checkins = seed_synthetic(session, sites, args.city)
-    print(f"sites added: {added}; synthetic observers: {observers}; synthetic check-ins: {checkins}")
+        print(f"sites added: {added}; synthetic observers: {observers}; synthetic check-ins: {checkins}")
+        if not args.no_risk:
+            for as_of in season_weeks():
+                rows = compute_city(session, args.city, as_of)
+                alerts = sum(r["alert"] for r in rows)
+                print(f"risk {as_of}: {len(rows)} sites, {alerts} alerts, weather-backed {sum(1 for r in rows if r['factors'][0]['value'] is not None)}")
 
 
 if __name__ == "__main__":

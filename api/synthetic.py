@@ -97,10 +97,9 @@ def make_checkin(truth: SiteTruth, obs: ObserverProfile, when: datetime, rng: ra
         q: report(v, q, COVER if q == "rip_trees" else APE, obs, rng) for q, v in truth.answers.items()
     }
     findings: list[dict[str, Any]] = []
-    for dip in range(1, 6):
-        count = max(0, int(rng.expovariate(1 / truth.larvae_mean))) if truth.larvae_mean > 0 else 0
-        findings.append({"type": "larvae", "subject": f"dip_{dip}", "count": count, "status": "manual", "synthetic": True})
-    if any(f["count"] for f in findings):
+    dips = [max(0, int(rng.expovariate(1 / truth.larvae_mean))) if truth.larvae_mean > 0 else 0 for _ in range(5)]
+    findings.append({"type": "larvae", "subject": "larval_dips", "count": sum(dips), "data": {"dips": dips}, "status": "manual", "synthetic": True})
+    if sum(dips):
         posture = "angled" if rng.random() < truth.culex_share else "flat"
         findings.append({
             "type": "larvae", "subject": "larval_posture", "citizen_answer": posture,
@@ -112,6 +111,8 @@ def make_checkin(truth: SiteTruth, obs: ObserverProfile, when: datetime, rng: ra
         "citizen_answer": ("heard" if rng.random() < 0.6 else "seen") if truth.amphibians and rng.random() < obs.accuracy else "none",
         "status": "manual", "synthetic": True,
     })
+    findings.append({"type": "predator", "subject": "bats", "citizen_answer": "seen" if truth.amphibians and rng.random() < 0.5 else "none",
+                     "status": "manual", "synthetic": True})
     findings.append({
         "type": "predator", "subject": "insectivorous_birds",
         "count": max(0, truth.insectivorous_birds + rng.choice((-1, 0, 0, 1))), "status": "manual", "synthetic": True,

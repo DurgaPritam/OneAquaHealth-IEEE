@@ -191,4 +191,37 @@ def submit_calibration(observer_id: str, payload: CalibrationAnswers, session: S
     return result
 
 
-ALL_ROUTERS = [calibration, ai, sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]
+risk = APIRouter(prefix="/api/risk", tags=["risk"])
+
+
+@risk.post("/compute")
+def compute_risk(city_id: str, as_of: str | None = None, session: Session = Depends(get_session)) -> list[dict]:
+    """Recompute every site in a city for the week containing ``as_of`` (default today). Returns full traces."""
+    from datetime import date
+
+    from api.risk.service import compute_city
+
+    day = date.fromisoformat(as_of) if as_of else date.today()
+    return compute_city(session, city_id, day)
+
+
+@risk.get("/latest", response_model=list[m.RiskScore])
+def latest_risk(city_id: str | None = None, session: Session = Depends(get_session)) -> list[m.RiskScore]:
+    """Most recent score per site."""
+    rows = session.exec(select(m.RiskScore).order_by(m.RiskScore.week)).all()
+    latest: dict[str, m.RiskScore] = {}
+    for r in rows:
+        latest[r.site_id] = r
+    if city_id:
+        ids = {s.id for s in session.exec(select(m.Site).where(m.Site.city_id == city_id)).all()}
+        return [r for r in latest.values() if r.site_id in ids]
+    return list(latest.values())
+
+
+@risk.get("/history/{site_id}", response_model=list[m.RiskScore])
+def risk_history(site_id: str, session: Session = Depends(get_session)) -> list[m.RiskScore]:
+    """Weekly trend for one site, oldest first."""
+    return list(session.exec(select(m.RiskScore).where(m.RiskScore.site_id == site_id).order_by(m.RiskScore.week)).all())
+
+
+ALL_ROUTERS = [risk, calibration, ai, sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]

@@ -1,0 +1,71 @@
+# AquaSentinel vector-habitat risk index. Every factor is in [0, 1].
+#   index = seasonal suitability x site conditions
+# seasonal suitability = weighted mean of the weather factors (the same for every site in a city);
+# site conditions      = weighted mean of the citizen-observation factors that have data.
+# Weather says whether the season favours vectors; citizen evidence says where. Nothing here describes infection
+# status of any place, bird or person: it scores conditions that favour mosquito
+# vectors, and nothing else.
+version: "1.0"
+window_days: 14  # citizen observations and weather are taken from this window
+
+bands:  # upper bounds, inclusive of lower
+  - { name: low, below: 0.30 }
+  - { name: moderate, below: 0.50 }
+  - { name: high, below: 0.70 }
+  - { name: very_high, below: 1.01 }
+
+alert_threshold: 0.55  # sites at or above this draft an action for officer review...
+min_coverage: 0.6  # ...but only if site factors with data carry at least this share of the site weights.
+                   # Below it the site is flagged "needs data" (a campaign target), never alerted on weather alone.
+
+season_weights:
+  temperature: 0.75
+  dry_spell: 0.25
+
+site_weights:
+  habitat: 0.30
+  vector_presence: 0.35
+  predator_deficit: 0.20
+  host_signal: 0.15
+
+temperature:
+  # Reisen WK, Fang Y, Martinez VM (2006) Effects of temperature on the transmission of
+  # West Nile virus by Culex tarsalis. J Med Entomol 43(2):309-317. https://pubmed.ncbi.nlm.nih.gov/16619616/
+  # Zero-development point 14.3 C; extrinsic incubation needs about 109 degree-days.
+  # Species caveat: measured in Culex tarsalis (North America); European vectors are mainly Culex pipiens (OQ-9).
+  base_c: 14.3
+  degree_days_target: 109
+  # Shocket MS et al. (2020) eLife 9:e58511: transmission peaks at 23-26 C and declines at higher
+  # temperatures. Above upper_optimum_c the factor is reduced linearly to zero at upper_limit_c.
+  upper_optimum_c: 26.0
+  upper_limit_c: 34.0
+
+dry_spell:
+  # OAH Catalogue of Measures D2.4, 4.3.1: during drought, low-head barriers retain stagnant water
+  # that favours mosquito breeding. https://doi.org/10.5281/zenodo.20040211
+  dry_day_max_mm: 1.0
+  days_to_saturate: 10
+
+habitat:
+  # Stream-check answers, reliability weighted (Dawid-Skene posterior). A/P/E scored 0, 0.5, 1.
+  questions:
+    flow_NP: 0.35  # still water: larval habitat
+    sub_OM: 0.15  # organic matter deposits
+    water_sewage_smell: 0.2  # organic pollution
+    water_foam: 0.1
+    water_colour_unusual: 0.1
+    mac_free_floating: 0.1  # free-floating plants shelter larvae
+
+vector_presence:
+  # Reliability-weighted mean larvae per dip; saturating curve 1 - exp(-mean / scale).
+  scale_per_dip: 3.0
+
+predator_deficit:
+  # 1 minus predator presence. Presence averages amphibians (none 0, heard 0.7, seen 1),
+  # insectivorous birds (count / birds_to_saturate) and bats (none 0, seen 1).
+  birds_to_saturate: 5
+  parts: { amphibians: 0.4, birds: 0.4, bats: 0.2 }
+
+host_signal:
+  # Dead bird reports in the window. A signal for the veterinary team, never a diagnosis.
+  reports_to_saturate: 3
