@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #ecfdf8;
+  --color-brand-100: #d1faec;
+  --color-brand-600: #0b7a66;
+  --color-brand-700: #09624f;
+  --color-brand-900: #053a30;
+}
+
+html, body, #root { height: 100%; }
+body { @apply bg-slate-50 text-slate-900 antialiased; }
+:focus-visible { outline: 3px solid #0b7a66; outline-offset: 2px; }
