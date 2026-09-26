@@ -1,0 +1,114 @@
+{
+  "resourceType": "Bundle",
+  "id": "neg-bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:0b6a4b1e-0000-4000-8000-000000000001",
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-site"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Site C1</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/enora-site-code",
+            "value": "C1"
+          }
+        ],
+        "status": "active",
+        "name": "Explorat\u00f3rio",
+        "mode": "instance",
+        "position": {
+          "latitude": 40.198,
+          "longitude": -8.429
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Location"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0b6a4b1e-0000-4000-8000-000000000002",
+      "resource": {
+        "resourceType": "Practitioner",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-observer"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Observer</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/observer-code",
+            "value": "OBS-7F3K2Q"
+          }
+        ],
+        "name": [
+          {
+            "text": "Jane Doe"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Practitioner"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0b6a4b1e-0000-4000-8000-000000000003",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-citizen-finding"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Finding</p></div>"
+        },
+        "status": "preliminary",
+        "code": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "bats"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:0b6a4b1e-0000-4000-8000-000000000001"
+        },
+        "effectiveDateTime": "2026-09-20T09:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:0b6a4b1e-0000-4000-8000-000000000002"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "seen"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ]
+}

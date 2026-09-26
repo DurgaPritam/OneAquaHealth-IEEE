@@ -1,0 +1,53 @@
+{
+  "description": "Deliberately broken records. Each MUST fail validation with at least one error whose location or message contains 'expect'.",
+  "cases": {
+    "practitioner-with-name.json": {
+      "reason": "Observer Practitioner carries a name and an e-mail address",
+      "expect": "Practitioner.name"
+    },
+    "practitioner-email-as-code.json": {
+      "reason": "Observer identifier is an e-mail address instead of a random OBS-XXXXXX code",
+      "expect": "as-observer-code"
+    },
+    "observation-without-subject.json": {
+      "reason": "Citizen finding without a subject site",
+      "expect": "Observation.subject"
+    },
+    "dead-bird-with-diagnosis.json": {
+      "reason": "Dead bird report claims an infection result and an interpretation",
+      "expect": "interpretation"
+    },
+    "dead-bird-without-disclaimer.json": {
+      "reason": "Dead bird report without the no-diagnosis note",
+      "expect": "as-dead-bird-no-diagnosis"
+    },
+    "servicerequest-code-not-in-valueset.json": {
+      "reason": "Action category code not in the AquaSentinel action category value set",
+      "expect": "category"
+    },
+    "servicerequest-without-requester.json": {
+      "reason": "Approved action without a requester (no officer approval recorded)",
+      "expect": "ServiceRequest.requester"
+    },
+    "citizen-finding-status-amended.json": {
+      "reason": "Citizen finding status 'amended' is not allowed (preliminary or final only)",
+      "expect": "status"
+    },
+    "indicator-finding-preliminary.json": {
+      "reason": "Unpromoted (preliminary) finding claims the OAH indicator profile, which fixes status final",
+      "expect": "status"
+    },
+    "provenance-without-reliability.json": {
+      "reason": "Observer Provenance without the observer reliability extension",
+      "expect": "reliability"
+    },
+    "indicator-finding-health-code.json": {
+      "reason": "Citizen finding uses an OAH human health code (disease prevalence), outside the codes AquaSentinel may use",
+      "expect": "code"
+    },
+    "bundle-with-named-observer.json": {
+      "reason": "Transaction Bundle whose observer Practitioner entry carries a name (entries are validated against their profiles)",
+      "expect": "Practitioner.name"
+    }
+  }
+}

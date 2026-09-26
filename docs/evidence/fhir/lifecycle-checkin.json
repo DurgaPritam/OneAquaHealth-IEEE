@@ -1,0 +1,1420 @@
+{
+  "resourceType": "Bundle",
+  "identifier": {
+    "system": "http://example.org/fhir/aquasentinel/sid/bundle",
+    "value": "checkin-755d814b-5f5b-a255-e544-9887b36ab3ed"
+  },
+  "type": "transaction",
+  "timestamp": "2026-09-21T10:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80",
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-site"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Stream site C1 Exploratório (Coimbra)</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/enora-site-code",
+            "value": "C1"
+          }
+        ],
+        "status": "active",
+        "name": "Exploratório",
+        "mode": "instance",
+        "position": {
+          "latitude": 40.198,
+          "longitude": -8.429
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Location",
+        "ifNoneExist": "identifier=http://example.org/fhir/aquasentinel/sid/enora-site-code|C1"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a",
+      "resource": {
+        "resourceType": "Practitioner",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-observer"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Pseudonymous observer OBS-SYN000</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/observer-code",
+            "value": "OBS-SYN000"
+          }
+        ],
+        "active": true
+      },
+      "request": {
+        "method": "POST",
+        "url": "Practitioner",
+        "ifNoneExist": "identifier=http://example.org/fhir/aquasentinel/sid/observer-code|OBS-SYN000"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8a3c1a11-5a13-58ef-92fe-98ae75552860",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Stream check stream check: banks at C1</p></div>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "morophology",
+              "display": "Morphology of the streams"
+            }
+          ],
+          "text": "stream check: banks"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel-stream-check",
+                  "code": "bank_left_CC"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "present"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel-stream-check",
+                  "code": "bank_right_CC"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "extensive"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c8d61864-47c6-512b-ba1b-f1e7fc98e110",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Stream check stream check: flow at C1</p></div>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "hydrology",
+              "display": "Hydrology of the stream"
+            }
+          ],
+          "text": "stream check: flow"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel-stream-check",
+                  "code": "flow_NP"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "present"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:893cbee0-03c8-5018-8395-ebff33dfe000",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Stream check stream check: channel_substrate at C1</p></div>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "morophology",
+              "display": "Morphology of the streams"
+            }
+          ],
+          "text": "stream check: channel_substrate"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel-stream-check",
+                  "code": "sub_OM"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "present"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d384489e-6244-52d7-a919-609469efca76",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Stream check stream check: water_signs at C1</p></div>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "foam",
+              "display": "Foam/colour/smell"
+            }
+          ],
+          "text": "stream check: water_signs"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel-stream-check",
+                  "code": "water_sewage_smell"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "absent"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ea4f3339-396e-5ee4-885d-228d6dc38582",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-vegetation-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Stream check stream check: rip_trees at C1</p></div>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "riparianVegetation",
+              "display": "Riparian vegetation"
+            }
+          ],
+          "text": "stream check: rip_trees"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "trees"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+                  "code": "41-60-percent"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f15f084-25b1-5635-9b17-84d36766eef4",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Citizen finding larval_dips at C1</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/finding-id",
+            "value": "524"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "diptera",
+              "display": "Diptera"
+            },
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "larval-dip-count"
+            }
+          ],
+          "text": "larval_dips"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "valueQuantity": {
+          "value": 75,
+          "unit": "larvae",
+          "system": "http://unitsofmeasure.org",
+          "code": "1"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "dip-count"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0,
+              "unit": "larvae",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "dip-count"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 46,
+              "unit": "larvae",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "dip-count"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 9,
+              "unit": "larvae",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "dip-count"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0,
+              "unit": "larvae",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "dip-count"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 20,
+              "unit": "larvae",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bc58c5d3-7983-50e3-a133-6f19feae5d29",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Citizen finding larval_posture at C1</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/finding-id",
+            "value": "525"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "diptera",
+              "display": "Diptera"
+            },
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "larval-posture"
+            }
+          ],
+          "text": "larval_posture"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "flat"
+            }
+          ],
+          "text": "flat"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "guided-key-result"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "anopheles_type"
+                }
+              ],
+              "text": "anopheles_type"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:78ad7f8c-854f-526e-88b0-e831efa45f2b",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Citizen finding amphibians at C1</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/finding-id",
+            "value": "526"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "amphibians",
+              "display": "Amphibians"
+            }
+          ],
+          "text": "amphibians"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "none"
+            }
+          ],
+          "text": "none"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f05540fa-145b-5885-add3-5c15bf53d15f",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-citizen-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Citizen finding bats at C1</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/finding-id",
+            "value": "527"
+          }
+        ],
+        "status": "preliminary",
+        "code": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "bats"
+            }
+          ],
+          "text": "bats"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "none"
+            }
+          ],
+          "text": "none"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:54b57026-856a-5b46-9314-2bb9d5aea433",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Citizen finding insectivorous_birds at C1</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/finding-id",
+            "value": "528"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "birds",
+              "display": "Birds"
+            }
+          ],
+          "text": "insectivorous_birds"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "valueQuantity": {
+          "value": 2,
+          "unit": "birds",
+          "system": "http://unitsofmeasure.org",
+          "code": "1"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a55d85d4-3045-5ae5-a3c7-0f39f309f29d",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-dead-bird-report"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dead bird report at C1: 1 seen. No diagnosis is made.</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/finding-id",
+            "value": "529"
+          }
+        ],
+        "status": "preliminary",
+        "code": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "dead-bird-report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "valueQuantity": {
+          "value": 1,
+          "unit": "birds",
+          "system": "http://unitsofmeasure.org",
+          "code": "1"
+        },
+        "note": [
+          {
+            "text": "Report only: count, place and time. No diagnosis or cause of death is made. Do not touch dead birds; the report is routed to veterinary teams."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8813a4f2-84e2-5c01-b234-92e39bebbbca",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Citizen finding predator_photo at C1</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/finding-id",
+            "value": "722"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "birds",
+              "display": "Birds"
+            },
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "predator-photo"
+            }
+          ],
+          "text": "predator_photo"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "valueCodeableConcept": {
+          "text": "Motacilla alba"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "ai-suggestion"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "Motacilla alba"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "ai-confidence"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.74,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "ai-provider"
+                }
+              ]
+            },
+            "valueString": "mock"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "citizen-decision"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "confirmed"
+                }
+              ]
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "AI suggestion (mock, confidence 0.74): Motacilla alba. Black, white and grey bird walking on the bank Citizen decision: confirmed."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:806b13ad-5d8d-5639-875b-8040b181dd1b",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-indicator-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Citizen finding adult_mosquito at C1</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/finding-id",
+            "value": "723"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "diptera",
+              "display": "Diptera"
+            },
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "adult-mosquito-key"
+            }
+          ],
+          "text": "adult_mosquito"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "striped_aedes_type"
+            }
+          ],
+          "text": "striped_aedes_type"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "guided-key-result"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "striped_aedes_type"
+                }
+              ],
+              "text": "striped_aedes_type"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "ai-suggestion"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "plain_culex_type"
+                }
+              ],
+              "text": "plain_culex_type"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "ai-confidence"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.58,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "ai-provider"
+                }
+              ]
+            },
+            "valueString": "mock"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "citizen-decision"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "corrected"
+                }
+              ]
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "AI suggestion (mock, confidence 0.58): plain_culex_type. Brown body without clear stripes Citizen decision: corrected."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:adce11ca-ea4d-546e-9607-706231efa0d6",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-citizen-finding"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Citizen finding predator_photo at C1</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/fhir/aquasentinel/sid/finding-id",
+            "value": "724"
+          }
+        ],
+        "status": "preliminary",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.eu/fhir/ig/oah/CodeSystem/temporarySystem-oah-eu",
+              "code": "amphibians",
+              "display": "Amphibians"
+            },
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "predator-photo"
+            }
+          ],
+          "text": "predator_photo"
+        },
+        "subject": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "effectiveDateTime": "2026-09-07T03:00:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+          }
+        ],
+        "valueCodeableConcept": {
+          "text": "Pelophylax lessonae"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "ai-suggestion"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "Pelophylax lessonae"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "ai-confidence"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.41,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "ai-provider"
+                }
+              ]
+            },
+            "valueString": "mock"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "citizen-decision"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                  "code": "expert_review"
+                }
+              ]
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "AI suggestion (mock, confidence 0.41): Pelophylax lessonae. Green frog in shallow water Citizen decision: expert_review."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f55daa6b-1b6a-5a04-b568-77ba057b4611",
+      "resource": {
+        "resourceType": "Provenance",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-observer-provenance"
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+              "code": "synthetic",
+              "display": "Synthetic record"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Findings of check-in 755d814b-5f5b-a255-e544-9887b36ab3ed by OBS-SYN000</p></div>"
+        },
+        "target": [
+          {
+            "reference": "urn:uuid:8a3c1a11-5a13-58ef-92fe-98ae75552860"
+          },
+          {
+            "reference": "urn:uuid:c8d61864-47c6-512b-ba1b-f1e7fc98e110"
+          },
+          {
+            "reference": "urn:uuid:893cbee0-03c8-5018-8395-ebff33dfe000"
+          },
+          {
+            "reference": "urn:uuid:d384489e-6244-52d7-a919-609469efca76"
+          },
+          {
+            "reference": "urn:uuid:ea4f3339-396e-5ee4-885d-228d6dc38582"
+          },
+          {
+            "reference": "urn:uuid:6f15f084-25b1-5635-9b17-84d36766eef4"
+          },
+          {
+            "reference": "urn:uuid:bc58c5d3-7983-50e3-a133-6f19feae5d29"
+          },
+          {
+            "reference": "urn:uuid:78ad7f8c-854f-526e-88b0-e831efa45f2b"
+          },
+          {
+            "reference": "urn:uuid:f05540fa-145b-5885-add3-5c15bf53d15f"
+          },
+          {
+            "reference": "urn:uuid:54b57026-856a-5b46-9314-2bb9d5aea433"
+          },
+          {
+            "reference": "urn:uuid:a55d85d4-3045-5ae5-a3c7-0f39f309f29d"
+          },
+          {
+            "reference": "urn:uuid:8813a4f2-84e2-5c01-b234-92e39bebbbca"
+          },
+          {
+            "reference": "urn:uuid:806b13ad-5d8d-5639-875b-8040b181dd1b"
+          },
+          {
+            "reference": "urn:uuid:adce11ca-ea4d-546e-9607-706231efa0d6"
+          }
+        ],
+        "recorded": "2026-09-07T03:05:00Z",
+        "location": {
+          "reference": "urn:uuid:6bbc067d-f233-5a89-a39d-7b4c396c8b80"
+        },
+        "agent": [
+          {
+            "extension": [
+              {
+                "url": "http://example.org/fhir/aquasentinel/StructureDefinition/observer-reliability",
+                "extension": [
+                  {
+                    "url": "dawidSkene",
+                    "valueDecimal": 0.7464
+                  },
+                  {
+                    "url": "calibrationTier",
+                    "valueCoding": {
+                      "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+                      "code": "new"
+                    }
+                  },
+                  {
+                    "url": "method",
+                    "valueString": "MAP Dawid-Skene over the city's stream checks in the risk window, seeded with calibration agreement"
+                  }
+                ]
+              }
+            ],
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                  "code": "author",
+                  "display": "Author"
+                }
+              ]
+            },
+            "who": {
+              "reference": "urn:uuid:aee47dc0-238a-5507-9ba2-2ac1d567bc6a"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Provenance"
+      }
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+        "code": "synthetic",
+        "display": "Synthetic record"
+      }
+    ]
+  }
+}

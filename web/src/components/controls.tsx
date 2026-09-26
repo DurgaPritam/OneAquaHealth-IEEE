@@ -134,9 +134,7 @@ export function PhotoInput({
 
   return (
     <div className="py-2">
-      <span className="mb-1.5 block font-medium text-slate-900">
-        {label} <span className="muted font-normal">({t('common.optional')})</span>
-      </span>
+      <span className="mb-1.5 block font-medium text-slate-900">{label}</span>
       <div className="flex flex-wrap items-center gap-3">
         <label htmlFor={id} className="btn-secondary cursor-pointer">
           {photo ? t('common.replacePhoto') : t('common.addPhoto')}

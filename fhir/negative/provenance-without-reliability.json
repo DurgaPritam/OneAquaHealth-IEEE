@@ -1,0 +1,29 @@
+{
+  "resourceType": "Provenance",
+  "id": "neg-prov",
+  "meta": {
+    "profile": [
+      "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-observer-provenance"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Negative test</p></div>"
+  },
+  "target": [
+    {
+      "reference": "Observation/example-dead-bird"
+    }
+  ],
+  "recorded": "2026-09-20T09:05:00Z",
+  "location": {
+    "reference": "Location/example-site-c1"
+  },
+  "agent": [
+    {
+      "who": {
+        "reference": "Practitioner/example-observer"
+      }
+    }
+  ]
+}

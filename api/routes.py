@@ -306,4 +306,33 @@ def dismiss_action(action_id: int, payload: Decision, session: Session = Depends
     return _decide(action_id, payload, False, session)
 
 
-ALL_ROUTERS = [workflow, risk, calibration, ai, sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]
+fhir = APIRouter(prefix="/api/fhir", tags=["fhir"])
+
+
+@fhir.get("/checkin/{checkin_id}")
+def fhir_checkin(checkin_id: int, session: Session = Depends(get_session)) -> dict:
+    """FHIR R4 transaction Bundle for one check-in: Location, pseudonymous Practitioner, Observations, Provenance."""
+    from api.fhir import lifecycle_bundle
+
+    try:
+        return lifecycle_bundle(session, checkin_id)
+    except LookupError as exc:
+        raise HTTPException(404, str(exc)) from exc
+    except PermissionError as exc:
+        raise HTTPException(403, str(exc)) from exc
+
+
+@fhir.get("/city/{city_id}/week/{week}")
+def fhir_city_week(city_id: str, week: str, session: Session = Depends(get_session)) -> dict:
+    """FHIR R4 transaction Bundle for a city week: MeasureReport, risk Observations, approved ServiceRequests, Communications."""
+    from api.fhir import city_week_bundle
+
+    try:
+        return city_week_bundle(session, city_id, week)
+    except LookupError as exc:
+        raise HTTPException(404, str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+
+
+ALL_ROUTERS = [fhir, workflow, risk, calibration, ai, sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]

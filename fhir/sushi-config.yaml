@@ -1,0 +1,16 @@
+# AquaSentinel FHIR profiles (SUSHI project). Build: npx sushi build fhir
+# Profiles, code systems and examples that carry AquaSentinel citizen stream checks,
+# observer reliability, the vector-habitat risk index, approved actions and
+# volunteer messages, built on the OneAquaHealth (OAH) IG. FSHOnly: we produce
+# conformance resources and examples, not a published IG.
+# The canonical uses the reserved example.org domain (RFC 2606) because the
+# project has no registered domain; see fhir/README.md.
+canonical: http://example.org/fhir/aquasentinel
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+FSHOnly: true
+dependencies:
+  # Not published: built locally from https://github.com/hl7-eu/oah at a pinned
+  # commit by fhir/scripts/setup_oah.sh (see docs/OPEN_QUESTIONS.md, OQ-2).
+  hl7.eu.fhir.oah: 0.1.0-ci-build

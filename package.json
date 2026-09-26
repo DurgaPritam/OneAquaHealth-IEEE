@@ -14,6 +14,7 @@
     "seed": ".venv/bin/python -m api.seed"
   },
   "devDependencies": {
-    "concurrently": "^10.0.5"
+    "concurrently": "^10.0.5",
+    "fsh-sushi": "^3.20.1"
   }
 }

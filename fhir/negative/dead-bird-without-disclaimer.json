@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "neg-dead-bird-note",
+  "meta": {
+    "profile": [
+      "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-dead-bird-report"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Negative test</p></div>"
+  },
+  "status": "preliminary",
+  "code": {
+    "coding": [
+      {
+        "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+        "code": "dead-bird-report"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Location/example-site-c1"
+  },
+  "effectiveDateTime": "2026-09-20T09:00:00Z",
+  "performer": [
+    {
+      "reference": "Practitioner/example-observer"
+    }
+  ],
+  "valueQuantity": {
+    "value": 2,
+    "unit": "birds",
+    "system": "http://unitsofmeasure.org",
+    "code": "1"
+  },
+  "note": [
+    {
+      "text": "Probably died of disease."
+    }
+  ]
+}

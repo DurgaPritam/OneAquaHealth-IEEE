@@ -1,0 +1,32 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "neg-sr-requester",
+  "meta": {
+    "profile": [
+      "http://example.org/fhir/aquasentinel/StructureDefinition/aquasentinel-action-request"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Negative test</p></div>"
+  },
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://example.org/fhir/aquasentinel/CodeSystem/aquasentinel",
+          "code": "vector-control-visit"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "text": "Verification visit"
+  },
+  "subject": {
+    "reference": "Location/example-site-c1"
+  },
+  "authoredOn": "2026-09-21T10:00:00Z"
+}

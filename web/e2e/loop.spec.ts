@@ -29,7 +29,7 @@ test('the whole loop: check-in, risk update, drafted action, officer approval, v
 
   await page.getByRole('button', { name: 'Check for new alerts' }).click()
   await page.getByLabel('Officer name or code').fill('officer:CO-01')
-  const card = page.getByRole('listitem').filter({ hasText: '(C2)' }).filter({ hasNotText: 'veterinary' }).first()
+  const card = page.getByRole('listitem').filter({ hasText: '(C2)' }).first() // the alert draft is created before the vet notification
   await card.getByRole('button', { name: 'Approve' }).click()
   await expect(page.getByText(/Approved by officer:CO-01/)).toBeVisible()
 
