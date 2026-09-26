@@ -19,3 +19,7 @@ web/dev-dist/
 playwright-report/
 test-results/
 var/
+
+# Local working notes (not published)
+CLAUDE.md
+PLAN.md

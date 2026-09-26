@@ -1,6 +1,6 @@
 """Backtest of seasonal suitability against ECDC West Nile virus first-case dates.
 
-Runs exactly the plan pre-registered in analysis/BACKTEST_PLAN.md (commit f389f25):
+Runs exactly the plan pre-registered in analysis/BACKTEST_PLAN.md (commit a6b76a7):
 weekly seasonal suitability from the production risk code and Open-Meteo archive
 weather, compared with the first locally acquired human case per NUTS 3 region.
 Nothing here is tuned; every rule is taken from the plan.
@@ -37,7 +37,7 @@ from api.risk.index import score_site  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "eval" / "reports"
 REGIONS_FILE = ROOT / "data" / "ecdc" / "backtest_regions.json"
-PLAN_COMMIT = "f389f25"
+PLAN_COMMIT = "a6b76a7"
 REPO = "https://github.com/DurgaPritam/OneAquaHealth-IEEE"
 PRIMARY_THETA = 0.50
 SECONDARY_THETAS = (0.30, 0.70)

@@ -46,7 +46,7 @@ flowchart LR
 
 | Claim | Result | Evidence |
 |---|---|---|
-| The weather part of the index is timely | Crossed the pre-registered threshold before the first human WNV case in **118 of 119** region-seasons (FR, IT; 2018 to 2023), median lead **8.0 weeks** | [eval/reports/backtest.md](eval/reports/backtest.md), plan committed first in [f389f25](https://github.com/DurgaPritam/OneAquaHealth-IEEE/commit/f389f25) |
+| The weather part of the index is timely | Crossed the pre-registered threshold before the first human WNV case in **118 of 119** region-seasons (FR, IT; 2018 to 2023), median lead **8.0 weeks** | [eval/reports/backtest.md](eval/reports/backtest.md), plan committed first in [a6b76a7](https://github.com/DurgaPritam/OneAquaHealth-IEEE/commit/a6b76a7) |
 | ...but weather alone cannot say where | It also crossed in **24 of 25** negative-control region-seasons (the five OAH city regions) | same report |
 | Reliability weighting helps on small panels | Simulated: plain Dawid-Skene **loses** to majority vote with 1 to 3 observers; our calibrated MAP version beats it by up to **+10 points** (priors tuned on a separate seed) | [eval/reports/calibration.md](eval/reports/calibration.md) |
 | Rankings are stable under weight changes | Spearman ≥ **0.97** for every ±50 % weight change | [eval/reports/sensitivity.md](eval/reports/sensitivity.md) |
