@@ -10,7 +10,8 @@
     "test:web": "npm --prefix web test",
     "validate": "bash fhir/scripts/validate.sh",
     "eval": ".venv/bin/python -m analysis.run_eval",
-    "dev:api": ".venv/bin/uvicorn api.main:app --reload --port ${API_PORT:-8000}"
+    "dev:api": ".venv/bin/uvicorn api.main:app --reload --port ${API_PORT:-8000}",
+    "seed": ".venv/bin/python -m api.seed"
   },
   "devDependencies": {
     "concurrently": "^10.0.5"

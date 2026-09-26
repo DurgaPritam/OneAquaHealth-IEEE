@@ -18,3 +18,4 @@ api/cache/
 web/dev-dist/
 playwright-report/
 test-results/
+var/

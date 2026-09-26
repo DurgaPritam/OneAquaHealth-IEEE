@@ -6,25 +6,62 @@
   "synthetic": false,
   "notes": "Only the Annex I fields a volunteer can answer by eye are included. Instrument fields (air and water temperature, dissolved oxygen, conductivity, TDS, pH, velocity, depth, width) are listed under excluded_fields. Codes for answers reuse the OAH FHIR IG TemporaryOahSystem codes where one exists (absent, present, extensive, 0-20-percent ... 81-100-percent).",
   "scales": {
-  "ape": {
+    "ape": {
       "source_text": "use P for Present; E for Extensive - more than 33% of the channel; A for absent",
       "options": [
-        { "value": "absent", "protocol_code": "A", "fhir_code": "absent" },
-        { "value": "present", "protocol_code": "P", "fhir_code": "present" },
-        { "value": "extensive", "protocol_code": "E", "fhir_code": "extensive" }
+        {
+          "value": "absent",
+          "protocol_code": "A",
+          "fhir_code": "absent"
+        },
+        {
+          "value": "present",
+          "protocol_code": "P",
+          "fhir_code": "present"
+        },
+        {
+          "value": "extensive",
+          "protocol_code": "E",
+          "fhir_code": "extensive"
+        }
       ]
     },
     "cover5": {
       "source_text": "1 - 0-20%, 2 - 21-40%, 3 - 41-60%, 4 - 61-80%, 5 - 81-100%",
       "options": [
-        { "value": "1", "protocol_code": "1", "fhir_code": "0-20-percent" },
-        { "value": "2", "protocol_code": "2", "fhir_code": "21-40-percent" },
-        { "value": "3", "protocol_code": "3", "fhir_code": "41-60-percent" },
-        { "value": "4", "protocol_code": "4", "fhir_code": "61-80-percent" },
-        { "value": "5", "protocol_code": "5", "fhir_code": "81-100-percent" }
+        {
+          "value": "1",
+          "protocol_code": "1",
+          "fhir_code": "0-20-percent"
+        },
+        {
+          "value": "2",
+          "protocol_code": "2",
+          "fhir_code": "21-40-percent"
+        },
+        {
+          "value": "3",
+          "protocol_code": "3",
+          "fhir_code": "41-60-percent"
+        },
+        {
+          "value": "4",
+          "protocol_code": "4",
+          "fhir_code": "61-80-percent"
+        },
+        {
+          "value": "5",
+          "protocol_code": "5",
+          "fhir_code": "81-100-percent"
+        }
       ]
     },
-    "count": { "source_text": "number", "type": "integer", "min": 0, "max": 99 }
+    "count": {
+      "source_text": "number",
+      "type": "integer",
+      "min": 0,
+      "max": 99
+    }
   },
   "sections": [
     {
@@ -32,11 +69,37 @@
       "protocol_section": "3. Hydromorphological characterization - Flow types",
       "fhir_indicator": "hydrology",
       "questions": [
-        { "id": "flow_RU", "protocol_code": "RU", "label": "Runs (no waves)", "scale": "ape" },
-        { "id": "flow_RI", "protocol_code": "RI", "label": "Riffles (unbroken standing waves)", "scale": "ape" },
-        { "id": "flow_PO", "protocol_code": "PO", "label": "Pools", "scale": "ape" },
-        { "id": "flow_NP", "protocol_code": "NP", "label": "No perceptible flow", "scale": "ape", "note": "NP is defined in the protocol legend but not listed as its own line on the form; included because standing water is the key larval habitat signal." },
-        { "id": "flow_D", "protocol_code": "D", "label": "Dry areas or intermittent flow", "scale": "ape" }
+        {
+          "id": "flow_RU",
+          "protocol_code": "RU",
+          "label": "Runs (no waves)",
+          "scale": "ape"
+        },
+        {
+          "id": "flow_RI",
+          "protocol_code": "RI",
+          "label": "Riffles (unbroken standing waves)",
+          "scale": "ape"
+        },
+        {
+          "id": "flow_PO",
+          "protocol_code": "PO",
+          "label": "Pools",
+          "scale": "ape"
+        },
+        {
+          "id": "flow_NP",
+          "protocol_code": "NP",
+          "label": "No perceptible flow",
+          "scale": "ape",
+          "note": "NP is defined in the protocol legend but not listed as its own line on the form; included because standing water is the key larval habitat signal."
+        },
+        {
+          "id": "flow_D",
+          "protocol_code": "D",
+          "label": "Dry areas or intermittent flow",
+          "scale": "ape"
+        }
       ]
     },
     {
@@ -44,26 +107,89 @@
       "protocol_section": "3. Hydromorphological characterization - Substrate types present in the channel",
       "fhir_indicator": "morophology",
       "questions": [
-        { "id": "sub_BE", "protocol_code": "BE", "label": "Bedrock", "scale": "ape" },
-        { "id": "sub_BO", "protocol_code": "BO", "label": "Boulders", "scale": "ape" },
-        { "id": "sub_ST", "protocol_code": "ST", "label": "Stones or cobbles", "scale": "ape" },
-        { "id": "sub_G", "protocol_code": "G", "label": "Gravel", "scale": "ape" },
-        { "id": "sub_SA", "protocol_code": "SA", "label": "Sand", "scale": "ape" },
-        { "id": "sub_MU", "protocol_code": "MU", "label": "Mud", "scale": "ape" },
-        { "id": "sub_OM", "protocol_code": "OM", "label": "Organic matter deposits", "scale": "ape" },
-        { "id": "sub_AR", "protocol_code": "AR", "label": "Artificial (concrete, tiles)", "scale": "ape" }
+        {
+          "id": "sub_BE",
+          "protocol_code": "BE",
+          "label": "Bedrock",
+          "scale": "ape"
+        },
+        {
+          "id": "sub_BO",
+          "protocol_code": "BO",
+          "label": "Boulders",
+          "scale": "ape"
+        },
+        {
+          "id": "sub_ST",
+          "protocol_code": "ST",
+          "label": "Stones or cobbles",
+          "scale": "ape"
+        },
+        {
+          "id": "sub_G",
+          "protocol_code": "G",
+          "label": "Gravel",
+          "scale": "ape"
+        },
+        {
+          "id": "sub_SA",
+          "protocol_code": "SA",
+          "label": "Sand",
+          "scale": "ape"
+        },
+        {
+          "id": "sub_MU",
+          "protocol_code": "MU",
+          "label": "Mud",
+          "scale": "ape"
+        },
+        {
+          "id": "sub_OM",
+          "protocol_code": "OM",
+          "label": "Organic matter deposits",
+          "scale": "ape"
+        },
+        {
+          "id": "sub_AR",
+          "protocol_code": "AR",
+          "label": "Artificial (concrete, tiles)",
+          "scale": "ape"
+        }
       ]
     },
     {
       "id": "banks",
       "protocol_section": "3. Hydromorphological characterization - Substrate in the banks (each margin separately)",
       "fhir_indicator": "morophology",
-      "per_margin": ["right", "left"],
+      "per_margin": [
+        "right",
+        "left"
+      ],
       "questions": [
-        { "id": "bank_EA", "protocol_code": "EA", "label": "Earth or soil", "scale": "ape" },
-        { "id": "bank_ST", "protocol_code": "ST", "label": "Laid natural stones (no concrete)", "scale": "ape" },
-        { "id": "bank_GA", "protocol_code": "GA", "label": "Gabion (stones in a metal mesh)", "scale": "ape" },
-        { "id": "bank_CC", "protocol_code": "CC", "label": "Concrete or other hard surface", "scale": "ape" }
+        {
+          "id": "bank_EA",
+          "protocol_code": "EA",
+          "label": "Earth or soil",
+          "scale": "ape"
+        },
+        {
+          "id": "bank_ST",
+          "protocol_code": "ST",
+          "label": "Laid natural stones (no concrete)",
+          "scale": "ape"
+        },
+        {
+          "id": "bank_GA",
+          "protocol_code": "GA",
+          "label": "Gabion (stones in a metal mesh)",
+          "scale": "ape"
+        },
+        {
+          "id": "bank_CC",
+          "protocol_code": "CC",
+          "label": "Concrete or other hard surface",
+          "scale": "ape"
+        }
       ]
     },
     {
@@ -71,11 +197,31 @@
       "protocol_section": "3. Hydromorphological characterization - Barriers, outflows, intakes, bridges",
       "fhir_indicator": "hydrology",
       "questions": [
-        { "id": "barriers", "label": "Barriers across the stream (number of weirs or dams)", "scale": "count" },
-        { "id": "outflows", "label": "Outflows (number of pipes discharging into the stream)", "scale": "count" },
-        { "id": "intakes", "label": "Intakes (number of pipes taking water from the stream)", "scale": "count" },
-        { "id": "bridges_pedestrian", "label": "Pedestrian bridges", "scale": "count" },
-        { "id": "bridges_cars", "label": "Road bridges", "scale": "count" }
+        {
+          "id": "barriers",
+          "label": "Barriers across the stream (number of weirs or dams)",
+          "scale": "count"
+        },
+        {
+          "id": "outflows",
+          "label": "Outflows (number of pipes discharging into the stream)",
+          "scale": "count"
+        },
+        {
+          "id": "intakes",
+          "label": "Intakes (number of pipes taking water from the stream)",
+          "scale": "count"
+        },
+        {
+          "id": "bridges_pedestrian",
+          "label": "Pedestrian bridges",
+          "scale": "count"
+        },
+        {
+          "id": "bridges_cars",
+          "label": "Road bridges",
+          "scale": "count"
+        }
       ]
     },
     {
@@ -83,14 +229,54 @@
       "protocol_section": "4a. Macrophytes - Channel vegetation types",
       "fhir_indicator": "macrophytes",
       "questions": [
-        { "id": "mac_liveworts", "fhir_code": "liveworts", "label": "Liverworts, mosses or lichens", "scale": "ape" },
-        { "id": "mac_broad_leaved_herbs", "fhir_code": "broad-leaved-herbs", "label": "Emergent broad-leaved herbs", "scale": "ape" },
-        { "id": "mac_floating_leaved", "fhir_code": "floating-leaved", "label": "Floating-leaved (rooted)", "scale": "ape" },
-        { "id": "mac_free_floating", "fhir_code": "free-floating", "label": "Free-floating", "scale": "ape" },
-        { "id": "mac_amphibious", "fhir_code": "amphibious", "label": "Amphibious (between land and water)", "scale": "ape" },
-        { "id": "mac_submerged_broad", "fhir_code": "submerged-broad-leaved", "label": "Submerged broad-leaved", "scale": "ape" },
-        { "id": "mac_submerged_linear", "fhir_code": "submerged-linear-leaved", "label": "Submerged linear-leaved", "scale": "ape" },
-        { "id": "mac_filamentous_algae", "fhir_code": "filamentous-algae", "label": "Filamentous algae", "scale": "ape" }
+        {
+          "id": "mac_liveworts",
+          "fhir_code": "liveworts",
+          "label": "Liverworts, mosses or lichens",
+          "scale": "ape"
+        },
+        {
+          "id": "mac_broad_leaved_herbs",
+          "fhir_code": "broad-leaved-herbs",
+          "label": "Emergent broad-leaved herbs",
+          "scale": "ape"
+        },
+        {
+          "id": "mac_floating_leaved",
+          "fhir_code": "floating-leaved",
+          "label": "Floating-leaved (rooted)",
+          "scale": "ape"
+        },
+        {
+          "id": "mac_free_floating",
+          "fhir_code": "free-floating",
+          "label": "Free-floating",
+          "scale": "ape"
+        },
+        {
+          "id": "mac_amphibious",
+          "fhir_code": "amphibious",
+          "label": "Amphibious (between land and water)",
+          "scale": "ape"
+        },
+        {
+          "id": "mac_submerged_broad",
+          "fhir_code": "submerged-broad-leaved",
+          "label": "Submerged broad-leaved",
+          "scale": "ape"
+        },
+        {
+          "id": "mac_submerged_linear",
+          "fhir_code": "submerged-linear-leaved",
+          "label": "Submerged linear-leaved",
+          "scale": "ape"
+        },
+        {
+          "id": "mac_filamentous_algae",
+          "fhir_code": "filamentous-algae",
+          "label": "Filamentous algae",
+          "scale": "ape"
+        }
       ]
     },
     {
@@ -98,16 +284,66 @@
       "protocol_section": "4b. Riparian vegetation - cover category",
       "fhir_indicator": "riparianVegetation",
       "questions": [
-        { "id": "rip_trees", "fhir_code": "trees", "label": "Trees (taller than 3 m)", "scale": "cover5" },
-        { "id": "rip_bushes", "fhir_code": "bushes", "label": "Bushes (1.5 to 3 m)", "scale": "cover5" },
-        { "id": "rip_herbaceous", "fhir_code": "herbaceous", "label": "Herbaceous plants (under 1.5 m)", "scale": "cover5" }
+        {
+          "id": "rip_trees",
+          "fhir_code": "trees",
+          "label": "Trees (taller than 3 m)",
+          "scale": "cover5"
+        },
+        {
+          "id": "rip_bushes",
+          "fhir_code": "bushes",
+          "label": "Bushes (1.5 to 3 m)",
+          "scale": "cover5"
+        },
+        {
+          "id": "rip_herbaceous",
+          "fhir_code": "herbaceous",
+          "label": "Herbaceous plants (under 1.5 m)",
+          "scale": "cover5"
+        }
+      ]
+    },
+    {
+      "id": "water_signs",
+      "protocol_section": "Not in Annex I. AquaSentinel addition aligned with OAH IG code #foam (Foam/colour/smell) and the OAH Citizen Science App question on water colour (Policy Brief p.9).",
+      "aquasentinel_addition": true,
+      "fhir_indicator": "foam",
+      "questions": [
+        {
+          "id": "water_foam",
+          "label": "Foam on the water surface",
+          "scale": "ape"
+        },
+        {
+          "id": "water_colour_unusual",
+          "label": "Unusual water colour (grey, milky, dark)",
+          "scale": "ape"
+        },
+        {
+          "id": "water_sewage_smell",
+          "label": "Sewage smell",
+          "scale": "ape"
+        }
       ]
     }
   ],
   "excluded_fields": [
-    { "field": "Air temperature, water temperature, dissolved oxygen, conductivity, TDS, pH", "reason": "requires a multi-parameter meter" },
-    { "field": "Flow velocity, water depth, water width (three measurements)", "reason": "requires a current meter and tape; not safe to wade for volunteers" },
-    { "field": "Non-native species per vegetation type", "reason": "requires species knowledge; left for expert review" },
-    { "field": "Presence of other artificial structures (free text)", "reason": "free text; not scored" }
+    {
+      "field": "Air temperature, water temperature, dissolved oxygen, conductivity, TDS, pH",
+      "reason": "requires a multi-parameter meter"
+    },
+    {
+      "field": "Flow velocity, water depth, water width (three measurements)",
+      "reason": "requires a current meter and tape; not safe to wade for volunteers"
+    },
+    {
+      "field": "Non-native species per vegetation type",
+      "reason": "requires species knowledge; left for expert review"
+    },
+    {
+      "field": "Presence of other artificial structures (free text)",
+      "reason": "free text; not scored"
+    }
   ]
 }
