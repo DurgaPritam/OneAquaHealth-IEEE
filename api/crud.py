@@ -50,7 +50,7 @@ def crud_router(
 
         @router.post("", response_model=table, status_code=201)
         def create_item(payload: create_schema, session: Session = Depends(get_session)) -> SQLModel:  # type: ignore[valid-type]
-            item = table.model_validate(payload)
+            item = table.model_validate(payload.model_dump(exclude_none=True))  # None must not override defaults
             session.add(item)
             session.commit()
             session.refresh(item)

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
@@ -59,6 +61,22 @@ def submit_checkin(payload: m.CheckInCreate, session: Session = Depends(get_sess
     for row in rows:
         session.refresh(row)
     return CheckInResult(checkin=checkin, findings=rows, duplicate=False)
+
+
+@sync.put("/api/observers/{observer_id}", response_model=m.Observer)
+def register_observer(observer_id: str, payload: m.ObserverCreate, session: Session = Depends(get_session)) -> m.Observer:
+    """Idempotent registration of a client-generated pseudonymous code (offline first)."""
+    if not re.fullmatch(m.OBSERVER_CODE_PATTERN, observer_id):
+        raise HTTPException(422, "Observer id must be a pseudonymous code like OBS-7F3K2Q")
+    body = m.ObserverCreate.model_validate({**payload.model_dump(), "id": observer_id})
+    existing = session.get(m.Observer, observer_id)
+    if existing is not None:
+        return existing
+    row = m.Observer.model_validate(body)
+    session.add(row)
+    session.commit()
+    session.refresh(row)
+    return row
 
 
 media = APIRouter(prefix="/api/photos", tags=["photos"])

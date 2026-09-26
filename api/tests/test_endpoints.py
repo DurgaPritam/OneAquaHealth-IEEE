@@ -140,3 +140,14 @@ def test_action_and_message_crud(client: TestClient, site: dict, observer: dict)
                                   "/api/actions/1", "/api/messages/1", "/api/photos/1"])
 def test_missing_items_404(client: TestClient, path: str) -> None:
     assert client.get(path).status_code == 404
+
+
+def test_register_observer_is_idempotent(client: TestClient) -> None:
+    a = client.put("/api/observers/OBS-AB12CD", json={"team": "t"})
+    b = client.put("/api/observers/OBS-AB12CD", json={})
+    assert a.status_code == b.status_code == 200
+    assert a.json()["id"] == b.json()["id"] == "OBS-AB12CD"
+
+
+def test_register_observer_rejects_non_pseudonymous_id(client: TestClient) -> None:
+    assert client.put("/api/observers/jane.doe@example.org", json={}).status_code == 422

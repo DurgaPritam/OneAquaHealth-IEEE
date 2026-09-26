@@ -190,7 +190,11 @@ class SiteUpdate(SQLModel):
     altitude: Optional[float] = None
 
 
+OBSERVER_CODE_PATTERN = r"^OBS-[A-Z0-9]{6}$"
+
+
 class ObserverCreate(SQLModel):
+    id: Optional[str] = Field(default=None, regex=OBSERVER_CODE_PATTERN, description="Client-generated pseudonymous code")
     team: Optional[str] = None
     synthetic: bool = False
 
