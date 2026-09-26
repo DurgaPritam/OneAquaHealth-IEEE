@@ -1,0 +1,2042 @@
+{
+ "description": "Region set for the pre-registered AquaSentinel backtest (analysis/BACKTEST_PLAN.md). Positives: every NUTS 3 region in Portugal, France, Italy, Belgium or Norway with a first human WNV case date in a cached ECDC season file. Negative controls: the five OAH research-city regions, which have no row in any cached file.",
+ "synthetic": false,
+ "generated": "2026-09-26",
+ "sources": {
+  "cases": "ECDC West Nile virus seasonal tables in data/ecdc/ (docs/SOURCES.md section 9). Dataset provided by ECDC based on data provided by public health authorities, scientific institutes or health care providers in the relevant reporting countries and/or by WHO.",
+  "coordinates": "Open-Meteo geocoding API https://geocoding-api.open-meteo.com/v1/search (GeoNames data, CC BY 4.0), queried on 2026-09-26 for the administrative seat of each region; first result in the region's country with feature code PPLA, PPLA2 or PPLC, else first result in the country."
+ },
+ "counts": {
+  "regions": 62,
+  "positive_regions": 57,
+  "negative_controls": 5,
+  "positive_region_seasons_primary": 119,
+  "positive_region_seasons_2020_sensitivity_only": 21,
+  "negative_region_seasons": 25
+ },
+ "regions": [
+  {
+   "role": "negative_control",
+   "nuts3": "BE234",
+   "nuts3_source": "docs/SOURCES.md section 9 (OAH research-city region)",
+   "name": "Arr. Gent",
+   "country": "BE",
+   "seat": "Ghent",
+   "point_name": "Ghent",
+   "lat": 51.05,
+   "lon": 3.71667,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2797656, feature PPL, Flanders/East Flanders): https://geocoding-api.open-meteo.com/v1/search?name=Ghent",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2019,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2020,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2021,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2023,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    }
+   ]
+  },
+  {
+   "role": "negative_control",
+   "nuts3": "FRJ23",
+   "nuts3_source": "docs/SOURCES.md section 9 (OAH research-city region)",
+   "name": "Haute-Garonne",
+   "country": "FR",
+   "seat": "Toulouse",
+   "point_name": "Toulouse",
+   "lat": 43.60426,
+   "lon": 1.44367,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2972315, feature PPLA, Occitanie/Upper Garonne): https://geocoding-api.open-meteo.com/v1/search?name=Toulouse",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2019,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2020,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2021,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2023,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    }
+   ]
+  },
+  {
+   "role": "negative_control",
+   "nuts3": "ITF32",
+   "nuts3_source": "docs/SOURCES.md section 9 (OAH research-city region)",
+   "name": "Benevento",
+   "country": "IT",
+   "seat": "Benevento",
+   "point_name": "Benevento",
+   "lat": 41.1307,
+   "lon": 14.77816,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3182179, feature PPLA2, Campania/Province of Benevento): https://geocoding-api.open-meteo.com/v1/search?name=Benevento",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2019,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2020,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2021,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2023,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    }
+   ]
+  },
+  {
+   "role": "negative_control",
+   "nuts3": "NO081",
+   "nuts3_source": "docs/SOURCES.md section 9 (OAH research-city region)",
+   "name": "Oslo",
+   "country": "NO",
+   "seat": "Oslo",
+   "point_name": "Oslo",
+   "lat": 59.91273,
+   "lon": 10.74609,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3143244, feature PPLC, Oslo/Oslo): https://geocoding-api.open-meteo.com/v1/search?name=Oslo",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2019,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2020,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2021,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2023,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    }
+   ]
+  },
+  {
+   "role": "negative_control",
+   "nuts3": "PT16E",
+   "nuts3_source": "docs/SOURCES.md section 9 (OAH research-city region)",
+   "name": "Região de Coimbra",
+   "country": "PT",
+   "seat": "Coimbra",
+   "point_name": "Coimbra",
+   "lat": 40.20686,
+   "lon": -8.41996,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2740637, feature PPLA, Coimbra District/Coimbra Municipality): https://geocoding-api.open-meteo.com/v1/search?name=Coimbra",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2019,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2020,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2021,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    },
+    {
+     "season": 2023,
+     "first_human_case": null,
+     "human_cases": null,
+     "primary": true,
+     "note": "no row in the cached ECDC file"
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "FRL03",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Alpes-Maritimes",
+   "country": "FR",
+   "seat": "Nice",
+   "point_name": "Nice",
+   "lat": 43.70313,
+   "lon": 7.26608,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2990440, feature PPLA2, Provence-Alpes-Côte d'Azur/Alpes-Maritimes): https://geocoding-api.open-meteo.com/v1/search?name=Nice",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-06",
+     "human_cases": 22,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-17",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "FRL04",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Bouches-du-Rhone",
+   "country": "FR",
+   "seat": "Marseille",
+   "point_name": "Marseille",
+   "lat": 43.29695,
+   "lon": 5.38107,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2995469, feature PPLA, Provence-Alpes-Côte d'Azur/Bouches-du-Rhône): https://geocoding-api.open-meteo.com/v1/search?name=Marseille",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-10-08",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-03",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "FRI31",
+   "nuts3_source": "ECDC file",
+   "name": "Charente",
+   "country": "FR",
+   "seat": "Angoulême",
+   "point_name": "Angoulême",
+   "lat": 45.64997,
+   "lon": 0.15345,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3037598, feature PPLA2, New Aquitaine/Charente): https://geocoding-api.open-meteo.com/v1/search?name=Angoulême",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-09-05",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "FRI32",
+   "nuts3_source": "ECDC file",
+   "name": "Charente-Maritime",
+   "country": "FR",
+   "seat": "La Rochelle",
+   "point_name": "La Rochelle",
+   "lat": 46.16308,
+   "lon": -1.15222,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3006787, feature PPLA2, New Aquitaine/Charente-Maritime): https://geocoding-api.open-meteo.com/v1/search?name=La Rochelle",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-15",
+     "human_cases": 5,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": null,
+   "nuts3_source": null,
+   "name": "Corse-du-Sud",
+   "country": "FR",
+   "seat": "Ajaccio",
+   "point_name": "Ajaccio",
+   "lat": 41.91886,
+   "lon": 8.73812,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3038334, feature PPLA, Corsica/South Corsica): https://geocoding-api.open-meteo.com/v1/search?name=Ajaccio",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-10-15",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "FRI12",
+   "nuts3_source": "ECDC file",
+   "name": "Gironde",
+   "country": "FR",
+   "seat": "Bordeaux",
+   "point_name": "Bordeaux",
+   "lat": 44.84124,
+   "lon": -0.58046,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3031582, feature PPLA, New Aquitaine/Gironde): https://geocoding-api.open-meteo.com/v1/search?name=Bordeaux",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-16",
+     "human_cases": 26,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "FRM02",
+   "nuts3_source": "ECDC file",
+   "name": "Haute-Corse",
+   "country": "FR",
+   "seat": "Bastia",
+   "point_name": "Bastia",
+   "lat": 42.70219,
+   "lon": 9.45123,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3034640, feature PPLA2, Corsica/Upper Corsica): https://geocoding-api.open-meteo.com/v1/search?name=Bastia",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-27",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": null,
+   "nuts3_source": null,
+   "name": "Pyrenees-Orientales",
+   "country": "FR",
+   "seat": "Perpignan",
+   "point_name": "Perpignan",
+   "lat": 42.69764,
+   "lon": 2.89541,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2987914, feature PPLA2, Occitanie/Pyrénées-Orientales): https://geocoding-api.open-meteo.com/v1/search?name=Perpignan",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-10-15",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "FRL05",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Var",
+   "country": "FR",
+   "seat": "Toulon",
+   "point_name": "Toulon",
+   "lat": 43.12442,
+   "lon": 5.92836,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2972328, feature PPLA2, Provence-Alpes-Côte d'Azur/Var): https://geocoding-api.open-meteo.com/v1/search?name=Toulon",
+   "seasons": [
+    {
+     "season": 2019,
+     "first_human_case": "2019-07-29",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-31",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": null,
+   "nuts3_source": null,
+   "name": "Vaucluse",
+   "country": "FR",
+   "seat": "Avignon",
+   "point_name": "Avignon",
+   "lat": 43.94834,
+   "lon": 4.80892,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3035681, feature PPLA2, Provence-Alpes-Côte d'Azur/Vaucluse): https://geocoding-api.open-meteo.com/v1/search?name=Avignon",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-09-03",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC18",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Alessandria",
+   "country": "IT",
+   "seat": "Alessandria",
+   "point_name": "Alessandria",
+   "lat": 44.90924,
+   "lon": 8.61007,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3183299, feature PPLA2, Piedmont/Province of Alessandria): https://geocoding-api.open-meteo.com/v1/search?name=Alessandria",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 12,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-30",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-17",
+     "human_cases": 2,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-09-16",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-13",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC17",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Asti",
+   "country": "IT",
+   "seat": "Asti",
+   "point_name": "Asti",
+   "lat": 44.90162,
+   "lon": 8.20751,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3182714, feature PPLA2, Piedmont/Province of Asti): https://geocoding-api.open-meteo.com/v1/search?name=Asti",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 10,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-02",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-09-21",
+     "human_cases": 1,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-25",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITF47",
+   "nuts3_source": "ECDC file",
+   "name": "Bari",
+   "country": "IT",
+   "seat": "Bari",
+   "point_name": "Bari",
+   "lat": 41.12066,
+   "lon": 16.86982,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3182351, feature PPLA, Apulia/Province of Bari): https://geocoding-api.open-meteo.com/v1/search?name=Bari",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-25",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC46",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Bergamo",
+   "country": "IT",
+   "seat": "Bergamo",
+   "point_name": "Bergamo",
+   "lat": 45.69601,
+   "lon": 9.66721,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3182164, feature PPLA2, Lombardy/Province of Bergamo): https://geocoding-api.open-meteo.com/v1/search?name=Bergamo",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-10-05",
+     "human_cases": 2,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-10",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC13",
+   "nuts3_source": "ECDC file",
+   "name": "Biella",
+   "country": "IT",
+   "seat": "Biella",
+   "point_name": "Biella",
+   "lat": 45.56304,
+   "lon": 8.05796,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3182043, feature PPLA2, Piedmont/Province of Biella): https://geocoding-api.open-meteo.com/v1/search?name=Biella",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-07",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH55",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Bologna",
+   "country": "IT",
+   "seat": "Bologna",
+   "point_name": "Bologna",
+   "lat": 44.49381,
+   "lon": 11.33875,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3181928, feature PPLA, Emilia-Romagna/Province of Bologna): https://geocoding-api.open-meteo.com/v1/search?name=Bologna",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-07-23",
+     "human_cases": 64,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-31",
+     "human_cases": 3,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-07-31",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-23",
+     "human_cases": 17,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC47",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Brescia",
+   "country": "IT",
+   "seat": "Brescia",
+   "point_name": "Brescia",
+   "lat": 45.53558,
+   "lon": 10.21472,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3181554, feature PPLA2, Lombardy/Province of Brescia): https://geocoding-api.open-meteo.com/v1/search?name=Brescia",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-09-17",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-31",
+     "human_cases": 4,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-21",
+     "human_cases": 15,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC42",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Como",
+   "country": "IT",
+   "seat": "Como",
+   "point_name": "Como",
+   "lat": 45.80819,
+   "lon": 9.0832,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3178229, feature PPLA2, Lombardy/Province of Como): https://geocoding-api.open-meteo.com/v1/search?name=Como",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-05-30",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITF61",
+   "nuts3_source": "ECDC file",
+   "name": "Cosenza",
+   "country": "IT",
+   "seat": "Cosenza",
+   "point_name": "Cosenza",
+   "lat": 39.2989,
+   "lon": 16.25307,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2524907, feature PPLA2, Calabria/Province of Cosenza): https://geocoding-api.open-meteo.com/v1/search?name=Cosenza",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-09-07",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC4A",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Cremona",
+   "country": "IT",
+   "seat": "Cremona",
+   "point_name": "Cremona",
+   "lat": 45.13325,
+   "lon": 10.02129,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3177838, feature PPLA2, Lombardy/Province of Cremona): https://geocoding-api.open-meteo.com/v1/search?name=Cremona",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-06",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-24",
+     "human_cases": 5,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-08-10",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-09",
+     "human_cases": 11,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC16",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Cuneo",
+   "country": "IT",
+   "seat": "Cuneo",
+   "point_name": "Cuneo",
+   "lat": 44.39071,
+   "lon": 7.54828,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3177700, feature PPLA2, Piedmont/Province of Cuneo): https://geocoding-api.open-meteo.com/v1/search?name=Cuneo",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-02",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-09-28",
+     "human_cases": 1,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-27",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH56",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Ferrara",
+   "country": "IT",
+   "seat": "Ferrara",
+   "point_name": "Ferrara",
+   "lat": 44.83804,
+   "lon": 11.62057,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3177090, feature PPLA2, Emilia-Romagna/Province of Ferrara): https://geocoding-api.open-meteo.com/v1/search?name=Ferrara",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-07-23",
+     "human_cases": 23,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-08-26",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITF46",
+   "nuts3_source": "ECDC file",
+   "name": "Foggia",
+   "country": "IT",
+   "seat": "Foggia",
+   "point_name": "Foggia",
+   "lat": 41.45845,
+   "lon": 15.55188,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3176885, feature PPLA2, Apulia/Province of Foggia): https://geocoding-api.open-meteo.com/v1/search?name=Foggia",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-25",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH58",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Forlì-Cesena",
+   "country": "IT",
+   "seat": "Forlì",
+   "point_name": "Forlì",
+   "lat": 44.22177,
+   "lon": 12.04144,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3176746, feature PPLA2, Emilia-Romagna/Province of Forlì-Cesena): https://geocoding-api.open-meteo.com/v1/search?name=Forlì",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-20",
+     "human_cases": 5,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-28",
+     "human_cases": 6,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC31",
+   "nuts3_source": "ECDC file",
+   "name": "Imperia",
+   "country": "IT",
+   "seat": "Imperia",
+   "point_name": "Imperia",
+   "lat": 43.88917,
+   "lon": 8.03933,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3175532, feature PPLA2, Liguria/Province of Imperia): https://geocoding-api.open-meteo.com/v1/search?name=Imperia",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-27",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC34",
+   "nuts3_source": "ECDC file",
+   "name": "La Spezia",
+   "country": "IT",
+   "seat": "La Spezia",
+   "point_name": "La Spezia",
+   "lat": 44.103,
+   "lon": 9.82375,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3175081, feature PPLA2, Liguria/Province of La Spezia): https://geocoding-api.open-meteo.com/v1/search?name=La Spezia",
+   "seasons": [
+    {
+     "season": 2021,
+     "first_human_case": "2021-06-19",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITF45",
+   "nuts3_source": "ECDC file",
+   "name": "Lecce",
+   "country": "IT",
+   "seat": "Lecce",
+   "point_name": "Lecce",
+   "lat": 40.35481,
+   "lon": 18.17244,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3174953, feature PPLA2, Apulia/Province of Lecce): https://geocoding-api.open-meteo.com/v1/search?name=Lecce",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-09-12",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC49",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Lodi",
+   "country": "IT",
+   "seat": "Lodi",
+   "point_name": "Lodi",
+   "lat": 45.30989,
+   "lon": 9.50085,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3174638, feature PPLA2, Lombardy/Province of Lodi): https://geocoding-api.open-meteo.com/v1/search?name=Lodi",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-17",
+     "human_cases": 16,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-08",
+     "human_cases": 16,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": null,
+   "nuts3_source": null,
+   "name": "Macerata",
+   "country": "IT",
+   "seat": "Macerata",
+   "point_name": "Macerata",
+   "lat": 43.29789,
+   "lon": 13.45293,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3174380, feature PPLA2, The Marches/Province of Macerata): https://geocoding-api.open-meteo.com/v1/search?name=Macerata",
+   "seasons": [
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-30",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC4B",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Mantova",
+   "country": "IT",
+   "seat": "Mantua",
+   "point_name": "Mantua",
+   "lat": 45.16031,
+   "lon": 10.79784,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3174051, feature PPLA2, Lombardy/Province of Mantua): https://geocoding-api.open-meteo.com/v1/search?name=Mantua",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 6,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-30",
+     "human_cases": 5,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-10-05",
+     "human_cases": 2,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-08-03",
+     "human_cases": 5,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-14",
+     "human_cases": 15,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC4C",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Milano",
+   "country": "IT",
+   "seat": "Milan",
+   "point_name": "Milan",
+   "lat": 45.46427,
+   "lon": 9.18951,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3173435, feature PPLA, Lombardy/Province of Milan): https://geocoding-api.open-meteo.com/v1/search?name=Milan",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-06",
+     "human_cases": 11,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-17",
+     "human_cases": 13,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-08-14",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-25",
+     "human_cases": 34,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH54",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Modena",
+   "country": "IT",
+   "seat": "Modena",
+   "point_name": "Modena",
+   "lat": 44.64783,
+   "lon": 10.92539,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3173331, feature PPLA2, Emilia-Romagna/Province of Modena): https://geocoding-api.open-meteo.com/v1/search?name=Modena",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-07-09",
+     "human_cases": 65,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-02",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-17",
+     "human_cases": 1,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-07-25",
+     "human_cases": 14,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-03",
+     "human_cases": 10,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC4D",
+   "nuts3_source": "ECDC file",
+   "name": "Monza e della Brianza",
+   "country": "IT",
+   "seat": "Monza",
+   "point_name": "Monza",
+   "lat": 45.58005,
+   "lon": 9.27246,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3172629, feature PPLA2, Lombardy/Province of Monza and Brianza): https://geocoding-api.open-meteo.com/v1/search?name=Monza",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-09",
+     "human_cases": 11,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC15",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Novara",
+   "country": "IT",
+   "seat": "Novara",
+   "point_name": "Novara",
+   "lat": 45.44694,
+   "lon": 8.62118,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3172189, feature PPLA2, Piedmont/Province of Novara): https://geocoding-api.open-meteo.com/v1/search?name=Novara",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-06",
+     "human_cases": 5,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-10-05",
+     "human_cases": 2,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-28",
+     "human_cases": 9,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITG2G",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Oristano",
+   "country": "IT",
+   "seat": "Oristano",
+   "point_name": "Oristano",
+   "lat": 39.9036,
+   "lon": 8.59257,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2523964, feature PPLA2, Sardinia/Province of Oristano): https://geocoding-api.open-meteo.com/v1/search?name=Oristano",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-28",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH36",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Padova",
+   "country": "IT",
+   "seat": "Padua",
+   "point_name": "Padua",
+   "lat": 45.40797,
+   "lon": 11.88586,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3171728, feature PPLA2, Veneto/Province of Padua): https://geocoding-api.open-meteo.com/v1/search?name=Padua",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-07-23",
+     "human_cases": 95,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-07-22",
+     "human_cases": 16,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-08-01",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-17",
+     "human_cases": 20,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH52",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Parma",
+   "country": "IT",
+   "seat": "Parma",
+   "point_name": "Parma",
+   "lat": 44.79935,
+   "lon": 10.32618,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3171457, feature PPLA2, Emilia-Romagna/Province of Parma): https://geocoding-api.open-meteo.com/v1/search?name=Parma",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-09-10",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-02",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-10",
+     "human_cases": 2,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-10",
+     "human_cases": 11,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC48",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Pavia",
+   "country": "IT",
+   "seat": "Pavia",
+   "point_name": "Pavia",
+   "lat": 45.19205,
+   "lon": 9.15917,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3171366, feature PPLA2, Lombardy/Province of Pavia): https://geocoding-api.open-meteo.com/v1/search?name=Pavia",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 7,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-17",
+     "human_cases": 4,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-08-22",
+     "human_cases": 6,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-25",
+     "human_cases": 6,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH51",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Piacenza",
+   "country": "IT",
+   "seat": "Piacenza",
+   "point_name": "Piacenza",
+   "lat": 45.05242,
+   "lon": 9.69342,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3171058, feature PPLA2, Emilia-Romagna/Province of Piacenza): https://geocoding-api.open-meteo.com/v1/search?name=Piacenza",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-27",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-10-05",
+     "human_cases": 1,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-08-18",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-26",
+     "human_cases": 16,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITI17",
+   "nuts3_source": "ECDC file",
+   "name": "Pisa",
+   "country": "IT",
+   "seat": "Pisa",
+   "point_name": "Pisa",
+   "lat": 43.70853,
+   "lon": 10.4036,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3170647, feature PPLA2, Tuscany/Province of Pisa): https://geocoding-api.open-meteo.com/v1/search?name=Pisa",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-09-24",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH41",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Pordenone",
+   "country": "IT",
+   "seat": "Pordenone",
+   "point_name": "Pordenone",
+   "lat": 45.95689,
+   "lon": 12.66051,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3170147, feature PPLA2, Friuli Venezia Giulia/Province of Pordenone): https://geocoding-api.open-meteo.com/v1/search?name=Pordenone",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-20",
+     "human_cases": 16,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-16",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-07-31",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-10-02",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH57",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Ravenna",
+   "country": "IT",
+   "seat": "Ravenna",
+   "point_name": "Ravenna",
+   "lat": 44.41344,
+   "lon": 12.20121,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3169561, feature PPLA2, Emilia-Romagna/Province of Ravenna): https://geocoding-api.open-meteo.com/v1/search?name=Ravenna",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-06",
+     "human_cases": 20,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-26",
+     "human_cases": 7,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH53",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Reggio nell'Emilia",
+   "country": "IT",
+   "seat": "Reggio Emilia",
+   "point_name": "Reggio Emilia",
+   "lat": 44.69825,
+   "lon": 10.63125,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3169522, feature PPLA2, Emilia-Romagna/Province of Reggio Emilia): https://geocoding-api.open-meteo.com/v1/search?name=Reggio Emilia",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-07-23",
+     "human_cases": 10,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-08-07",
+     "human_cases": 7,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-17",
+     "human_cases": 11,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH37",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Rovigo",
+   "country": "IT",
+   "seat": "Rovigo",
+   "point_name": "Rovigo",
+   "lat": 45.06982,
+   "lon": 11.79022,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3168843, feature PPLA2, Veneto/Province of Rovigo): https://geocoding-api.open-meteo.com/v1/search?name=Rovigo",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-07-09",
+     "human_cases": 38,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-30",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-31",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITF35",
+   "nuts3_source": "ECDC file",
+   "name": "Salerno",
+   "country": "IT",
+   "seat": "Salerno",
+   "point_name": "Salerno",
+   "lat": 40.67545,
+   "lon": 14.79328,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3168673, feature PPLA2, Campania/Province of Salerno): https://geocoding-api.open-meteo.com/v1/search?name=Salerno",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-10-05",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITG2D",
+   "nuts3_source": "ECDC file",
+   "name": "Sassari",
+   "country": "IT",
+   "seat": "Sassari",
+   "point_name": "Sassari",
+   "lat": 40.72586,
+   "lon": 8.55552,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3167096, feature PPLA2, Sardinia/Province of Sassari): https://geocoding-api.open-meteo.com/v1/search?name=Sassari",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-01",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITF43",
+   "nuts3_source": "ECDC file",
+   "name": "Taranto",
+   "country": "IT",
+   "seat": "Taranto",
+   "point_name": "Taranto",
+   "lat": 40.46438,
+   "lon": 17.24707,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3165926, feature PPLA2, Apulia/Province of Taranto): https://geocoding-api.open-meteo.com/v1/search?name=Taranto",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-09-17",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC11",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Torino",
+   "country": "IT",
+   "seat": "Torino",
+   "point_name": "Turin",
+   "lat": 45.07049,
+   "lon": 7.68682,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3165524, feature PPLA, Piedmont/Province of Turin): https://geocoding-api.open-meteo.com/v1/search?name=Torino",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-20",
+     "human_cases": 19,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-08-05",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-08-10",
+     "human_cases": 1,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-17",
+     "human_cases": 30,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITG11",
+   "nuts3_source": "ECDC file",
+   "name": "Trapani",
+   "country": "IT",
+   "seat": "Trapani",
+   "point_name": "Trapani",
+   "lat": 38.0176,
+   "lon": 12.53617,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 2522876, feature PPLA2, Sicily/Province of Trapani): https://geocoding-api.open-meteo.com/v1/search?name=Trapani",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-01",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH34",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Treviso",
+   "country": "IT",
+   "seat": "Treviso",
+   "point_name": "Treviso",
+   "lat": 45.66673,
+   "lon": 12.2416,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3165201, feature PPLA2, Veneto/Province of Treviso): https://geocoding-api.open-meteo.com/v1/search?name=Treviso",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-06",
+     "human_cases": 11,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-02",
+     "human_cases": 5,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-23",
+     "human_cases": 11,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH42",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Udine",
+   "country": "IT",
+   "seat": "Udine",
+   "point_name": "Udine",
+   "lat": 46.0693,
+   "lon": 13.23715,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3165072, feature PPLA2, Friuli Venezia Giulia/Udine): https://geocoding-api.open-meteo.com/v1/search?name=Udine",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-06",
+     "human_cases": 6,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-09-09",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC41",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Varese",
+   "country": "IT",
+   "seat": "Varese",
+   "point_name": "Varese",
+   "lat": 45.82058,
+   "lon": 8.82511,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3164699, feature PPLA2, Lombardy/Province of Varese): https://geocoding-api.open-meteo.com/v1/search?name=Varese",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-09-17",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-09-21",
+     "human_cases": 1,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-11",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH35",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Venezia",
+   "country": "IT",
+   "seat": "Venice",
+   "point_name": "Venice",
+   "lat": 45.43713,
+   "lon": 12.33265,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3164603, feature PPLA, Veneto/Province of Venice): https://geocoding-api.open-meteo.com/v1/search?name=Venice",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-07-23",
+     "human_cases": 46,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-02",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-10-05",
+     "human_cases": 1,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2021,
+     "first_human_case": "2021-08-15",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-24",
+     "human_cases": 12,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC14",
+   "nuts3_source": "ECDC file",
+   "name": "Verbano-Cusio-Ossola",
+   "country": "IT",
+   "seat": "Verbania",
+   "point_name": "Verbania",
+   "lat": 45.92136,
+   "lon": 8.55183,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 6457398, feature PPLA2, Piedmont/Verbania): https://geocoding-api.open-meteo.com/v1/search?name=Verbania",
+   "seasons": [
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-24",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITC12",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Vercelli",
+   "country": "IT",
+   "seat": "Vercelli",
+   "point_name": "Vercelli",
+   "lat": 45.32163,
+   "lon": 8.41989,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3164565, feature PPLA2, Piedmont/Province of Vercelli): https://geocoding-api.open-meteo.com/v1/search?name=Vercelli",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-08-06",
+     "human_cases": 9,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-30",
+     "human_cases": 1,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-09-21",
+     "human_cases": 2,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-08-13",
+     "human_cases": 3,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH31",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Verona",
+   "country": "IT",
+   "seat": "Verona",
+   "point_name": "Verona",
+   "lat": 45.43854,
+   "lon": 10.9938,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3164527, feature PPLA2, Veneto/Province of Verona): https://geocoding-api.open-meteo.com/v1/search?name=Verona",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-07-30",
+     "human_cases": 56,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-09",
+     "human_cases": 2,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-10-05",
+     "human_cases": 1,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-17",
+     "human_cases": 16,
+     "primary": true,
+     "note": null
+    }
+   ]
+  },
+  {
+   "role": "positive",
+   "nuts3": "ITH32",
+   "nuts3_source": "ECDC 2021/2023 file, matched by name",
+   "name": "Vicenza",
+   "country": "IT",
+   "seat": "Vicenza",
+   "point_name": "Vicenza",
+   "lat": 45.54672,
+   "lon": 11.5475,
+   "coordinate_source": "Open-Meteo geocoding API (GeoNames id 3164419, feature PPLA2, Veneto/Province of Vicenza): https://geocoding-api.open-meteo.com/v1/search?name=Vicenza",
+   "seasons": [
+    {
+     "season": 2018,
+     "first_human_case": "2018-07-23",
+     "human_cases": 16,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2019,
+     "first_human_case": "2019-09-02",
+     "human_cases": 4,
+     "primary": true,
+     "note": null
+    },
+    {
+     "season": 2020,
+     "first_human_case": "2021-10-05",
+     "human_cases": 1,
+     "primary": false,
+     "note": "2020 file dates all fall in 2021 (year inconsistent with the season); excluded from the primary analysis, used only in a labelled sensitivity check"
+    },
+    {
+     "season": 2023,
+     "first_human_case": "2023-07-13",
+     "human_cases": 6,
+     "primary": true,
+     "note": null
+    }
+   ]
+  }
+ ]
+}
