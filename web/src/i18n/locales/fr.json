@@ -12,7 +12,8 @@
     "syncDone": "Tous les relevés ont été envoyés",
     "syncFailed": "Envoi impossible pour le moment. Nous réessaierons quand vous serez en ligne.",
     "demoData": "Données de démonstration (synthétiques)",
-    "demoAi": "IA de démonstration (simulée)"
+    "demoAi": "IA de démonstration (simulée)",
+    "syncLabel": "État de la connexion et de l’envoi"
   },
   "nav": {
     "label": "Principal",
@@ -185,7 +186,8 @@
     "bats": "Chauves-souris au crépuscule",
     "bats_none": "Aucune, ou pas au crépuscule",
     "bats_seen": "Vues",
-    "photo": "Photo d'un animal (facultatif, à distance)"
+    "photo": "Photo d'un animal (facultatif, à distance)",
+    "protected": "N'attrapez pas et ne manipulez pas les grenouilles, crapauds ou tritons. Tous les amphibiens sont protégés ; les manipuler nécessite une autorisation."
   },
   "deadBirds": {
     "heading": "Oiseaux morts",
@@ -395,11 +397,48 @@
     "kind_action_taken": "A mené à une action",
     "kind_alert_raised": "A aidé à lancer une alerte",
     "sentHeading": "Vos relevés",
-    "noSent": "Aucun relevé envoyé depuis cet appareil pour le moment."
+    "noSent": "Aucun relevé envoyé depuis cet appareil pour le moment.",
+    "tier": "Votre niveau d'observateur : {{tier}}",
+    "tierNone": "Pas encore calibré. Faites la séance d'entraînement pour obtenir un niveau.",
+    "points": "Points de preuve : {{points}}",
+    "pointsHelp": "Les points récompensent les relevés soignés et complets qui concordent avec l'image pondérée par la fiabilité sur ce site. Seul votre meilleur relevé par site et par semaine compte, et les relevés de qualité inférieure à {{min}} ne rapportent rien. Envoyer plus de relevés ne rapporte pas plus de points.",
+    "counted": "{{counted}} relevé(s) pris en compte, {{ignored}} non pris en compte",
+    "campaignHeading": "Campagne de la saison des moustiques",
+    "campaignIntro": "Ces sites ont le plus besoin d'un relevé du ruisseau. Les visiter aide davantage la ville que refaire un site vérifié récemment.",
+    "campaignNone": "Tous les sites ont des données récentes. Merci !",
+    "reason_no_data": "Aucun relevé récent du ruisseau",
+    "reason_stale": "Les données les plus récentes datent de {{n}} jours",
+    "reason_uncertain": "Incertain : fourchette de {{n}}",
+    "checkThis": "Vérifier ce site",
+    "leaderHeading": "Classement des équipes",
+    "leaderIntro": "Les équipes sont classées par points de preuve par membre, jamais par nombre de relevés.",
+    "team": "Équipe",
+    "members": "Membres",
+    "perMember": "Points par membre",
+    "topObservers": "Observateurs les plus soigneux",
+    "observer": "Observateur",
+    "quality": "Qualité moyenne",
+    "you": "Vous",
+    "syntheticNote": "Les autres observateurs et équipes sont des données de démonstration synthétiques.",
+    "tierCol": "Niveau",
+    "pointsCol": "Points"
   },
   "demo": {
     "banner": "Démo : fonctionne entièrement dans votre navigateur. Les sites sont réels ; les bénévoles, relevés et actions sont synthétiques.",
     "clock": "Horloge de la démo : {{date}}",
-    "reset": "Réinitialiser la démo"
+    "reset": "Réinitialiser la démo",
+    "label": "Avis de démonstration"
+  },
+  "explain": {
+    "summary": "Une seule santé : en savoir plus",
+    "source": "Source",
+    "stream": "La façon dont l'eau s'écoule et la nature des berges déterminent quels animaux peuvent vivre dans un ruisseau. Les berges en béton, l'eau stagnante et la boue organique favorisent les larves de moustiques et font fuir leurs prédateurs.",
+    "stream_src": "OneAquaHealth Policy Brief (2026), p. 4 à 5",
+    "larvae": "Les diptères, le groupe qui comprend les moustiques, sont utilisés par OneAquaHealth comme indicateur d'alerte précoce : des changements dans leur abondance ou leur répartition peuvent signaler une évolution du risque de maladies à transmission vectorielle en ville.",
+    "larvae_src": "OAH Key Indicators Factsheets, X. Diptera Adults, p. 12",
+    "predators": "Les amphibiens régulent les nuisibles comme les moustiques, ce qui limite la propagation des maladies transmises par les moustiques. Les oiseaux insectivores aident à réguler les moustiques vecteurs de maladies, et ils déclinent à mesure que les villes s'imperméabilisent.",
+    "predators_src": "OAH Key Indicators Factsheets, IV. Amphibians p. 6 et V. Birds p. 7",
+    "deadBirds": "Les oiseaux qui fréquentent les ruisseaux urbains peuvent être des réservoirs d'agents pathogènes en plus d'être des prédateurs d'insectes. C'est pourquoi les oiseaux morts sont signalés à l'équipe vétérinaire, qui décide quoi faire. Vous n'avez jamais besoin de les toucher.",
+    "deadBirds_src": "OAH Field Sampling Protocols (2026), 4.3 Birds, p. 9"
   }
 }

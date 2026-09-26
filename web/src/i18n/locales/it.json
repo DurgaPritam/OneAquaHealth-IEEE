@@ -12,7 +12,8 @@
     "syncDone": "Tutti i rilevamenti sono stati inviati",
     "syncFailed": "Non è ancora stato possibile inviare. Riproveremo quando sarai online.",
     "demoData": "Dati dimostrativi (sintetici)",
-    "demoAi": "IA dimostrativa (simulata)"
+    "demoAi": "IA dimostrativa (simulata)",
+    "syncLabel": "Stato della connessione e dell’invio"
   },
   "nav": {
     "label": "Principale",
@@ -185,7 +186,8 @@
     "bats": "Pipistrelli al tramonto",
     "bats_none": "Nessuno o non al tramonto",
     "bats_seen": "Visti",
-    "photo": "Foto di un animale (facoltativa, da lontano)"
+    "photo": "Foto di un animale (facoltativa, da lontano)",
+    "protected": "Non catturare e non maneggiare rane, rospi o tritoni. Tutti gli anfibi sono protetti; per maneggiarli serve un permesso."
   },
   "deadBirds": {
     "heading": "Uccelli morti",
@@ -395,11 +397,48 @@
     "kind_action_taken": "Ha portato a un intervento",
     "kind_alert_raised": "Ha aiutato a lanciare un'allerta",
     "sentHeading": "I tuoi rilevamenti",
-    "noSent": "Nessun rilevamento ancora inviato da questo dispositivo."
+    "noSent": "Nessun rilevamento ancora inviato da questo dispositivo.",
+    "tier": "Il tuo livello di osservatore: {{tier}}",
+    "tierNone": "Non ancora calibrato. Fai l'esercitazione per ottenere un livello.",
+    "points": "Punti evidenza: {{points}}",
+    "pointsHelp": "I punti premiano rilevamenti accurati e completi che concordano con il quadro ponderato per affidabilità in quel sito. Conta solo il tuo miglior rilevamento per sito a settimana, e i rilevamenti con qualità inferiore a {{min}} non danno punti. Inviare più rilevamenti non fa guadagnare più punti.",
+    "counted": "{{counted}} rilevamento/i contato/i, {{ignored}} non contato/i",
+    "campaignHeading": "Campagna della stagione delle zanzare",
+    "campaignIntro": "Questi siti hanno più bisogno di un controllo del torrente. Visitarli aiuta la città più che ripetere un sito controllato di recente.",
+    "campaignNone": "Tutti i siti hanno dati recenti. Grazie!",
+    "reason_no_data": "Nessun controllo recente del torrente",
+    "reason_stale": "I dati più recenti hanno {{n}} giorni",
+    "reason_uncertain": "Incerto: intervallo ampio {{n}}",
+    "checkThis": "Controlla questo sito",
+    "leaderHeading": "Classifica delle squadre",
+    "leaderIntro": "Le squadre sono ordinate per punti evidenza per membro, mai per numero di rilevamenti.",
+    "team": "Squadra",
+    "members": "Membri",
+    "perMember": "Punti per membro",
+    "topObservers": "Osservatori più accurati",
+    "observer": "Osservatore",
+    "quality": "Qualità media",
+    "you": "Tu",
+    "syntheticNote": "Gli altri osservatori e le altre squadre sono dati dimostrativi sintetici.",
+    "tierCol": "Livello",
+    "pointsCol": "Punti"
   },
   "demo": {
     "banner": "Demo: funziona interamente nel tuo browser. I siti sono reali; volontari, rilevamenti e azioni sono sintetici.",
     "clock": "Orologio della demo: {{date}}",
-    "reset": "Reimposta la demo"
+    "reset": "Reimposta la demo",
+    "label": "Avviso demo"
+  },
+  "explain": {
+    "summary": "One Health: scopri di più",
+    "source": "Fonte",
+    "stream": "Il modo in cui si muove l'acqua e il materiale delle rive determinano quali animali possono vivere in un torrente. Rive in cemento, acqua ferma e fanghiglia organica favoriscono le larve di zanzara e allontanano i loro predatori.",
+    "stream_src": "OneAquaHealth Policy Brief (2026), pp. 4 e 5",
+    "larvae": "I ditteri, il gruppo che comprende le zanzare, sono usati da OneAquaHealth come indicatore di allerta precoce: cambiamenti nella loro abbondanza o distribuzione possono segnalare variazioni del rischio di malattie trasmesse da vettori nelle città.",
+    "larvae_src": "OAH Key Indicators Factsheets, X. Diptera Adults, p. 12",
+    "predators": "Gli anfibi controllano infestanti come le zanzare, riducendo la diffusione delle malattie trasmesse dalle zanzare. Gli uccelli insettivori aiutano a controllare le zanzare vettori di malattie, e diminuiscono man mano che le città diventano più cementificate.",
+    "predators_src": "OAH Key Indicators Factsheets, IV. Amphibians p. 6 e V. Birds p. 7",
+    "deadBirds": "Gli uccelli che frequentano i torrenti urbani possono essere serbatoi di patogeni oltre che predatori di insetti. Per questo gli uccelli morti vengono segnalati al servizio veterinario, che decide cosa fare. Non devi mai toccarli.",
+    "deadBirds_src": "OAH Field Sampling Protocols (2026), 4.3 Birds, p. 9"
   }
 }

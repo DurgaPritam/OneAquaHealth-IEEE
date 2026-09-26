@@ -26,7 +26,7 @@ function FitBounds({ points }: { points: MapPoint[] }) {
   return null
 }
 
-/** Leaflet map of sites. Decorative for screen readers: every map has a list alternative next to it. */
+/** Leaflet map of sites in a labelled region. Every map has a list or table alternative next to it. */
 export default function SiteMap({
   points,
   selectedId,
@@ -41,7 +41,7 @@ export default function SiteMap({
   height?: number
 }) {
   return (
-    <div role="img" aria-label={label} className="overflow-hidden rounded-xl border border-slate-200" style={{ height }}>
+    <section aria-label={label} className="overflow-hidden rounded-xl border border-slate-200" style={{ height }}>
       <MapContainer center={[48, 5]} zoom={4} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }} keyboard={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -65,6 +65,6 @@ export default function SiteMap({
           </CircleMarker>
         ))}
       </MapContainer>
-    </div>
+    </section>
   )
 }

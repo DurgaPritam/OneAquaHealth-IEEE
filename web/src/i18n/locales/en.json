@@ -12,7 +12,8 @@
     "syncDone": "All check-ins sent",
     "syncFailed": "Could not send yet. We will try again when you are online.",
     "demoData": "Demo data (synthetic)",
-    "demoAi": "Demo AI (mock)"
+    "demoAi": "Demo AI (mock)",
+    "syncLabel": "Connection and sending status"
   },
   "nav": {
     "label": "Main",
@@ -185,7 +186,8 @@
     "bats": "Bats at dusk",
     "bats_none": "None or not at dusk",
     "bats_seen": "Seen",
-    "photo": "Photo of an animal (optional, from a distance)"
+    "photo": "Photo of an animal (optional, from a distance)",
+    "protected": "Do not catch or handle frogs, toads or newts. All amphibians are protected; handling them needs a permit."
   },
   "deadBirds": {
     "heading": "Dead birds",
@@ -395,11 +397,48 @@
     "kind_action_taken": "Led to an action",
     "kind_alert_raised": "Helped raise an alert",
     "sentHeading": "Your check-ins",
-    "noSent": "No check-ins sent from this device yet."
+    "noSent": "No check-ins sent from this device yet.",
+    "tier": "Your observer tier: {{tier}}",
+    "tierNone": "Not calibrated yet. Take the practice round to get a tier.",
+    "points": "Evidence points: {{points}}",
+    "pointsHelp": "Points reward careful, complete check-ins that agree with the reliability-weighted picture at that site. Only your best check-in per site per week counts, and check-ins below quality {{min}} earn nothing. Sending more check-ins does not earn more points.",
+    "counted": "{{counted}} check-in(s) counted, {{ignored}} not counted",
+    "campaignHeading": "Mosquito season campaign",
+    "campaignIntro": "These sites need a stream check most. Visiting them helps the city more than repeating a site that was checked recently.",
+    "campaignNone": "Every site has recent data. Thank you!",
+    "reason_no_data": "No recent stream checks",
+    "reason_stale": "Newest data is {{n}} days old",
+    "reason_uncertain": "Uncertain: range {{n}} wide",
+    "checkThis": "Check this site",
+    "leaderHeading": "Team leaderboard",
+    "leaderIntro": "Teams are ranked by evidence points per member, never by number of check-ins.",
+    "team": "Team",
+    "members": "Members",
+    "perMember": "Points per member",
+    "topObservers": "Most careful observers",
+    "observer": "Observer",
+    "quality": "Mean quality",
+    "you": "You",
+    "syntheticNote": "Other observers and teams are synthetic demo data.",
+    "tierCol": "Tier",
+    "pointsCol": "Points"
   },
   "demo": {
     "banner": "Demo: runs entirely in your browser. Sites are real; volunteers, check-ins and actions are synthetic.",
     "clock": "Demo clock: {{date}}",
-    "reset": "Reset demo"
+    "reset": "Reset demo",
+    "label": "Demo notice"
+  },
+  "explain": {
+    "summary": "One Health: learn more",
+    "source": "Source",
+    "stream": "How water moves and what the banks are made of shape which animals can live in a stream. Concrete banks, still water and organic sludge favour mosquito larvae and push out their predators.",
+    "stream_src": "OneAquaHealth Policy Brief (2026), p.4 to 5",
+    "larvae": "Diptera, the group that includes mosquitoes, are used by OneAquaHealth as an early-warning indicator: changes in their abundance or distribution can signal shifts in the risk of vector-borne diseases in cities.",
+    "larvae_src": "OAH Key Indicators Factsheets, X. Diptera Adults, p.12",
+    "predators": "Amphibians control pests such as mosquitoes, reducing the spread of mosquito-borne disease. Insectivorous birds help control disease vector mosquitoes, and they decline as cities become more paved.",
+    "predators_src": "OAH Key Indicators Factsheets, IV. Amphibians p.6 and V. Birds p.7",
+    "deadBirds": "Birds using urban streams can act as reservoirs of pathogens as well as insect predators. That is why dead birds go to the veterinary team, who decide what to do. You never need to touch them.",
+    "deadBirds_src": "OAH Field Sampling Protocols (2026), 4.3 Birds, p.9"
   }
 }

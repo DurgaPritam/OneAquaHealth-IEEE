@@ -117,4 +117,8 @@ export class FakeClient implements DataClient {
     this.calibrations[observerId] = answers
     return scoreCalibration(answers)
   }
+
+  async engagementData() {
+    return { observers: [], checkins: [], findings: [], scores: [], sites: SITES, latest: [] }
+  }
 }

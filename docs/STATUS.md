@@ -11,6 +11,6 @@
 | 6 | Backtest | Built | Pre-registered (commit f389f25) before any result; 119 positive NUTS3 region-seasons and 25 negative-control region-seasons; weather-only signal preceded the first human case in 118/119 (median lead 8 weeks) but also crossed in 24/25 controls: a seasonal gate with no spatial specificity; one call-path deviation reported |
 | 7 | City dashboard and actions | Built | Leaflet map plus ranked table (index, range, band with icon, coverage, data age), site panel with every factor and weekly trend chart, alert queue with officer approval/edit/dismissal, measures mapped to OAH Catalogue sections and pages, maladaptation warnings, volunteer messages; full loop tested end to end (also runs in-browser via LocalClient) |
 | 8 | FHIR | Not started | |
-| 9 | Engagement | Not started | |
-| 10 | Hardening and deployment | Not started | |
+| 9 | Engagement | Built | My impact page: messages, tier, evidence points, mosquito-season campaign from data gaps (no data, stale, uncertain range), team leaderboard by points per member; only the best check-in per observer, site and week counts and quality below 0.4 earns nothing (tested: 50 low-quality check-ins earn 0); One Health explainers grounded in OAH factsheets with page numbers; amphibian do-not-handle note |
+| 10 | Hardening and deployment | Built (deploy pending) | Static demo: whole backend in the browser (LocalClient) over an exported snapshot; Playwright e2e on phone and desktop (full loop, calibration, offline queue, axe incl. colour contrast on every screen); CI runs all tests; GitHub Pages deploy waits for the repo owner to enable Pages (Settings, Pages, Source: GitHub Actions) |
 | 11 | Submission package | Not started | |

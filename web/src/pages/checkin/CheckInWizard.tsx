@@ -56,9 +56,9 @@ export function CheckInWizard({ uuid = () => crypto.randomUUID() }: { uuid?: () 
   if (done) {
     return (
       <section aria-labelledby="done-heading" className="card mx-auto max-w-xl space-y-3 text-center">
-        <h2 id="done-heading" className="h1">
+        <h1 id="done-heading" className="h1">
           {t('done.heading')}
-        </h2>
+        </h1>
         <p>{done === 'sent' ? t('done.sent') : t('done.queued')}</p>
         <p className="muted">{t('done.next')}</p>
         <div className="flex flex-wrap justify-center gap-3">

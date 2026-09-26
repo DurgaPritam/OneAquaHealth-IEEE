@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Segmented, Stepper } from '../../components/controls'
+import { Explainer } from '../../components/Explainer'
 import { answerKeys, answeredCount, marginKey, questions, type Question, type Section } from '../../lib/checkin'
 import type { AnswerValue } from '../../lib/types'
 
@@ -19,9 +20,9 @@ export function StepStream({
   const { t } = useTranslation()
   return (
     <section aria-labelledby="step-heading" className="space-y-4">
-      <h2 id="step-heading" className="h1">
+      <h1 id="step-heading" className="h1">
         {t('stream.heading')}
-      </h2>
+      </h1>
       <p className="text-slate-700">{t('stream.intro')}</p>
       <p className="muted">
         {t('stream.source')}{' '}
@@ -30,6 +31,7 @@ export function StepStream({
         </a>
       </p>
       <p className="muted">{t('stream.scaleHelp')}</p>
+      <Explainer module="stream" />
       {questions.sections.map((section) => (
         <SectionCard
           key={section.id}
@@ -64,9 +66,9 @@ function SectionCard({
     <div className="card" role="group" aria-labelledby={headingId}>
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
-          <h3 id={headingId} className="h2">
+          <h2 id={headingId} className="h2">
             {t(`sections.${section.id}`)}
-          </h3>
+          </h2>
           <p className="muted">
             {skipped ? t('common.skipped') : t('common.answered', { count: answeredCount(section, answers), total })}
             {section.aquasentinel_addition && ` · ${t('common.oahAddition')}`}

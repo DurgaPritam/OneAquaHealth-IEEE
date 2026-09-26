@@ -12,7 +12,8 @@
     "syncDone": "Todos os registos foram enviados",
     "syncFailed": "Ainda não foi possível enviar. Voltamos a tentar quando estiver online.",
     "demoData": "Dados de demonstração (sintéticos)",
-    "demoAi": "IA de demonstração (simulada)"
+    "demoAi": "IA de demonstração (simulada)",
+    "syncLabel": "Estado da ligação e do envio"
   },
   "nav": {
     "label": "Principal",
@@ -185,7 +186,8 @@
     "bats": "Morcegos ao anoitecer",
     "bats_none": "Nenhum ou não era ao anoitecer",
     "bats_seen": "Vistos",
-    "photo": "Fotografia de um animal (opcional, à distância)"
+    "photo": "Fotografia de um animal (opcional, à distância)",
+    "protected": "Não apanhe nem manuseie rãs, sapos ou tritões. Todos os anfíbios são protegidos; manuseá-los exige uma licença."
   },
   "deadBirds": {
     "heading": "Aves mortas",
@@ -395,11 +397,48 @@
     "kind_action_taken": "Levou a uma ação",
     "kind_alert_raised": "Ajudou a lançar um alerta",
     "sentHeading": "Os seus registos",
-    "noSent": "Ainda não foram enviados registos a partir deste dispositivo."
+    "noSent": "Ainda não foram enviados registos a partir deste dispositivo.",
+    "tier": "O seu nível de observador: {{tier}}",
+    "tierNone": "Ainda sem calibração. Faça a ronda de treino para obter um nível.",
+    "points": "Pontos de evidência: {{points}}",
+    "pointsHelp": "Os pontos recompensam registos cuidadosos e completos que concordam com o quadro ponderado pela fiabilidade nesse local. Só conta o seu melhor registo por local e por semana, e registos com qualidade abaixo de {{min}} não ganham pontos. Enviar mais registos não dá mais pontos.",
+    "counted": "{{counted}} registo(s) contado(s), {{ignored}} não contado(s)",
+    "campaignHeading": "Campanha da época dos mosquitos",
+    "campaignIntro": "Estes locais são os que mais precisam de uma verificação da ribeira. Visitá-los ajuda mais a cidade do que repetir um local verificado há pouco tempo.",
+    "campaignNone": "Todos os locais têm dados recentes. Obrigado!",
+    "reason_no_data": "Sem verificações recentes da ribeira",
+    "reason_stale": "Os dados mais recentes têm {{n}} dias",
+    "reason_uncertain": "Incerto: intervalo com {{n}} de amplitude",
+    "checkThis": "Verificar este local",
+    "leaderHeading": "Classificação das equipas",
+    "leaderIntro": "As equipas são ordenadas por pontos de evidência por membro, nunca pelo número de registos.",
+    "team": "Equipa",
+    "members": "Membros",
+    "perMember": "Pontos por membro",
+    "topObservers": "Observadores mais cuidadosos",
+    "observer": "Observador",
+    "quality": "Qualidade média",
+    "you": "Você",
+    "syntheticNote": "Os outros observadores e equipas são dados de demonstração sintéticos.",
+    "tierCol": "Nível",
+    "pointsCol": "Pontos"
   },
   "demo": {
     "banner": "Demonstração: funciona totalmente no seu navegador. Os locais são reais; voluntários, registos e ações são sintéticos.",
     "clock": "Relógio da demonstração: {{date}}",
-    "reset": "Reiniciar a demonstração"
+    "reset": "Reiniciar a demonstração",
+    "label": "Aviso de demonstração"
+  },
+  "explain": {
+    "summary": "Uma Só Saúde: saiba mais",
+    "source": "Fonte",
+    "stream": "A forma como a água se move e o material das margens definem que animais podem viver numa ribeira. Margens de betão, água parada e lodo orgânico favorecem as larvas de mosquito e afastam os seus predadores.",
+    "stream_src": "OneAquaHealth Policy Brief (2026), p. 4 a 5",
+    "larvae": "Os dípteros, o grupo que inclui os mosquitos, são usados pelo OneAquaHealth como indicador de alerta precoce: mudanças na sua abundância ou distribuição podem sinalizar alterações no risco de doenças transmitidas por vetores nas cidades.",
+    "larvae_src": "OAH Key Indicators Factsheets, X. Diptera Adults, p. 12",
+    "predators": "Os anfíbios controlam pragas como os mosquitos, reduzindo a propagação de doenças transmitidas por mosquitos. As aves insetívoras ajudam a controlar os mosquitos vetores de doenças e diminuem à medida que as cidades ficam mais impermeabilizadas.",
+    "predators_src": "OAH Key Indicators Factsheets, IV. Amphibians p. 6 e V. Birds p. 7",
+    "deadBirds": "As aves que usam as ribeiras urbanas podem ser reservatórios de agentes patogénicos, além de predadoras de insetos. É por isso que as aves mortas são comunicadas à equipa veterinária, que decide o que fazer. Nunca precisa de lhes tocar.",
+    "deadBirds_src": "OAH Field Sampling Protocols (2026), 4.3 Birds, p. 9"
   }
 }

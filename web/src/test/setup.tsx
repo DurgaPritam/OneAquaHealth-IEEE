@@ -4,7 +4,7 @@ import { vi } from 'vitest'
 
 // Leaflet needs a real layout engine; the map is decorative (every map has a list alternative).
 vi.mock('../components/SiteMap', () => ({
-  default: ({ label }: { label: string }) => <div role="img" aria-label={label} />,
+  default: ({ label }: { label: string }) => <section aria-label={label} />,
 }))
 
 if (!('randomUUID' in crypto)) {

@@ -40,9 +40,9 @@ export function StepReview({
 
   return (
     <section aria-labelledby="step-heading" className="space-y-4">
-      <h2 id="step-heading" className="h1">
+      <h1 id="step-heading" className="h1">
         {t('review.heading')}
-      </h2>
+      </h1>
       <dl className="card divide-y divide-slate-100">
         {rows.map(([label, value, step]) => (
           <div key={label} className="flex flex-wrap items-center justify-between gap-2 py-2">

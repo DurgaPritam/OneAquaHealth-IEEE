@@ -4,7 +4,7 @@
 import Dexie, { type Table } from 'dexie'
 import type { AiResponse, AiStatus, VisionType } from '../ai'
 import { scoreCalibration } from '../calibration'
-import type { DataClient } from '../client'
+import type { DataClient, EngagementData } from '../client'
 import { HttpError } from '../client'
 import type { Action, CheckIn, CheckInDraft, CheckInResult, DecisionResult, Finding, Message, Observer, RiskScore, Site } from '../types'
 import { decide, draftForCity, editAction, MEASURES } from './actions'
@@ -239,5 +239,10 @@ export class LocalClient implements DataClient {
     o.tier = result.tier
     await this.save()
     return result
+  }
+
+  async engagementData(cityId: string): Promise<EngagementData> {
+    const st = await this.s()
+    return { observers: st.observers, checkins: st.checkins, findings: st.findings, scores: st.risk_scores, sites: st.sites, latest: this.latest(st, cityId) }
   }
 }

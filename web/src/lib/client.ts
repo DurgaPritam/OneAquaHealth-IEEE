@@ -1,6 +1,6 @@
 import type { AiResponse, AiStatus, VisionType } from './ai'
 import type { CalibrationResult } from './calibration'
-import type { Action, CheckInDraft, CheckInResult, DecisionResult, MeasureCatalogue, Message, Observer, RiskScore, Site } from './types'
+import type { Action, CheckIn, CheckInDraft, CheckInResult, DecisionResult, Finding, MeasureCatalogue, Message, Observer, RiskScore, Site } from './types'
 
 /**
  * Everything the UI needs from a backend. HttpClient talks to the FastAPI
@@ -24,6 +24,16 @@ export interface DataClient {
   aiStatus(): Promise<AiStatus>
   suggest(photo: Blob, type: VisionType, siteId?: string, keyResult?: string): Promise<AiResponse>
   submitCalibration(observerId: string, answers: Record<string, string>): Promise<CalibrationResult>
+  engagementData(cityId: string): Promise<EngagementData>
+}
+
+export interface EngagementData {
+  observers: Observer[]
+  checkins: CheckIn[]
+  findings: Finding[]
+  scores: RiskScore[]
+  sites: Site[]
+  latest: RiskScore[]
 }
 
 export class HttpError extends Error {
@@ -122,5 +132,17 @@ export class HttpClient implements DataClient {
   async submitCalibration(observerId: string, answers: Record<string, string>) {
     await this.registerObserver(observerId)
     return this.json<CalibrationResult>(`/api/calibration/${encodeURIComponent(observerId)}`, 'POST', { answers })
+  }
+
+  async engagementData(cityId: string): Promise<EngagementData> {
+    const [observers, checkins, findings, scores, sites, latest] = await Promise.all([
+      this.request<Observer[]>('/api/observers?limit=5000'),
+      this.request<CheckIn[]>('/api/checkins?limit=5000'),
+      this.request<Finding[]>('/api/findings?limit=5000'),
+      this.request<RiskScore[]>('/api/risk-scores?limit=5000'),
+      this.listSites(),
+      this.latestRisk(cityId),
+    ])
+    return { observers, checkins, findings, scores, sites, latest }
   }
 }

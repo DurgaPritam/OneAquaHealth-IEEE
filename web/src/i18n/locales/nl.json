@@ -12,7 +12,8 @@
     "syncDone": "Alle controles zijn verstuurd",
     "syncFailed": "Versturen lukt nog niet. We proberen het opnieuw zodra je online bent.",
     "demoData": "Demogegevens (synthetisch)",
-    "demoAi": "Demo-AI (nagebootst)"
+    "demoAi": "Demo-AI (nagebootst)",
+    "syncLabel": "Status van verbinding en verzenden"
   },
   "nav": {
     "label": "Hoofdmenu",
@@ -185,7 +186,8 @@
     "bats": "Vleermuizen bij schemering",
     "bats_none": "Geen, of niet bij schemering",
     "bats_seen": "Gezien",
-    "photo": "Foto van een dier (optioneel, van op afstand)"
+    "photo": "Foto van een dier (optioneel, van op afstand)",
+    "protected": "Vang of hanteer geen kikkers, padden of salamanders. Alle amfibieën zijn beschermd; om ze te hanteren heb je een vergunning nodig."
   },
   "deadBirds": {
     "heading": "Dode vogels",
@@ -395,11 +397,48 @@
     "kind_action_taken": "Leidde tot een actie",
     "kind_alert_raised": "Hielp een waarschuwing te geven",
     "sentHeading": "Jouw controles",
-    "noSent": "Nog geen controles verstuurd vanaf dit toestel."
+    "noSent": "Nog geen controles verstuurd vanaf dit toestel.",
+    "tier": "Jouw waarnemersniveau: {{tier}}",
+    "tierNone": "Nog niet gekalibreerd. Doe de oefenronde om een niveau te krijgen.",
+    "points": "Bewijspunten: {{points}}",
+    "pointsHelp": "Punten belonen zorgvuldige, volledige controles die overeenkomen met het beeld op die locatie, gewogen naar betrouwbaarheid. Alleen je beste controle per locatie per week telt, en controles met een kwaliteit onder {{min}} leveren niets op. Meer controles versturen levert geen extra punten op.",
+    "counted": "{{counted}} controle(s) geteld, {{ignored}} niet geteld",
+    "campaignHeading": "Campagne muggenseizoen",
+    "campaignIntro": "Deze locaties hebben het meest een beekcontrole nodig. Ze bezoeken helpt de stad meer dan een locatie opnieuw doen die pas gecontroleerd werd.",
+    "campaignNone": "Elke locatie heeft recente gegevens. Bedankt!",
+    "reason_no_data": "Geen recente beekcontroles",
+    "reason_stale": "Nieuwste gegevens zijn {{n}} dagen oud",
+    "reason_uncertain": "Onzeker: bereik van {{n}} breed",
+    "checkThis": "Controleer deze locatie",
+    "leaderHeading": "Teamklassement",
+    "leaderIntro": "Teams worden gerangschikt volgens bewijspunten per lid, nooit volgens het aantal controles.",
+    "team": "Team",
+    "members": "Leden",
+    "perMember": "Punten per lid",
+    "topObservers": "Zorgvuldigste waarnemers",
+    "observer": "Waarnemer",
+    "quality": "Gemiddelde kwaliteit",
+    "you": "Jij",
+    "syntheticNote": "De andere waarnemers en teams zijn synthetische demogegevens.",
+    "tierCol": "Niveau",
+    "pointsCol": "Punten"
   },
   "demo": {
     "banner": "Demo: werkt volledig in je browser. De locaties zijn echt; vrijwilligers, controles en acties zijn synthetisch.",
     "clock": "Demoklok: {{date}}",
-    "reset": "Demo opnieuw instellen"
+    "reset": "Demo opnieuw instellen",
+    "label": "Demomelding"
+  },
+  "explain": {
+    "summary": "One Health: meer weten",
+    "source": "Bron",
+    "stream": "Hoe het water stroomt en waaruit de oevers bestaan, bepaalt welke dieren in een beek kunnen leven. Betonnen oevers, stilstaand water en organisch slib zijn gunstig voor muggenlarven en verdrijven hun natuurlijke vijanden.",
+    "stream_src": "OneAquaHealth Policy Brief (2026), p. 4 tot 5",
+    "larvae": "Tweevleugeligen (Diptera), de groep waartoe muggen behoren, worden door OneAquaHealth gebruikt als vroege waarschuwing: veranderingen in hun aantal of verspreiding kunnen wijzen op een verschuiving in het risico op door vectoren overgedragen ziekten in steden.",
+    "larvae_src": "OAH Key Indicators Factsheets, X. Diptera Adults, p. 12",
+    "predators": "Amfibieën houden plagen zoals muggen onder controle en beperken zo de verspreiding van ziekten die muggen overdragen. Insectenetende vogels helpen muggen die ziekten overdragen onder controle te houden, en ze gaan achteruit naarmate steden meer verhard worden.",
+    "predators_src": "OAH Key Indicators Factsheets, IV. Amphibians p. 6 en V. Birds p. 7",
+    "deadBirds": "Vogels die stadsbeken gebruiken, kunnen naast insecteneters ook dragers van ziekteverwekkers zijn. Daarom gaan dode vogels naar de veterinaire dienst, die beslist wat er moet gebeuren. Je hoeft ze nooit aan te raken.",
+    "deadBirds_src": "OAH Field Sampling Protocols (2026), 4.3 Birds, p. 9"
   }
 }

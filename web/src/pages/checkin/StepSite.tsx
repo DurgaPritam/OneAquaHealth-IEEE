@@ -64,9 +64,9 @@ export function StepSite({
 
   return (
     <section aria-labelledby="step-heading" className="space-y-4">
-      <h2 id="step-heading" className="h1">
+      <h1 id="step-heading" className="h1">
         {t('site.heading')}
-      </h2>
+      </h1>
       <p className="text-slate-700">{t('site.intro')}</p>
 
       <div className="flex flex-wrap items-end gap-3">
@@ -105,7 +105,7 @@ export function StepSite({
             <SiteMap points={visible.map((site) => ({ site }))} selectedId={siteId} onSelect={onSelect} label={t('site.mapLabel')} />
           </Suspense>
           <div>
-            <h3 className="mb-2 font-semibold">{t('site.listLabel')}</h3>
+            <h2 className="mb-2 font-semibold">{t('site.listLabel')}</h2>
             <ul className="max-h-80 space-y-2 overflow-y-auto pr-1">
               {visible.slice(0, 40).map((s) => (
                 <li key={s.id}>

@@ -94,7 +94,7 @@ function DemoBanner() {
   }, [client])
   if (!(client instanceof LocalClient) || !date) return null
   return (
-    <div className="border-b border-violet-200 bg-violet-50">
+    <section aria-label={t('demo.label')} className="border-b border-violet-200 bg-violet-50">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-3 px-4 py-2 text-sm text-violet-950">
         <span className="font-semibold">{t('demo.banner')}</span>
         <span>{t('demo.clock', { date })}</span>
@@ -102,7 +102,7 @@ function DemoBanner() {
           {t('demo.reset')}
         </button>
       </div>
-    </div>
+    </section>
   )
 }
 
@@ -111,18 +111,20 @@ function StatusBar() {
   const { online, pending, syncing, sync, lastSync } = useApp()
   if (online && pending === 0 && !lastSync?.failed) return null
   return (
-    <div role="status" className="border-b border-slate-200 bg-white">
+    <section aria-label={t('app.syncLabel')} className="border-b border-slate-200 bg-white">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-3 px-4 py-2 text-sm">
         <span className={`inline-block h-2.5 w-2.5 rounded-full ${online ? 'bg-emerald-600' : 'bg-slate-500'}`} aria-hidden />
-        <span>{online ? t('app.online') : t('app.offline')}</span>
-        {pending > 0 && <span className="font-medium">{t('app.pending', { count: pending })}</span>}
+        <span role="status">
+          {online ? t('app.online') : t('app.offline')}
+          {pending > 0 && <span className="ml-3 font-medium">{t('app.pending', { count: pending })}</span>}
+        </span>
         {pending > 0 && online && (
           <button type="button" onClick={() => void sync()} disabled={syncing} className="btn-secondary ml-auto">
             {syncing ? t('app.syncing') : t('app.syncNow')}
           </button>
         )}
       </div>
-    </div>
+    </section>
   )
 }
 

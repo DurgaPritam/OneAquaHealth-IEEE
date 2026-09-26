@@ -12,7 +12,8 @@
     "syncDone": "Alle registreringer er sendt",
     "syncFailed": "Kunne ikke sende ennå. Vi prøver igjen når du er tilkoblet.",
     "demoData": "Demodata (syntetiske)",
-    "demoAi": "Demo-KI (simulert)"
+    "demoAi": "Demo-KI (simulert)",
+    "syncLabel": "Status for tilkobling og sending"
   },
   "nav": {
     "label": "Hovedmeny",
@@ -185,7 +186,8 @@
     "bats": "Flaggermus i skumringen",
     "bats_none": "Ingen, eller ikke i skumringen",
     "bats_seen": "Sett",
-    "photo": "Bilde av et dyr (valgfritt, på avstand)"
+    "photo": "Bilde av et dyr (valgfritt, på avstand)",
+    "protected": "Ikke fang eller håndter frosker, padder eller salamandere. Alle amfibier er fredet; å håndtere dem krever tillatelse."
   },
   "deadBirds": {
     "heading": "Døde fugler",
@@ -395,11 +397,48 @@
     "kind_action_taken": "Førte til et tiltak",
     "kind_alert_raised": "Bidro til et varsel",
     "sentHeading": "Registreringene dine",
-    "noSent": "Ingen registreringer er sendt fra denne enheten ennå."
+    "noSent": "Ingen registreringer er sendt fra denne enheten ennå.",
+    "tier": "Observatørnivået ditt: {{tier}}",
+    "tierNone": "Ikke kalibrert ennå. Ta øvingsrunden for å få et nivå.",
+    "points": "Bevispoeng: {{points}}",
+    "pointsHelp": "Poengene belønner nøye og fullstendige registreringer som stemmer med det pålitelighetsvektede bildet for stedet. Bare den beste registreringen din per sted per uke teller, og registreringer med kvalitet under {{min}} gir ingen poeng. Å sende flere registreringer gir ikke flere poeng.",
+    "counted": "{{counted}} registrering(er) telt, {{ignored}} ikke telt",
+    "campaignHeading": "Kampanje for myggsesongen",
+    "campaignIntro": "Disse stedene trenger en bekkesjekk mest. Å besøke dem hjelper byen mer enn å sjekke et sted som nylig er sjekket.",
+    "campaignNone": "Alle steder har ferske data. Takk!",
+    "reason_no_data": "Ingen nylige bekkesjekker",
+    "reason_stale": "De nyeste dataene er {{n}} dager gamle",
+    "reason_uncertain": "Usikkert: spenn på {{n}}",
+    "checkThis": "Sjekk dette stedet",
+    "leaderHeading": "Lagtabell",
+    "leaderIntro": "Lagene rangeres etter bevispoeng per medlem, aldri etter antall registreringer.",
+    "team": "Lag",
+    "members": "Medlemmer",
+    "perMember": "Poeng per medlem",
+    "topObservers": "De mest nøye observatørene",
+    "observer": "Observatør",
+    "quality": "Gjennomsnittlig kvalitet",
+    "you": "Deg",
+    "syntheticNote": "De andre observatørene og lagene er syntetiske demodata.",
+    "tierCol": "Nivå",
+    "pointsCol": "Poeng"
   },
   "demo": {
     "banner": "Demo: kjører helt i nettleseren din. Stedene er ekte; frivillige, registreringer og tiltak er syntetiske.",
     "clock": "Demoklokke: {{date}}",
-    "reset": "Tilbakestill demoen"
+    "reset": "Tilbakestill demoen",
+    "label": "Demovarsel"
+  },
+  "explain": {
+    "summary": "Én helse: lær mer",
+    "source": "Kilde",
+    "stream": "Hvordan vannet beveger seg og hva breddene består av, avgjør hvilke dyr som kan leve i en bekk. Betongbredder, stillestående vann og organisk slam gir gode forhold for mygglarver og fortrenger rovdyrene deres.",
+    "stream_src": "OneAquaHealth Policy Brief (2026), s. 4 til 5",
+    "larvae": "Tovinger (Diptera), gruppen som mygg hører til, brukes av OneAquaHealth som en tidlig varselindikator: endringer i hvor mange de er eller hvor de finnes, kan varsle endringer i risikoen for vektorbårne sykdommer i byer.",
+    "larvae_src": "OAH Key Indicators Factsheets, X. Diptera Adults, s. 12",
+    "predators": "Amfibier holder skadedyr som mygg i sjakk og reduserer spredningen av myggbårne sykdommer. Insektetende fugler hjelper til med å holde mygg som sprer sykdom nede, og de blir færre etter hvert som byene blir mer asfaltert.",
+    "predators_src": "OAH Key Indicators Factsheets, IV. Amphibians s. 6 og V. Birds s. 7",
+    "deadBirds": "Fugler som bruker bybekker, kan være reservoarer for smittestoffer i tillegg til å spise insekter. Derfor går døde fugler til veterinærteamet, som bestemmer hva som skal gjøres. Du trenger aldri å røre dem.",
+    "deadBirds_src": "OAH Field Sampling Protocols (2026), 4.3 Birds, s. 9"
   }
 }

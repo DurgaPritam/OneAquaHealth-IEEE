@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AiAssist } from '../../components/AiAssist'
+import { Explainer } from '../../components/Explainer'
 import { Callout, PhotoInput, Segmented, Stepper } from '../../components/controls'
 import { DipIllustration, PostureAngled, PostureFlat } from '../../illustrations'
 import { keyPath, KEYS, type AiItem } from '../../lib/ai'
@@ -20,15 +21,16 @@ export function StepLarvae({ s, patch }: { s: WizardState; patch: Patch }) {
   const key = larvaKey(s.posture)
   return (
     <section aria-labelledby="step-heading" className="space-y-4">
-      <h2 id="step-heading" className="h1">
+      <h1 id="step-heading" className="h1">
         {t('larvae.heading')}
-      </h2>
+      </h1>
       <p className="text-slate-700">{t('larvae.intro')}</p>
       <Callout tone="why" title={t('common.whyItMatters')}>
         {t('larvae.why')}
       </Callout>
+      <Explainer module="larvae" />
       <div className="card space-y-3">
-        <h3 className="h2">{t('larvae.howHeading')}</h3>
+        <h2 className="h2">{t('larvae.howHeading')}</h2>
         <DipIllustration title={t('larvae.how2')} />
         <ol className="list-decimal space-y-1 pl-5">
           {[1, 2, 3, 4].map((i) => (
@@ -92,7 +94,7 @@ function AdultMosquito({ s, patch }: { s: WizardState; patch: Patch }) {
   const result = adultKeyResult(s.adultKey)
   return (
     <div className="card">
-      <h3 className="h2">{t('adult.heading')}</h3>
+      <h2 className="h2">{t('adult.heading')}</h2>
       <p className="muted mt-1">{t('adult.intro')}</p>
       <Segmented
         legend={t('adult.question')}
@@ -139,13 +141,15 @@ export function StepPredators({ s, patch }: { s: WizardState; patch: Patch }) {
   const setAi = useAiSetter(patch, s, 'predator_photo')
   return (
     <section aria-labelledby="step-heading" className="space-y-4">
-      <h2 id="step-heading" className="h1">
+      <h1 id="step-heading" className="h1">
         {t('predators.heading')}
-      </h2>
+      </h1>
       <p className="text-slate-700">{t('predators.intro')}</p>
       <Callout tone="why" title={t('common.whyItMatters')}>
         {t('predators.why')}
       </Callout>
+      <Explainer module="predators" />
+      <Callout tone="info">{t('predators.protected')}</Callout>
       <div className="card">
         <Segmented
           legend={t('predators.amphibians')}
@@ -171,9 +175,9 @@ export function StepDeadBirds({ s, patch }: { s: WizardState; patch: Patch }) {
   const { t } = useTranslation()
   return (
     <section aria-labelledby="step-heading" className="space-y-4">
-      <h2 id="step-heading" className="h1">
+      <h1 id="step-heading" className="h1">
         {t('deadBirds.heading')}
-      </h2>
+      </h1>
       <Callout tone="danger" title={t('deadBirds.warningTitle')}>
         <ul className="list-disc space-y-1 pl-5 text-base">
           <li>{t('deadBirds.warning1')}</li>
@@ -184,6 +188,7 @@ export function StepDeadBirds({ s, patch }: { s: WizardState; patch: Patch }) {
       <Callout tone="why" title={t('common.whyItMatters')}>
         {t('deadBirds.why')}
       </Callout>
+      <Explainer module="deadBirds" />
       <div className="card">
         <Segmented
           legend={t('deadBirds.question')}
