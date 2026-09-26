@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { buildDraft, emptyState, type WizardState } from '../../lib/checkin'
@@ -23,7 +23,11 @@ export function CheckInWizard({ uuid = () => crypto.randomUUID() }: { uuid?: () 
   const [done, setDone] = useState<null | 'queued' | 'sent'>(null)
   const headingRef = useRef<HTMLParagraphElement>(null)
 
-  const patch = (p: Partial<WizardState>) => setS((prev) => ({ ...prev, ...p }))
+  const patch = useCallback(
+    (p: Partial<WizardState> | ((prev: WizardState) => Partial<WizardState>)) =>
+      setS((prev) => ({ ...prev, ...(typeof p === 'function' ? p(prev) : p) })),
+    [],
+  )
 
   useEffect(() => {
     if (!s.siteId) return

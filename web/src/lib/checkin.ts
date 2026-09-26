@@ -1,4 +1,5 @@
 import questionsFile from '../../../data/questions.json'
+import { aiFields, KEYS, runKey, type AiItem } from './ai'
 import { roundCoord } from './observer'
 import type { AnswerValue, CheckInDraft, FindingIn, QueuedPhoto } from './types'
 
@@ -22,6 +23,11 @@ export interface WizardState {
   deadBirdPhoto?: Blob
   consent: boolean
   extraFindings: FindingIn[]
+  /** AI suggestions keyed by the finding subject that owns the photo. */
+  ai: Record<string, AiItem | undefined>
+  adultSeen?: 'yes' | 'no'
+  adultKey: Record<string, string>
+  adultPhoto?: Blob
 }
 
 export const emptyState = (): WizardState => ({
@@ -32,6 +38,8 @@ export const emptyState = (): WizardState => ({
   deadBirds: 0,
   consent: false,
   extraFindings: [],
+  ai: {},
+  adultKey: {},
 })
 
 // ------------------------------------------------------------- questions
@@ -71,11 +79,13 @@ export function answeredCount(section: Section, answers: Record<string, AnswerVa
 
 // ------------------------------------------------------------- guided key
 
-/** Larval resting posture key. Culex and Aedes larvae hang at an angle from a siphon; Anopheles lie flat. */
+/** Larval resting posture key (data/keys/larvae.json). Culex and Aedes hang from a siphon; Anopheles lie flat. */
 export function larvaKey(posture: Posture | undefined): string | null {
-  if (posture === 'angled') return 'culex_or_aedes_type'
-  if (posture === 'flat') return 'anopheles_type'
-  return null
+  return posture ? runKey(KEYS.larvae, { posture }) : null
+}
+
+export function adultKeyResult(answers: Record<string, string>): string | null {
+  return runKey(KEYS.adult_mosquito, answers)
 }
 
 // ------------------------------------------------------------- draft
@@ -90,7 +100,8 @@ export interface BuildContext {
 export function buildFindings(s: WizardState): FindingIn[] {
   const findings: FindingIn[] = []
   const total = s.dips.reduce((a, b) => a + b, 0)
-  findings.push({ type: 'larvae', subject: 'larval_dips', count: total, status: 'manual', data: { dips: [...s.dips] } })
+  const cupAi = aiFields(s.cupPhoto ? s.ai.larval_dips : undefined)
+  findings.push({ type: 'larvae', subject: 'larval_dips', count: total, status: 'manual', ...cupAi, data: { dips: [...s.dips], ...(cupAi.data ?? {}) } })
   if (total > 0 && s.posture) {
     findings.push({
       type: 'larvae',
@@ -103,6 +114,22 @@ export function buildFindings(s: WizardState): FindingIn[] {
   if (s.amphibians) findings.push({ type: 'predator', subject: 'amphibians', citizen_answer: s.amphibians, status: 'manual' })
   findings.push({ type: 'predator', subject: 'insectivorous_birds', count: s.birds, status: 'manual' })
   if (s.bats) findings.push({ type: 'predator', subject: 'bats', citizen_answer: s.bats, status: 'manual' })
+  if (s.predatorPhoto) {
+    findings.push({ type: 'predator', subject: 'predator_photo', status: 'manual', ...aiFields(s.ai.predator_photo) })
+  }
+  if (s.adultSeen === 'yes') {
+    const key = adultKeyResult(s.adultKey)
+    const ai = aiFields(s.adultPhoto ? s.ai.adult_mosquito : undefined)
+    findings.push({
+      type: 'adult_mosquito',
+      subject: 'adult_mosquito',
+      key_label: key,
+      status: 'manual',
+      citizen_answer: key,
+      ...ai,
+      data: { key_answers: { ...s.adultKey }, ...(ai.data ?? {}) },
+    })
+  }
   if (s.deadBirdsSeen === 'yes' && s.deadBirds > 0) {
     findings.push({ type: 'dead_bird', subject: 'dead_bird', count: s.deadBirds, status: 'manual', data: { handled: false } })
   }
@@ -122,6 +149,7 @@ export function buildDraft(s: WizardState, ctx: BuildContext): { draft: CheckInD
   const photos: QueuedPhoto[] = []
   if (s.cupPhoto) photos.push({ subject: 'larval_dips', blob: s.cupPhoto })
   if (s.predatorPhoto) photos.push({ subject: 'predator_photo', blob: s.predatorPhoto })
+  if (s.adultPhoto && s.adultSeen === 'yes') photos.push({ subject: 'adult_mosquito', blob: s.adultPhoto })
   if (s.deadBirdPhoto && s.deadBirdsSeen === 'yes') photos.push({ subject: 'dead_bird', blob: s.deadBirdPhoto })
   const draft: CheckInDraft = {
     client_uuid: ctx.uuid,

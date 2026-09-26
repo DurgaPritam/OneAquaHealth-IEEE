@@ -1,0 +1,30 @@
+{
+  "id": "larvae",
+  "title": "Larval resting posture key",
+  "source": "Standard entomology teaching key: Culicinae larvae (Culex, Aedes) breathe through a siphon and hang at an angle below the surface; Anophelinae larvae lack a siphon and lie parallel to the surface. See ECDC, Guidelines for the surveillance of native mosquitoes in Europe (2014), larval identification section: https://www.ecdc.europa.eu/en/publications-data/guidelines-surveillance-native-mosquitoes-europe",
+  "never": "species level, infection status",
+  "start": "posture",
+  "nodes": {
+    "posture": {
+      "question": "How do most larvae rest at the surface?",
+      "options": {
+        "angled": { "next": "siphon" },
+        "flat": { "result": "anopheles_type" },
+        "unsure": { "result": null }
+      }
+    },
+    "siphon": {
+      "question": "Can you see a short breathing tube at the tail end touching the surface?",
+      "optional": true,
+      "options": {
+        "yes": { "result": "culex_or_aedes_type" },
+        "no": { "result": "culex_or_aedes_type" },
+        "unsure": { "result": "culex_or_aedes_type" }
+      }
+    }
+  },
+  "results": {
+    "culex_or_aedes_type": "Culex-type or Aedes-type larva (hangs from a breathing tube)",
+    "anopheles_type": "Anopheles-type larva (lies flat, no breathing tube)"
+  }
+}

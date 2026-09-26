@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { NavLink, Outlet } from 'react-router-dom'
 import { changeLanguage, LANGUAGES, type LanguageCode } from '../i18n'
@@ -14,6 +15,11 @@ const NAV = [
 export function Layout() {
   const { t, i18n } = useTranslation()
   const current = LANGUAGES.find((l) => l.code === i18n.language) ?? LANGUAGES[0]
+  const { client } = useApp()
+  const [mockAi, setMockAi] = useState(false)
+  useEffect(() => {
+    client.aiStatus().then((s) => setMockAi(s.mock), () => setMockAi(false))
+  }, [client])
   return (
     <div className="flex min-h-full flex-col">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-[2000] focus:rounded focus:bg-white focus:p-3">
@@ -26,6 +32,7 @@ export function Layout() {
             {t('app.title')}
           </NavLink>
           <div className="ml-auto flex items-center gap-2">
+            {mockAi && <span className="rounded-full border border-violet-300 bg-violet-100 px-2 py-1 text-xs font-semibold text-violet-950">{t('app.demoAi')}</span>}
             <label htmlFor="lang" className="sr-only">
               {t('lang.label')}
             </label>

@@ -1,12 +1,21 @@
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { AiAssist } from '../../components/AiAssist'
 import { Callout, PhotoInput, Segmented, Stepper } from '../../components/controls'
 import { DipIllustration, PostureAngled, PostureFlat } from '../../illustrations'
-import { larvaKey, type WizardState } from '../../lib/checkin'
+import { keyPath, KEYS, type AiItem } from '../../lib/ai'
+import { adultKeyResult, larvaKey, type WizardState } from '../../lib/checkin'
 
-type Patch = (p: Partial<WizardState>) => void
+export type Patch = (p: Partial<WizardState> | ((prev: WizardState) => Partial<WizardState>)) => void
 
-export function StepLarvae({ s, patch, aiSlot }: { s: WizardState; patch: Patch; aiSlot?: React.ReactNode }) {
+/** Functional update: an AI answer can arrive after other fields have changed. */
+function useAiSetter(patch: Patch, _s: WizardState, subject: string) {
+  return useCallback((item: AiItem | undefined) => patch((prev) => ({ ai: { ...prev.ai, [subject]: item } })), [patch, subject])
+}
+
+export function StepLarvae({ s, patch }: { s: WizardState; patch: Patch }) {
   const { t } = useTranslation()
+  const setAi = useAiSetter(patch, s, 'larval_dips')
   const total = s.dips.reduce((a, b) => a + b, 0)
   const key = larvaKey(s.posture)
   return (
@@ -44,7 +53,7 @@ export function StepLarvae({ s, patch, aiSlot }: { s: WizardState; patch: Patch;
           {total > 0 ? t('larvae.total', { count: total }) : t('larvae.noLarvae')}
         </p>
         <PhotoInput label={t('larvae.cupPhoto')} photo={s.cupPhoto} onChange={(b) => patch({ cupPhoto: b })} />
-        {aiSlot}
+        <AiAssist type="larvae" photo={s.cupPhoto} siteId={s.siteId} item={s.ai.larval_dips} onChange={setAi} />
       </div>
       {total > 0 && (
         <div className="card space-y-2">
@@ -72,12 +81,62 @@ export function StepLarvae({ s, patch, aiSlot }: { s: WizardState; patch: Patch;
           )}
         </div>
       )}
+      <AdultMosquito s={s} patch={patch} />
     </section>
   )
 }
 
-export function StepPredators({ s, patch, aiSlot }: { s: WizardState; patch: Patch; aiSlot?: React.ReactNode }) {
+function AdultMosquito({ s, patch }: { s: WizardState; patch: Patch }) {
   const { t } = useTranslation()
+  const setAi = useAiSetter(patch, s, 'adult_mosquito')
+  const result = adultKeyResult(s.adultKey)
+  return (
+    <div className="card">
+      <h3 className="h2">{t('adult.heading')}</h3>
+      <p className="muted mt-1">{t('adult.intro')}</p>
+      <Segmented
+        legend={t('adult.question')}
+        options={[
+          { value: 'no', label: t('adult.no') },
+          { value: 'yes', label: t('adult.yes') },
+        ]}
+        value={s.adultSeen}
+        onChange={(v) => patch({ adultSeen: v as WizardState['adultSeen'] })}
+      />
+      {s.adultSeen === 'yes' && (
+        <>
+          {keyPath(KEYS.adult_mosquito, s.adultKey).map((nodeId) => (
+            <Segmented
+              key={nodeId}
+              legend={t(`adult.q_${nodeId}`)}
+              options={Object.keys(KEYS.adult_mosquito.nodes[nodeId].options).map((v) => ({ value: v, label: t(`adult.key_${v}`) }))}
+              value={s.adultKey[nodeId]}
+              onChange={(v) => {
+                const next = { ...s.adultKey }
+                if (v === undefined) delete next[nodeId]
+                else next[nodeId] = v
+                const kept = Object.fromEntries(keyPath(KEYS.adult_mosquito, next).filter((k) => next[k]).map((k) => [k, next[k]]))
+                patch({ adultKey: kept })
+              }}
+            />
+          ))}
+          {result && (
+            <Callout tone="info">
+              {t('adult.result', { result: t(`adult.result_${result}`) })}
+              {result === 'striped_aedes_type' && <> {t('adult.tigerNote')}</>}
+            </Callout>
+          )}
+          <PhotoInput label={t('adult.photo')} photo={s.adultPhoto} onChange={(b) => patch({ adultPhoto: b })} />
+          <AiAssist type="adult_mosquito" photo={s.adultPhoto} siteId={s.siteId} keyResult={result} item={s.ai.adult_mosquito} onChange={setAi} />
+        </>
+      )}
+    </div>
+  )
+}
+
+export function StepPredators({ s, patch }: { s: WizardState; patch: Patch }) {
+  const { t } = useTranslation()
+  const setAi = useAiSetter(patch, s, 'predator_photo')
   return (
     <section aria-labelledby="step-heading" className="space-y-4">
       <h2 id="step-heading" className="h1">
@@ -102,7 +161,7 @@ export function StepPredators({ s, patch, aiSlot }: { s: WizardState; patch: Pat
           onChange={(v) => patch({ bats: v as WizardState['bats'] })}
         />
         <PhotoInput label={t('predators.photo')} photo={s.predatorPhoto} onChange={(b) => patch({ predatorPhoto: b })} />
-        {aiSlot}
+        <AiAssist type="predator" photo={s.predatorPhoto} siteId={s.siteId} item={s.ai.predator_photo} onChange={setAi} />
       </div>
     </section>
   )

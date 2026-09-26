@@ -1,3 +1,4 @@
+import type { AiResponse, AiStatus, VisionType } from './ai'
 import type { Action, CheckInDraft, CheckInResult, Message, Observer, RiskScore, Site } from './types'
 
 /**
@@ -13,6 +14,8 @@ export interface DataClient {
   listMessages(observerId: string): Promise<Message[]>
   listRiskScores(week?: string): Promise<RiskScore[]>
   listActions(status?: string): Promise<Action[]>
+  aiStatus(): Promise<AiStatus>
+  suggest(photo: Blob, type: VisionType, siteId?: string, keyResult?: string): Promise<AiResponse>
 }
 
 export class HttpError extends Error {
@@ -69,5 +72,18 @@ export class HttpClient implements DataClient {
 
   listActions(status?: string) {
     return this.request<Action[]>(`/api/actions${status ? `?status=${status}` : ''}`)
+  }
+
+  aiStatus() {
+    return this.request<AiStatus>('/api/ai/status')
+  }
+
+  suggest(photo: Blob, type: VisionType, siteId?: string, keyResult?: string) {
+    const form = new FormData()
+    form.append('file', photo, 'photo.jpg')
+    const q = new URLSearchParams({ finding_type: type })
+    if (siteId) q.set('site_id', siteId)
+    if (keyResult) q.set('key_result', keyResult)
+    return this.request<AiResponse>(`/api/ai/suggest?${q}`, { method: 'POST', body: form })
   }
 }

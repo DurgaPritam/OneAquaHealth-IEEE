@@ -121,4 +121,42 @@ def delete_photo(photo_id: int, session: Session = Depends(get_session)) -> None
     session.commit()
 
 
-ALL_ROUTERS = [sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]
+ai = APIRouter(prefix="/api/ai", tags=["ai"])
+
+
+@ai.get("/status")
+def ai_status() -> dict:
+    """Which provider is active. The UI shows a "demo AI (mock)" badge when mock is true."""
+    from api.ai import service
+
+    return service.status()
+
+
+@ai.post("/suggest")
+async def ai_suggest(
+    finding_type: str,
+    file: UploadFile = File(...),
+    site_id: str | None = None,
+    key_result: str | None = None,
+    session: Session = Depends(get_session),
+) -> dict:
+    """Suggest a label for a photo. The citizen must accept, change or reject it."""
+    from api.ai import service
+
+    lat = lon = None
+    if site_id:
+        site = get_or_404(session, m.Site, site_id)
+        lat, lon = site.lat, site.lon
+    try:
+        clean = photos.sanitise(await file.read(), max_edge=1024)
+    except Exception as exc:
+        raise HTTPException(422, "Not a readable image") from exc
+    try:
+        return service.suggest(clean.data, finding_type, lat, lon, key_result)
+    except service.NeverAnalysed as exc:
+        raise HTTPException(400, str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+
+
+ALL_ROUTERS = [ai, sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]

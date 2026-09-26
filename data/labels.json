@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "synthetic": false,
+  "notes": "The only labels any AI provider may return. Anything else is dropped by api/ai/gate.py and the drop is shown to the volunteer. Larvae and adult mosquito labels are types, never species. Dead birds have no labels: the vision model is never called for them.",
+  "not_sure": "not_sure",
+  "types": {
+    "larvae": {
+      "description": "Photo of a white cup after a dip",
+      "labels": [
+        { "id": "larvae_present", "text": "Larvae visible in the cup" },
+        { "id": "larvae_absent", "text": "No larvae visible in the cup" },
+        { "id": "not_sure", "text": "Not sure" }
+      ]
+    },
+    "adult_mosquito": {
+      "description": "Photo of an adult mosquito",
+      "labels": [
+        { "id": "striped_aedes_type", "text": "Black and white striped mosquito (tiger mosquito type, Aedes albopictus-like)" },
+        { "id": "plain_culex_type", "text": "Plain brown mosquito (Culex type)" },
+        { "id": "not_a_mosquito", "text": "Not a mosquito (e.g. midge or crane fly)" },
+        { "id": "not_sure", "text": "Not sure" }
+      ]
+    },
+    "predator": {
+      "description": "Photo of a bird or amphibian near the stream. Species labels are candidates for the volunteer to confirm; GBIF flags implausible ones for expert review.",
+      "labels": [
+        { "id": "Hirundo rustica", "text": "Barn swallow", "group": "bird", "gbif": "Hirundo rustica" },
+        { "id": "Delichon urbicum", "text": "House martin", "group": "bird", "gbif": "Delichon urbicum" },
+        { "id": "Apus apus", "text": "Common swift", "group": "bird", "gbif": "Apus apus" },
+        { "id": "Motacilla alba", "text": "White wagtail", "group": "bird", "gbif": "Motacilla alba" },
+        { "id": "Motacilla cinerea", "text": "Grey wagtail", "group": "bird", "gbif": "Motacilla cinerea" },
+        { "id": "Muscicapa striata", "text": "Spotted flycatcher", "group": "bird", "gbif": "Muscicapa striata" },
+        { "id": "Phylloscopus collybita", "text": "Common chiffchaff", "group": "bird", "gbif": "Phylloscopus collybita" },
+        { "id": "Cinclus cinclus", "text": "White-throated dipper", "group": "bird", "gbif": "Cinclus cinclus" },
+        { "id": "Alcedo atthis", "text": "Common kingfisher", "group": "bird", "gbif": "Alcedo atthis" },
+        { "id": "Pelophylax perezi", "text": "Perez's frog", "group": "amphibian", "gbif": "Pelophylax perezi" },
+        { "id": "Pelophylax ridibundus", "text": "Marsh frog", "group": "amphibian", "gbif": "Pelophylax ridibundus" },
+        { "id": "Pelophylax lessonae", "text": "Pool frog", "group": "amphibian", "gbif": "Pelophylax lessonae" },
+        { "id": "Rana temporaria", "text": "Common frog", "group": "amphibian", "gbif": "Rana temporaria" },
+        { "id": "Bufo bufo", "text": "Common toad", "group": "amphibian", "gbif": "Bufo bufo" },
+        { "id": "Bufo spinosus", "text": "Spiny toad", "group": "amphibian", "gbif": "Bufo spinosus" },
+        { "id": "Lissotriton helveticus", "text": "Palmate newt", "group": "amphibian", "gbif": "Lissotriton helveticus" },
+        { "id": "bird_unidentified", "text": "A bird, species unclear", "group": "bird" },
+        { "id": "amphibian_unidentified", "text": "A frog, toad or newt, species unclear", "group": "amphibian" },
+        { "id": "not_sure", "text": "Not sure" }
+      ]
+    },
+    "habitat": {
+      "description": "Photo of the stream edge",
+      "labels": [
+        { "id": "standing_water", "text": "Standing water at the edge" },
+        { "id": "flowing_water", "text": "Flowing water at the edge" },
+        { "id": "dry_channel", "text": "Dry channel" },
+        { "id": "not_sure", "text": "Not sure" }
+      ]
+    },
+    "dead_bird": {
+      "description": "Never analysed by AI. Report and route only.",
+      "labels": []
+    }
+  }
+}

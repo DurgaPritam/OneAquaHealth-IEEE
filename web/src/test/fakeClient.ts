@@ -1,3 +1,4 @@
+import type { AiResponse, AiStatus, VisionType } from '../lib/ai'
 import type { DataClient } from '../lib/client'
 import { HttpError } from '../lib/client'
 import type { CheckInDraft, CheckInResult, Finding, Observer, Site } from '../lib/types'
@@ -16,6 +17,16 @@ export class FakeClient implements DataClient {
   checkins = new Map<string, CheckInResult>()
   photos: { findingId: number; size: number }[] = []
   private nextId = 1
+  aiCalls: { type: VisionType; siteId?: string; keyResult?: string }[] = []
+  aiAvailable = true
+  nextAi: AiResponse = {
+    available: true,
+    provider: 'mock',
+    model: 'mock-deterministic-1',
+    mock: true,
+    suggestions: [{ label: 'larvae_present', confidence: 0.82, reason: 'Demo AI (mock): placeholder suggestion.', text: 'Larvae visible in the cup' }],
+    dropped: [{ label: 'Culex pipiens larva', why: 'not in the allowed label list' }],
+  }
 
   private guard() {
     if (this.offline) throw new TypeError('Failed to fetch')
@@ -61,5 +72,16 @@ export class FakeClient implements DataClient {
 
   async listActions() {
     return []
+  }
+
+  async aiStatus(): Promise<AiStatus> {
+    return { provider: 'mock', model: 'mock-deterministic-1', mock: true, available: true }
+  }
+
+  async suggest(_photo: Blob, type: VisionType, siteId?: string, keyResult?: string): Promise<AiResponse> {
+    this.guard()
+    this.aiCalls.push({ type, siteId, keyResult })
+    if (!this.aiAvailable) return { available: false, error: 'down', suggestions: [], dropped: [] }
+    return this.nextAi
   }
 }

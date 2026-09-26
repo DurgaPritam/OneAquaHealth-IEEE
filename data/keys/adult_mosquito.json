@@ -1,0 +1,38 @@
+{
+  "id": "adult_mosquito",
+  "title": "Adult mosquito key",
+  "source": "ECDC Aedes albopictus factsheet (black body with white bands on legs and a single white stripe along the thorax): https://www.ecdc.europa.eu/en/disease-vectors/facts/mosquito-factsheets/aedes-albopictus",
+  "never": "species confirmation, infection status",
+  "start": "stripes",
+  "nodes": {
+    "stripes": {
+      "question": "Does it have black and white stripes on the legs and body?",
+      "options": {
+        "yes": { "next": "thorax_line" },
+        "no": { "next": "colour" },
+        "unsure": { "result": "not_sure" }
+      }
+    },
+    "thorax_line": {
+      "question": "Is there one white line down the middle of its back?",
+      "options": {
+        "yes": { "result": "striped_aedes_type" },
+        "no": { "result": "striped_aedes_type" },
+        "unsure": { "result": "striped_aedes_type" }
+      }
+    },
+    "colour": {
+      "question": "Is it plain brown or light brown?",
+      "options": {
+        "yes": { "result": "plain_culex_type" },
+        "no": { "result": "not_sure" },
+        "unsure": { "result": "not_sure" }
+      }
+    }
+  },
+  "results": {
+    "striped_aedes_type": "Tiger mosquito type (Aedes albopictus-like). Only an expert can confirm the species.",
+    "plain_culex_type": "Plain brown, Culex type",
+    "not_sure": "Not sure"
+  }
+}
