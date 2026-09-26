@@ -262,5 +262,59 @@
     "result_striped_aedes_type": "Tiger mosquito type (Aedes albopictus-like). Only an expert can confirm the species.",
     "result_plain_culex_type": "Plain brown, Culex type",
     "result_not_sure": "Not sure"
+  },
+  "calib": {
+    "heading": "Practice round",
+    "intro": "Answer {{n}} quick questions about drawings of streams and larvae. We compare your answers with the reference answers and show where your eye differs. It takes about five minutes.",
+    "why": "Everyone sees streams a little differently. Knowing how you tend to answer lets the city weigh each report fairly. Your tier never limits what you can report.",
+    "referenceNote": "The drawings are generated from their answers, so the answer is fixed by construction. No AI labelled them. They are synthetic and await review by the team panel.",
+    "start": "Start practice",
+    "progress": "Question {{current}} of {{total}}",
+    "imageAlt": "Reference drawing {{id}}",
+    "q_larval_posture": "How do the larvae in this cup rest at the surface?",
+    "posture_angled": "Hanging at an angle",
+    "posture_flat": "Lying flat",
+    "finish": "See my results",
+    "resultsHeading": "Your results",
+    "agreement": "Agreement score (Cohen's kappa): {{kappa}}",
+    "kappaHelp": "1 means you matched every reference answer. 0 means no better than chance.",
+    "tierLabel": "Your observer tier: {{tier}}",
+    "tier_new": "New",
+    "tier_calibrated": "Calibrated",
+    "tier_trusted": "Trusted",
+    "tierHelp": "Calibrated from 0.4 and Trusted from 0.7. Tiers set how much weight your answers get when several people check the same site.",
+    "perQuestion": "By question",
+    "question": "Question",
+    "kappa": "Kappa",
+    "matched": "Matched",
+    "feedbackHeading": "What to look for next time",
+    "noFeedback": "You matched every reference answer. Great eye!",
+    "lookAgain": "Look again at {{id}}: {{rationale}}",
+    "answeredVs": "You answered {{ans}}; the reference answer is {{ref}}.",
+    "again": "Practise again",
+    "saved": "Your tier has been saved.",
+    "savedOffline": "You are offline, so your tier is saved on this device only for now.",
+    "fb": {
+      "bank_CC": {
+        "under": "You tend to rate banks as natural when hard revetment is visible. Look for straight edges and block joints, even under moss.",
+        "over": "You rated some natural banks as concrete. Stones in a wire mesh (gabions) and soil are not concrete."
+      },
+      "flow_NP": {
+        "under": "You tend to miss still water. Look for flat, dark water, floating leaves and reflections at the edges.",
+        "over": "You tend to see still water where it is moving. White standing waves and ripples mean the water flows."
+      },
+      "rip_trees": {
+        "under": "You tend to underestimate tree cover along the banks.",
+        "over": "You tend to overestimate tree cover along the banks."
+      },
+      "water_foam": {
+        "under": "You tend to miss foam on the water. Look for white patches that do not move with the ripples.",
+        "over": "You tend to report more foam than there is. A few small patches count as present, not extensive."
+      },
+      "larval_posture": {
+        "swap": "Check the angle from the side: Culex-type larvae hang down from the surface, Anopheles-type larvae lie flat along it."
+      },
+      "generic": "When the reference answer was {{ref}}, you answered {{ans}}."
+    }
   }
 }

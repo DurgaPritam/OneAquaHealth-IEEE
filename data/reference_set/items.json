@@ -1,0 +1,215 @@
+{
+  "description": "Calibration reference set. Each illustration is generated from its answer (analysis/make_reference_set.py), so the answer is fixed by construction. No AI labelled any item. Items stay review_status pending until the team panel has looked at every drawing.",
+  "synthetic": true,
+  "items": [
+    {
+      "id": "rs01",
+      "question_id": "bank_CC",
+      "scale": "ape",
+      "image": "rs01.svg",
+      "answer": "extensive",
+      "rationale": "Both banks are grey blocks with straight joints along their whole length.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs02",
+      "question_id": "bank_CC",
+      "scale": "ape",
+      "image": "rs02.svg",
+      "answer": "extensive",
+      "rationale": "Moss grows on it, but the straight block joints show the banks are concrete.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs03",
+      "question_id": "bank_CC",
+      "scale": "ape",
+      "image": "rs03.svg",
+      "answer": "absent",
+      "rationale": "Brown soil with grass; no blocks or joints.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs04",
+      "question_id": "bank_CC",
+      "scale": "ape",
+      "image": "rs04.svg",
+      "answer": "present",
+      "rationale": "Concrete covers only part of the bank; the rest is soil.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs05",
+      "question_id": "bank_CC",
+      "scale": "ape",
+      "image": "rs05.svg",
+      "answer": "absent",
+      "rationale": "Stones held in a wire mesh are gabions, not concrete.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs06",
+      "question_id": "flow_NP",
+      "scale": "ape",
+      "image": "rs06.svg",
+      "answer": "extensive",
+      "rationale": "Dark, flat water with floating leaves and a reflection: no flow anywhere.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs07",
+      "question_id": "flow_NP",
+      "scale": "ape",
+      "image": "rs07.svg",
+      "answer": "absent",
+      "rationale": "White standing waves across the channel: the water is moving.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs08",
+      "question_id": "flow_NP",
+      "scale": "ape",
+      "image": "rs08.svg",
+      "answer": "present",
+      "rationale": "A still, leafy patch at the left edge; the rest flows.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs09",
+      "question_id": "flow_NP",
+      "scale": "ape",
+      "image": "rs09.svg",
+      "answer": "present",
+      "rationale": "The channel is mostly dry, with a few standing puddles.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs10",
+      "question_id": "rip_trees",
+      "scale": "cover5",
+      "image": "rs10.svg",
+      "answer": "1",
+      "rationale": "Only a few trees: well under a fifth of the banks are under canopy.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs11",
+      "question_id": "rip_trees",
+      "scale": "cover5",
+      "image": "rs11.svg",
+      "answer": "3",
+      "rationale": "About half of the banks are under tree canopy.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs12",
+      "question_id": "rip_trees",
+      "scale": "cover5",
+      "image": "rs12.svg",
+      "answer": "5",
+      "rationale": "Trees almost all the way along both banks.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs13",
+      "question_id": "water_foam",
+      "scale": "ape",
+      "image": "rs13.svg",
+      "answer": "absent",
+      "rationale": "Clear water surface with no white patches.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs14",
+      "question_id": "water_foam",
+      "scale": "ape",
+      "image": "rs14.svg",
+      "answer": "present",
+      "rationale": "A few small white foam patches.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs15",
+      "question_id": "water_foam",
+      "scale": "ape",
+      "image": "rs15.svg",
+      "answer": "extensive",
+      "rationale": "Foam covers a large part of the surface.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs16",
+      "question_id": "larval_posture",
+      "scale": "posture",
+      "image": "rs16.svg",
+      "answer": "angled",
+      "rationale": "Bodies hang down at an angle from a short tube at the surface.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs17",
+      "question_id": "larval_posture",
+      "scale": "posture",
+      "image": "rs17.svg",
+      "answer": "flat",
+      "rationale": "Bodies lie flat, parallel to the surface.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs18",
+      "question_id": "larval_posture",
+      "scale": "posture",
+      "image": "rs18.svg",
+      "answer": "angled",
+      "rationale": "Hanging at an angle: Culex-type or Aedes-type.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    },
+    {
+      "id": "rs19",
+      "question_id": "larval_posture",
+      "scale": "posture",
+      "image": "rs19.svg",
+      "answer": "flat",
+      "rationale": "Lying flat just under the surface: Anopheles-type.",
+      "labelled_by": "construction",
+      "review_status": "pending team panel review",
+      "synthetic": true
+    }
+  ]
+}

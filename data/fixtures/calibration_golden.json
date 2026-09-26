@@ -1,0 +1,866 @@
+[
+ {
+  "answers": {
+   "rs01": "extensive",
+   "rs02": "extensive",
+   "rs03": "absent",
+   "rs04": "present",
+   "rs05": "absent",
+   "rs06": "extensive",
+   "rs07": "absent",
+   "rs08": "present",
+   "rs09": "present",
+   "rs10": "1",
+   "rs11": "3",
+   "rs12": "5",
+   "rs13": "absent",
+   "rs14": "present",
+   "rs15": "extensive",
+   "rs16": "angled",
+   "rs17": "flat",
+   "rs18": "angled",
+   "rs19": "flat"
+  },
+  "result": {
+   "per_question": {
+    "bank_CC": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 5
+    },
+    "flow_NP": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 4
+    },
+    "rip_trees": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 3
+    },
+    "water_foam": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 3
+    },
+    "larval_posture": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 4
+    }
+   },
+   "overall_kappa": 1.0,
+   "tier": "trusted",
+   "n": 19,
+   "feedback": []
+  }
+ },
+ {
+  "answers": {
+   "rs01": "extensive",
+   "rs02": "extensive",
+   "rs03": "present",
+   "rs04": "present",
+   "rs05": "absent",
+   "rs06": "extensive",
+   "rs07": "absent",
+   "rs08": "absent",
+   "rs09": "present",
+   "rs10": "1",
+   "rs11": "3",
+   "rs12": "1",
+   "rs13": "absent",
+   "rs14": "present",
+   "rs15": "extensive",
+   "rs16": "angled",
+   "rs17": "angled",
+   "rs18": "angled",
+   "rs19": "flat"
+  },
+  "result": {
+   "per_question": {
+    "bank_CC": {
+     "kappa": 0.706,
+     "agreement": 0.8,
+     "n": 5
+    },
+    "flow_NP": {
+     "kappa": 0.636,
+     "agreement": 0.75,
+     "n": 4
+    },
+    "rip_trees": {
+     "kappa": 0.5,
+     "agreement": 0.667,
+     "n": 3
+    },
+    "water_foam": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 3
+    },
+    "larval_posture": {
+     "kappa": 0.5,
+     "agreement": 0.75,
+     "n": 4
+    }
+   },
+   "overall_kappa": 0.662,
+   "tier": "calibrated",
+   "n": 19,
+   "feedback": [
+    {
+     "question": "bank_CC",
+     "direction": "over",
+     "key": "calib.fb.bank_CC.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs03",
+       "reference": "absent",
+       "answered": "present",
+       "rationale": "Brown soil with grass; no blocks or joints."
+      }
+     ]
+    },
+    {
+     "question": "flow_NP",
+     "direction": "under",
+     "key": "calib.fb.flow_NP.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs08",
+       "reference": "present",
+       "answered": "absent",
+       "rationale": "A still, leafy patch at the left edge; the rest flows."
+      }
+     ]
+    },
+    {
+     "question": "rip_trees",
+     "direction": "under",
+     "key": "calib.fb.rip_trees.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs12",
+       "reference": "5",
+       "answered": "1",
+       "rationale": "Trees almost all the way along both banks."
+      }
+     ]
+    },
+    {
+     "question": "larval_posture",
+     "direction": "swap",
+     "key": "calib.fb.larval_posture.swap",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs17",
+       "reference": "flat",
+       "answered": "angled",
+       "rationale": "Bodies lie flat, parallel to the surface."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "answers": {
+   "rs01": "extensive",
+   "rs02": "extensive",
+   "rs03": "absent",
+   "rs04": "present",
+   "rs05": "extensive",
+   "rs06": "extensive",
+   "rs07": "absent",
+   "rs08": "present",
+   "rs09": "present",
+   "rs10": "4",
+   "rs11": "1",
+   "rs12": "3",
+   "rs13": "extensive",
+   "rs14": "present",
+   "rs15": "extensive",
+   "rs16": "flat",
+   "rs17": "flat",
+   "rs18": "angled",
+   "rs19": "flat"
+  },
+  "result": {
+   "per_question": {
+    "bank_CC": {
+     "kappa": 0.688,
+     "agreement": 0.8,
+     "n": 5
+    },
+    "flow_NP": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 4
+    },
+    "rip_trees": {
+     "kappa": -0.286,
+     "agreement": 0.0,
+     "n": 3
+    },
+    "water_foam": {
+     "kappa": 0.5,
+     "agreement": 0.667,
+     "n": 3
+    },
+    "larval_posture": {
+     "kappa": 0.5,
+     "agreement": 0.75,
+     "n": 4
+    }
+   },
+   "overall_kappa": 0.531,
+   "tier": "calibrated",
+   "n": 19,
+   "feedback": [
+    {
+     "question": "rip_trees",
+     "direction": "under",
+     "key": "calib.fb.rip_trees.under",
+     "count": 2,
+     "examples": [
+      {
+       "item": "rs11",
+       "reference": "3",
+       "answered": "1",
+       "rationale": "About half of the banks are under tree canopy."
+      },
+      {
+       "item": "rs12",
+       "reference": "5",
+       "answered": "3",
+       "rationale": "Trees almost all the way along both banks."
+      }
+     ]
+    },
+    {
+     "question": "bank_CC",
+     "direction": "over",
+     "key": "calib.fb.bank_CC.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs05",
+       "reference": "absent",
+       "answered": "extensive",
+       "rationale": "Stones held in a wire mesh are gabions, not concrete."
+      }
+     ]
+    },
+    {
+     "question": "rip_trees",
+     "direction": "over",
+     "key": "calib.fb.rip_trees.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs10",
+       "reference": "1",
+       "answered": "4",
+       "rationale": "Only a few trees: well under a fifth of the banks are under canopy."
+      }
+     ]
+    },
+    {
+     "question": "water_foam",
+     "direction": "over",
+     "key": "calib.fb.water_foam.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs13",
+       "reference": "absent",
+       "answered": "extensive",
+       "rationale": "Clear water surface with no white patches."
+      }
+     ]
+    },
+    {
+     "question": "larval_posture",
+     "direction": "swap",
+     "key": "calib.fb.larval_posture.swap",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs16",
+       "reference": "angled",
+       "answered": "flat",
+       "rationale": "Bodies hang down at an angle from a short tube at the surface."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "answers": {
+   "rs01": "extensive",
+   "rs02": "absent",
+   "rs03": "absent",
+   "rs04": "present",
+   "rs05": "absent",
+   "rs06": "present",
+   "rs07": "absent",
+   "rs08": "extensive",
+   "rs09": "present",
+   "rs10": "1",
+   "rs11": "3",
+   "rs12": "1",
+   "rs13": "absent",
+   "rs14": "absent",
+   "rs15": "extensive",
+   "rs16": "angled",
+   "rs17": "angled",
+   "rs18": "angled",
+   "rs19": "flat"
+  },
+  "result": {
+   "per_question": {
+    "bank_CC": {
+     "kappa": 0.688,
+     "agreement": 0.8,
+     "n": 5
+    },
+    "flow_NP": {
+     "kappa": 0.2,
+     "agreement": 0.5,
+     "n": 4
+    },
+    "rip_trees": {
+     "kappa": 0.5,
+     "agreement": 0.667,
+     "n": 3
+    },
+    "water_foam": {
+     "kappa": 0.5,
+     "agreement": 0.667,
+     "n": 3
+    },
+    "larval_posture": {
+     "kappa": 0.5,
+     "agreement": 0.75,
+     "n": 4
+    }
+   },
+   "overall_kappa": 0.486,
+   "tier": "calibrated",
+   "n": 19,
+   "feedback": [
+    {
+     "question": "bank_CC",
+     "direction": "under",
+     "key": "calib.fb.bank_CC.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs02",
+       "reference": "extensive",
+       "answered": "absent",
+       "rationale": "Moss grows on it, but the straight block joints show the banks are concrete."
+      }
+     ]
+    },
+    {
+     "question": "flow_NP",
+     "direction": "under",
+     "key": "calib.fb.flow_NP.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs06",
+       "reference": "extensive",
+       "answered": "present",
+       "rationale": "Dark, flat water with floating leaves and a reflection: no flow anywhere."
+      }
+     ]
+    },
+    {
+     "question": "flow_NP",
+     "direction": "over",
+     "key": "calib.fb.flow_NP.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs08",
+       "reference": "present",
+       "answered": "extensive",
+       "rationale": "A still, leafy patch at the left edge; the rest flows."
+      }
+     ]
+    },
+    {
+     "question": "rip_trees",
+     "direction": "under",
+     "key": "calib.fb.rip_trees.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs12",
+       "reference": "5",
+       "answered": "1",
+       "rationale": "Trees almost all the way along both banks."
+      }
+     ]
+    },
+    {
+     "question": "water_foam",
+     "direction": "under",
+     "key": "calib.fb.water_foam.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs14",
+       "reference": "present",
+       "answered": "absent",
+       "rationale": "A few small white foam patches."
+      }
+     ]
+    },
+    {
+     "question": "larval_posture",
+     "direction": "swap",
+     "key": "calib.fb.larval_posture.swap",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs17",
+       "reference": "flat",
+       "answered": "angled",
+       "rationale": "Bodies lie flat, parallel to the surface."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "answers": {
+   "rs01": "absent",
+   "rs02": "extensive",
+   "rs03": "absent",
+   "rs04": "present",
+   "rs05": "absent",
+   "rs06": "extensive",
+   "rs07": "extensive",
+   "rs08": "present",
+   "rs09": "absent",
+   "rs10": "1",
+   "rs11": "5",
+   "rs12": "1",
+   "rs13": "absent",
+   "rs14": "present",
+   "rs15": "extensive",
+   "rs16": "angled",
+   "rs17": "flat",
+   "rs18": "angled",
+   "rs19": "flat"
+  },
+  "result": {
+   "per_question": {
+    "bank_CC": {
+     "kappa": 0.688,
+     "agreement": 0.8,
+     "n": 5
+    },
+    "flow_NP": {
+     "kappa": 0.273,
+     "agreement": 0.5,
+     "n": 4
+    },
+    "rip_trees": {
+     "kappa": 0.0,
+     "agreement": 0.333,
+     "n": 3
+    },
+    "water_foam": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 3
+    },
+    "larval_posture": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 4
+    }
+   },
+   "overall_kappa": 0.607,
+   "tier": "calibrated",
+   "n": 19,
+   "feedback": [
+    {
+     "question": "bank_CC",
+     "direction": "under",
+     "key": "calib.fb.bank_CC.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs01",
+       "reference": "extensive",
+       "answered": "absent",
+       "rationale": "Both banks are grey blocks with straight joints along their whole length."
+      }
+     ]
+    },
+    {
+     "question": "flow_NP",
+     "direction": "over",
+     "key": "calib.fb.flow_NP.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs07",
+       "reference": "absent",
+       "answered": "extensive",
+       "rationale": "White standing waves across the channel: the water is moving."
+      }
+     ]
+    },
+    {
+     "question": "flow_NP",
+     "direction": "under",
+     "key": "calib.fb.flow_NP.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs09",
+       "reference": "present",
+       "answered": "absent",
+       "rationale": "The channel is mostly dry, with a few standing puddles."
+      }
+     ]
+    },
+    {
+     "question": "rip_trees",
+     "direction": "over",
+     "key": "calib.fb.rip_trees.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs11",
+       "reference": "3",
+       "answered": "5",
+       "rationale": "About half of the banks are under tree canopy."
+      }
+     ]
+    },
+    {
+     "question": "rip_trees",
+     "direction": "under",
+     "key": "calib.fb.rip_trees.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs12",
+       "reference": "5",
+       "answered": "1",
+       "rationale": "Trees almost all the way along both banks."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "answers": {
+   "rs01": "extensive",
+   "rs02": "absent",
+   "rs03": "present",
+   "rs04": "absent",
+   "rs05": "present",
+   "rs06": "absent",
+   "rs07": "absent",
+   "rs08": "present",
+   "rs09": "extensive",
+   "rs10": "1",
+   "rs11": "3",
+   "rs12": "5",
+   "rs13": "absent",
+   "rs14": "present",
+   "rs15": "present",
+   "rs16": "angled",
+   "rs17": "flat",
+   "rs18": "angled",
+   "rs19": "flat"
+  },
+  "result": {
+   "per_question": {
+    "bank_CC": {
+     "kappa": -0.176,
+     "agreement": 0.2,
+     "n": 5
+    },
+    "flow_NP": {
+     "kappa": 0.273,
+     "agreement": 0.5,
+     "n": 4
+    },
+    "rip_trees": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 3
+    },
+    "water_foam": {
+     "kappa": 0.5,
+     "agreement": 0.667,
+     "n": 3
+    },
+    "larval_posture": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 4
+    }
+   },
+   "overall_kappa": 0.459,
+   "tier": "calibrated",
+   "n": 19,
+   "feedback": [
+    {
+     "question": "bank_CC",
+     "direction": "under",
+     "key": "calib.fb.bank_CC.under",
+     "count": 2,
+     "examples": [
+      {
+       "item": "rs02",
+       "reference": "extensive",
+       "answered": "absent",
+       "rationale": "Moss grows on it, but the straight block joints show the banks are concrete."
+      },
+      {
+       "item": "rs04",
+       "reference": "present",
+       "answered": "absent",
+       "rationale": "Concrete covers only part of the bank; the rest is soil."
+      }
+     ]
+    },
+    {
+     "question": "bank_CC",
+     "direction": "over",
+     "key": "calib.fb.bank_CC.over",
+     "count": 2,
+     "examples": [
+      {
+       "item": "rs03",
+       "reference": "absent",
+       "answered": "present",
+       "rationale": "Brown soil with grass; no blocks or joints."
+      },
+      {
+       "item": "rs05",
+       "reference": "absent",
+       "answered": "present",
+       "rationale": "Stones held in a wire mesh are gabions, not concrete."
+      }
+     ]
+    },
+    {
+     "question": "flow_NP",
+     "direction": "under",
+     "key": "calib.fb.flow_NP.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs06",
+       "reference": "extensive",
+       "answered": "absent",
+       "rationale": "Dark, flat water with floating leaves and a reflection: no flow anywhere."
+      }
+     ]
+    },
+    {
+     "question": "flow_NP",
+     "direction": "over",
+     "key": "calib.fb.flow_NP.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs09",
+       "reference": "present",
+       "answered": "extensive",
+       "rationale": "The channel is mostly dry, with a few standing puddles."
+      }
+     ]
+    },
+    {
+     "question": "water_foam",
+     "direction": "under",
+     "key": "calib.fb.water_foam.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs15",
+       "reference": "extensive",
+       "answered": "present",
+       "rationale": "Foam covers a large part of the surface."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "answers": {
+   "rs01": "present",
+   "rs02": "extensive",
+   "rs03": "extensive",
+   "rs04": "present",
+   "rs05": "absent",
+   "rs06": "absent",
+   "rs07": "absent",
+   "rs08": "present",
+   "rs09": "extensive",
+   "rs10": "3",
+   "rs11": "3",
+   "rs12": "1",
+   "rs13": "absent",
+   "rs14": "present",
+   "rs15": "extensive",
+   "rs16": "angled",
+   "rs17": "flat",
+   "rs18": "angled",
+   "rs19": "angled"
+  },
+  "result": {
+   "per_question": {
+    "bank_CC": {
+     "kappa": 0.412,
+     "agreement": 0.6,
+     "n": 5
+    },
+    "flow_NP": {
+     "kappa": 0.273,
+     "agreement": 0.5,
+     "n": 4
+    },
+    "rip_trees": {
+     "kappa": 0.0,
+     "agreement": 0.333,
+     "n": 3
+    },
+    "water_foam": {
+     "kappa": 1.0,
+     "agreement": 1.0,
+     "n": 3
+    },
+    "larval_posture": {
+     "kappa": 0.5,
+     "agreement": 0.75,
+     "n": 4
+    }
+   },
+   "overall_kappa": 0.429,
+   "tier": "calibrated",
+   "n": 19,
+   "feedback": [
+    {
+     "question": "bank_CC",
+     "direction": "under",
+     "key": "calib.fb.bank_CC.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs01",
+       "reference": "extensive",
+       "answered": "present",
+       "rationale": "Both banks are grey blocks with straight joints along their whole length."
+      }
+     ]
+    },
+    {
+     "question": "bank_CC",
+     "direction": "over",
+     "key": "calib.fb.bank_CC.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs03",
+       "reference": "absent",
+       "answered": "extensive",
+       "rationale": "Brown soil with grass; no blocks or joints."
+      }
+     ]
+    },
+    {
+     "question": "flow_NP",
+     "direction": "under",
+     "key": "calib.fb.flow_NP.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs06",
+       "reference": "extensive",
+       "answered": "absent",
+       "rationale": "Dark, flat water with floating leaves and a reflection: no flow anywhere."
+      }
+     ]
+    },
+    {
+     "question": "flow_NP",
+     "direction": "over",
+     "key": "calib.fb.flow_NP.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs09",
+       "reference": "present",
+       "answered": "extensive",
+       "rationale": "The channel is mostly dry, with a few standing puddles."
+      }
+     ]
+    },
+    {
+     "question": "rip_trees",
+     "direction": "over",
+     "key": "calib.fb.rip_trees.over",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs10",
+       "reference": "1",
+       "answered": "3",
+       "rationale": "Only a few trees: well under a fifth of the banks are under canopy."
+      }
+     ]
+    },
+    {
+     "question": "rip_trees",
+     "direction": "under",
+     "key": "calib.fb.rip_trees.under",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs12",
+       "reference": "5",
+       "answered": "1",
+       "rationale": "Trees almost all the way along both banks."
+      }
+     ]
+    },
+    {
+     "question": "larval_posture",
+     "direction": "swap",
+     "key": "calib.fb.larval_posture.swap",
+     "count": 1,
+     "examples": [
+      {
+       "item": "rs19",
+       "reference": "flat",
+       "answered": "angled",
+       "rationale": "Lying flat just under the surface: Anopheles-type."
+      }
+     ]
+    }
+   ]
+  }
+ }
+]

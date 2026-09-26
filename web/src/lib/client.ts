@@ -1,4 +1,5 @@
 import type { AiResponse, AiStatus, VisionType } from './ai'
+import type { CalibrationResult } from './calibration'
 import type { Action, CheckInDraft, CheckInResult, Message, Observer, RiskScore, Site } from './types'
 
 /**
@@ -16,6 +17,7 @@ export interface DataClient {
   listActions(status?: string): Promise<Action[]>
   aiStatus(): Promise<AiStatus>
   suggest(photo: Blob, type: VisionType, siteId?: string, keyResult?: string): Promise<AiResponse>
+  submitCalibration(observerId: string, answers: Record<string, string>): Promise<CalibrationResult>
 }
 
 export class HttpError extends Error {
@@ -85,5 +87,10 @@ export class HttpClient implements DataClient {
     if (siteId) q.set('site_id', siteId)
     if (keyResult) q.set('key_result', keyResult)
     return this.request<AiResponse>(`/api/ai/suggest?${q}`, { method: 'POST', body: form })
+  }
+
+  async submitCalibration(observerId: string, answers: Record<string, string>) {
+    await this.registerObserver(observerId)
+    return this.json<CalibrationResult>(`/api/calibration/${encodeURIComponent(observerId)}`, 'POST', { answers })
   }
 }

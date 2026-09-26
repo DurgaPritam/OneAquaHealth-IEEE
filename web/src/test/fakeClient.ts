@@ -1,4 +1,5 @@
 import type { AiResponse, AiStatus, VisionType } from '../lib/ai'
+import { scoreCalibration } from '../lib/calibration'
 import type { DataClient } from '../lib/client'
 import { HttpError } from '../lib/client'
 import type { CheckInDraft, CheckInResult, Finding, Observer, Site } from '../lib/types'
@@ -83,5 +84,13 @@ export class FakeClient implements DataClient {
     this.aiCalls.push({ type, siteId, keyResult })
     if (!this.aiAvailable) return { available: false, error: 'down', suggestions: [], dropped: [] }
     return this.nextAi
+  }
+
+  calibrations: Record<string, Record<string, string>> = {}
+
+  async submitCalibration(observerId: string, answers: Record<string, string>) {
+    this.guard()
+    this.calibrations[observerId] = answers
+    return scoreCalibration(answers)
   }
 }

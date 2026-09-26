@@ -18,7 +18,7 @@
     "label": "Principal",
     "home": "Accueil",
     "checkin": "Relevé du ruisseau",
-    "calibrate": "S'entraîner",
+    "calibrate": "Entraînement",
     "feed": "Mon impact",
     "city": "Vue de la ville",
     "about": "Comment ça marche"
@@ -262,5 +262,59 @@
     "result_striped_aedes_type": "Type moustique tigre (proche d'Aedes albopictus). Seul un expert peut confirmer l'espèce.",
     "result_plain_culex_type": "Brun uni, type Culex",
     "result_not_sure": "Je ne sais pas"
+  },
+  "calib": {
+    "heading": "Séance d'entraînement",
+    "intro": "Répondez à {{n}} questions rapides sur des dessins de ruisseaux et de larves. Nous comparons vos réponses aux réponses de référence et vous montrons où votre regard diffère. Cela prend environ cinq minutes.",
+    "why": "Chacun voit les ruisseaux un peu différemment. Savoir comment vous avez tendance à répondre permet à la ville de pondérer chaque relevé de façon équitable. Votre niveau ne limite jamais ce que vous pouvez signaler.",
+    "referenceNote": "Les dessins sont générés à partir de leurs réponses, donc la réponse est fixée par construction. Aucune IA ne les a étiquetés. Ils sont synthétiques et attendent la relecture du panel de l'équipe.",
+    "start": "Commencer l'entraînement",
+    "progress": "Question {{current}} sur {{total}}",
+    "imageAlt": "Dessin de référence {{id}}",
+    "q_larval_posture": "Comment les larves de ce gobelet se tiennent-elles à la surface ?",
+    "posture_angled": "Suspendues en biais",
+    "posture_flat": "À plat",
+    "finish": "Voir mes résultats",
+    "resultsHeading": "Vos résultats",
+    "agreement": "Score d'accord (kappa de Cohen) : {{kappa}}",
+    "kappaHelp": "1 veut dire que vous avez trouvé toutes les réponses de référence. 0 veut dire pas mieux que le hasard.",
+    "tierLabel": "Votre niveau d'observateur : {{tier}}",
+    "tier_new": "Nouveau",
+    "tier_calibrated": "Calibré",
+    "tier_trusted": "Fiable",
+    "tierHelp": "Calibré à partir de 0,4 et Fiable à partir de 0,7. Le niveau fixe le poids de vos réponses quand plusieurs personnes vérifient le même site.",
+    "perQuestion": "Par question",
+    "question": "Question",
+    "kappa": "Kappa",
+    "matched": "Concordance",
+    "feedbackHeading": "À quoi faire attention la prochaine fois",
+    "noFeedback": "Vous avez trouvé toutes les réponses de référence. Excellent coup d'œil !",
+    "lookAgain": "Regardez à nouveau {{id}} : {{rationale}}",
+    "answeredVs": "Vous avez répondu {{ans}} ; la réponse de référence est {{ref}}.",
+    "again": "S'entraîner à nouveau",
+    "saved": "Votre niveau a été enregistré.",
+    "savedOffline": "Vous êtes hors ligne, votre niveau est donc enregistré sur cet appareil uniquement pour le moment.",
+    "fb": {
+      "bank_CC": {
+        "under": "Vous avez tendance à juger les berges naturelles alors qu'un revêtement dur est visible. Cherchez les bords droits et les joints entre blocs, même sous la mousse.",
+        "over": "Vous avez classé certaines berges naturelles comme du béton. Des pierres dans un grillage (gabions) et la terre ne sont pas du béton."
+      },
+      "flow_NP": {
+        "under": "Vous avez tendance à ne pas voir l'eau stagnante. Cherchez une eau plate et sombre, des feuilles flottantes et des reflets sur les bords.",
+        "over": "Vous avez tendance à voir de l'eau stagnante là où elle bouge. De petites vagues blanches et des rides à la surface signifient que l'eau coule."
+      },
+      "rip_trees": {
+        "under": "Vous avez tendance à sous-estimer la couverture d'arbres le long des berges.",
+        "over": "Vous avez tendance à surestimer la couverture d'arbres le long des berges."
+      },
+      "water_foam": {
+        "under": "Vous avez tendance à ne pas voir la mousse sur l'eau. Cherchez des taches blanches qui ne bougent pas avec les rides.",
+        "over": "Vous avez tendance à signaler plus de mousse qu'il n'y en a. Quelques petites taches comptent comme présent, pas étendu."
+      },
+      "larval_posture": {
+        "swap": "Vérifiez l'angle de côté : les larves de type Culex pendent sous la surface, celles de type Anopheles restent à plat le long de celle-ci."
+      },
+      "generic": "Quand la réponse de référence était {{ref}}, vous avez répondu {{ans}}."
+    }
   }
 }

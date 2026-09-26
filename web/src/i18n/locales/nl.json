@@ -18,7 +18,7 @@
     "label": "Hoofdmenu",
     "home": "Start",
     "checkin": "Beekcontrole",
-    "calibrate": "Oefenen",
+    "calibrate": "Oefenronde",
     "feed": "Mijn bijdrage",
     "city": "Stadsoverzicht",
     "about": "Hoe het werkt"
@@ -262,5 +262,59 @@
     "result_striped_aedes_type": "Type tijgermug (lijkt op Aedes albopictus). Alleen een expert kan de soort bevestigen.",
     "result_plain_culex_type": "Egaal bruin, Culex-type",
     "result_not_sure": "Niet zeker"
+  },
+  "calib": {
+    "heading": "Oefenronde",
+    "intro": "Beantwoord {{n}} korte vragen over tekeningen van beken en larven. We vergelijken je antwoorden met de referentieantwoorden en tonen waar jouw blik afwijkt. Het duurt ongeveer vijf minuten.",
+    "why": "Iedereen kijkt een beetje anders naar een beek. Weten hoe jij meestal antwoordt, helpt de stad om elke melding eerlijk te wegen. Je niveau beperkt nooit wat je kunt melden.",
+    "referenceNote": "De tekeningen worden gemaakt op basis van hun antwoorden, dus het antwoord ligt vast door de manier waarop ze gemaakt zijn. Geen enkele AI heeft ze gelabeld. Ze zijn synthetisch en wachten op nazicht door het teampanel.",
+    "start": "Start de oefening",
+    "progress": "Vraag {{current}} van {{total}}",
+    "imageAlt": "Referentietekening {{id}}",
+    "q_larval_posture": "Hoe rusten de larven in deze beker aan het oppervlak?",
+    "posture_angled": "Schuin hangend",
+    "posture_flat": "Plat liggend",
+    "finish": "Toon mijn resultaten",
+    "resultsHeading": "Jouw resultaten",
+    "agreement": "Overeenstemmingsscore (kappa van Cohen): {{kappa}}",
+    "kappaHelp": "1 betekent dat je elk referentieantwoord juist had. 0 betekent niet beter dan toeval.",
+    "tierLabel": "Jouw waarnemersniveau: {{tier}}",
+    "tier_new": "Nieuw",
+    "tier_calibrated": "Gekalibreerd",
+    "tier_trusted": "Betrouwbaar",
+    "tierHelp": "Gekalibreerd vanaf 0,4 en Betrouwbaar vanaf 0,7. Het niveau bepaalt hoeveel gewicht je antwoorden krijgen als meerdere mensen dezelfde locatie controleren.",
+    "perQuestion": "Per vraag",
+    "question": "Vraag",
+    "kappa": "Kappa",
+    "matched": "Overeenkomend",
+    "feedbackHeading": "Waar je de volgende keer op let",
+    "noFeedback": "Je had elk referentieantwoord juist. Scherp gezien!",
+    "lookAgain": "Bekijk {{id}} opnieuw: {{rationale}}",
+    "answeredVs": "Jij antwoordde {{ans}}; het referentieantwoord is {{ref}}.",
+    "again": "Opnieuw oefenen",
+    "saved": "Je niveau is bewaard.",
+    "savedOffline": "Je bent offline, dus je niveau is voorlopig alleen op dit toestel bewaard.",
+    "fb": {
+      "bank_CC": {
+        "under": "Je beoordeelt oevers vaak als natuurlijk terwijl er harde oeverbescherming te zien is. Let op rechte randen en voegen tussen blokken, ook onder mos.",
+        "over": "Je gaf sommige natuurlijke oevers aan als beton. Stenen in een metalen korf (schanskorven) en aarde zijn geen beton."
+      },
+      "flow_NP": {
+        "under": "Je mist vaak stilstaand water. Let op vlak, donker water, drijvende bladeren en weerspiegelingen aan de randen.",
+        "over": "Je ziet vaak stilstaand water waar het beweegt. Witte golfjes en rimpelingen betekenen dat het water stroomt."
+      },
+      "rip_trees": {
+        "under": "Je schat de boombedekking langs de oevers vaak te laag in.",
+        "over": "Je schat de boombedekking langs de oevers vaak te hoog in."
+      },
+      "water_foam": {
+        "under": "Je mist vaak schuim op het water. Let op witte vlekken die niet met de rimpelingen meebewegen.",
+        "over": "Je meldt vaak meer schuim dan er is. Een paar kleine vlekken tellen als aanwezig, niet als uitgebreid."
+      },
+      "larval_posture": {
+        "swap": "Bekijk de hoek van opzij: larven van het Culex-type hangen onder het oppervlak, larven van het Anopheles-type liggen er plat langs."
+      },
+      "generic": "Toen het referentieantwoord {{ref}} was, antwoordde jij {{ans}}."
+    }
   }
 }

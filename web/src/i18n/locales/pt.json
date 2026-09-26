@@ -18,7 +18,7 @@
     "label": "Principal",
     "home": "Início",
     "checkin": "Verificar a ribeira",
-    "calibrate": "Praticar",
+    "calibrate": "Treino",
     "feed": "O meu contributo",
     "city": "Vista da cidade",
     "about": "Como funciona"
@@ -262,5 +262,59 @@
     "result_striped_aedes_type": "Tipo mosquito-tigre (semelhante a Aedes albopictus). Só um especialista pode confirmar a espécie.",
     "result_plain_culex_type": "Castanho liso, tipo Culex",
     "result_not_sure": "Não tenho a certeza"
+  },
+  "calib": {
+    "heading": "Ronda de treino",
+    "intro": "Responda a {{n}} perguntas rápidas sobre desenhos de ribeiras e larvas. Comparamos as suas respostas com as respostas de referência e mostramos onde o seu olhar é diferente. Demora cerca de cinco minutos.",
+    "why": "Cada pessoa vê as ribeiras de forma um pouco diferente. Saber como tende a responder permite à cidade pesar cada registo de forma justa. O seu nível nunca limita o que pode registar.",
+    "referenceNote": "Os desenhos são gerados a partir das respostas, por isso a resposta é fixa por construção. Nenhuma IA os classificou. São sintéticos e aguardam revisão pelo painel da equipa.",
+    "start": "Começar o treino",
+    "progress": "Pergunta {{current}} de {{total}}",
+    "imageAlt": "Desenho de referência {{id}}",
+    "q_larval_posture": "Como descansam à superfície as larvas deste copo?",
+    "posture_angled": "Penduradas em ângulo",
+    "posture_flat": "Deitadas",
+    "finish": "Ver os meus resultados",
+    "resultsHeading": "Os seus resultados",
+    "agreement": "Pontuação de concordância (kappa de Cohen): {{kappa}}",
+    "kappaHelp": "1 significa que acertou em todas as respostas de referência. 0 significa que não foi melhor do que o acaso.",
+    "tierLabel": "O seu nível de observador: {{tier}}",
+    "tier_new": "Novo",
+    "tier_calibrated": "Calibrado",
+    "tier_trusted": "De confiança",
+    "tierHelp": "Calibrado a partir de 0,4 e De confiança a partir de 0,7. O nível define o peso das suas respostas quando várias pessoas verificam o mesmo local.",
+    "perQuestion": "Por pergunta",
+    "question": "Pergunta",
+    "kappa": "Kappa",
+    "matched": "Coincidiu",
+    "feedbackHeading": "O que observar da próxima vez",
+    "noFeedback": "Acertou em todas as respostas de referência. Excelente olho!",
+    "lookAgain": "Veja de novo {{id}}: {{rationale}}",
+    "answeredVs": "Respondeu {{ans}}; a resposta de referência é {{ref}}.",
+    "again": "Treinar outra vez",
+    "saved": "O seu nível foi guardado.",
+    "savedOffline": "Está offline, por isso o seu nível fica guardado só neste dispositivo, por agora.",
+    "fb": {
+      "bank_CC": {
+        "under": "Tende a classificar margens como naturais quando há revestimento duro visível. Procure arestas retas e juntas entre blocos, mesmo debaixo do musgo.",
+        "over": "Classificou algumas margens naturais como betão. Pedras numa rede metálica (gabiões) e terra não são betão."
+      },
+      "flow_NP": {
+        "under": "Tende a não reparar na água parada. Procure água lisa e escura, folhas a flutuar e reflexos nas margens.",
+        "over": "Tende a ver água parada onde ela se move. Pequenas ondas brancas e ondulação significam que a água corre."
+      },
+      "rip_trees": {
+        "under": "Tende a subestimar a cobertura de árvores nas margens.",
+        "over": "Tende a sobrestimar a cobertura de árvores nas margens."
+      },
+      "water_foam": {
+        "under": "Tende a não reparar na espuma na água. Procure manchas brancas que não se movem com a ondulação.",
+        "over": "Tende a registar mais espuma do que existe. Algumas manchas pequenas contam como presente, não extenso."
+      },
+      "larval_posture": {
+        "swap": "Veja o ângulo de lado: as larvas do tipo Culex ficam penduradas da superfície, as do tipo Anopheles ficam deitadas ao longo dela."
+      },
+      "generic": "Quando a resposta de referência era {{ref}}, respondeu {{ans}}."
+    }
   }
 }

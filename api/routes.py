@@ -159,4 +159,36 @@ async def ai_suggest(
         raise HTTPException(422, str(exc)) from exc
 
 
-ALL_ROUTERS = [ai, sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]
+calibration = APIRouter(prefix="/api/calibration", tags=["calibration"])
+
+
+class CalibrationAnswers(BaseModel):
+    answers: dict[str, str]
+
+
+@calibration.get("/items")
+def calibration_items() -> list[dict]:
+    """Reference items for the practice round, without their answers."""
+    from api.reliability.calibration import public_items
+
+    return public_items()
+
+
+@calibration.post("/{observer_id}")
+def submit_calibration(observer_id: str, payload: CalibrationAnswers, session: Session = Depends(get_session)) -> dict:
+    """Score a practice round, store per-question kappa on the observer and set their tier."""
+    from api.reliability.calibration import score
+
+    observer = get_or_404(session, m.Observer, observer_id)
+    try:
+        result = score(payload.answers)
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+    observer.calibration = {"per_question": result["per_question"], "overall_kappa": result["overall_kappa"], "n": result["n"]}
+    observer.tier = m.ObserverTier(result["tier"])
+    session.add(observer)
+    session.commit()
+    return result
+
+
+ALL_ROUTERS = [calibration, ai, sync, sites, observers, checkins, findings, media, risk_scores, actions, messages]

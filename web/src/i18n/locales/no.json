@@ -18,7 +18,7 @@
     "label": "Hovedmeny",
     "home": "Hjem",
     "checkin": "Bekkesjekk",
-    "calibrate": "Øv",
+    "calibrate": "Øving",
     "feed": "Mitt bidrag",
     "city": "Byoversikt",
     "about": "Slik fungerer det"
@@ -262,5 +262,59 @@
     "result_striped_aedes_type": "Tigermygg-type (ligner Aedes albopictus). Bare en ekspert kan bekrefte arten.",
     "result_plain_culex_type": "Ensfarget brun, Culex-type",
     "result_not_sure": "Usikker"
+  },
+  "calib": {
+    "heading": "Øvingsrunde",
+    "intro": "Svar på {{n}} raske spørsmål om tegninger av bekker og larver. Vi sammenligner svarene dine med fasitsvarene og viser hvor blikket ditt skiller seg ut. Det tar omtrent fem minutter.",
+    "why": "Alle ser bekker litt forskjellig. Når vi vet hvordan du pleier å svare, kan byen vekte hver registrering rettferdig. Nivået ditt begrenser aldri hva du kan registrere.",
+    "referenceNote": "Tegningene lages ut fra svarene, så svaret er gitt av hvordan de er laget. Ingen KI har merket dem. De er syntetiske og venter på gjennomgang av teamets panel.",
+    "start": "Start øvingen",
+    "progress": "Spørsmål {{current}} av {{total}}",
+    "imageAlt": "Referansetegning {{id}}",
+    "q_larval_posture": "Hvordan hviler larvene i denne koppen i overflaten?",
+    "posture_angled": "Henger på skrå",
+    "posture_flat": "Ligger flatt",
+    "finish": "Se resultatene mine",
+    "resultsHeading": "Resultatene dine",
+    "agreement": "Samsvarspoeng (Cohens kappa): {{kappa}}",
+    "kappaHelp": "1 betyr at du traff alle fasitsvarene. 0 betyr ikke bedre enn tilfeldig.",
+    "tierLabel": "Observatørnivået ditt: {{tier}}",
+    "tier_new": "Ny",
+    "tier_calibrated": "Kalibrert",
+    "tier_trusted": "Pålitelig",
+    "tierHelp": "Kalibrert fra 0,4 og Pålitelig fra 0,7. Nivået bestemmer hvor mye svarene dine teller når flere personer sjekker samme sted.",
+    "perQuestion": "Per spørsmål",
+    "question": "Spørsmål",
+    "kappa": "Kappa",
+    "matched": "Samsvarte",
+    "feedbackHeading": "Hva du bør se etter neste gang",
+    "noFeedback": "Du traff alle fasitsvarene. Godt øye!",
+    "lookAgain": "Se på {{id}} igjen: {{rationale}}",
+    "answeredVs": "Du svarte {{ans}}; fasitsvaret er {{ref}}.",
+    "again": "Øv igjen",
+    "saved": "Nivået ditt er lagret.",
+    "savedOffline": "Du er frakoblet, så nivået ditt er foreløpig bare lagret på denne enheten.",
+    "fb": {
+      "bank_CC": {
+        "under": "Du pleier å vurdere bredder som naturlige selv når hard forbygning er synlig. Se etter rette kanter og fuger mellom blokker, også under mose.",
+        "over": "Du vurderte noen naturlige bredder som betong. Stein i en metallkurv (gabioner) og jord er ikke betong."
+      },
+      "flow_NP": {
+        "under": "Du pleier å overse stillestående vann. Se etter flatt, mørkt vann, flytende blader og speilinger langs kantene.",
+        "over": "Du pleier å se stillestående vann der det beveger seg. Hvite stående bølger og krusninger betyr at vannet renner."
+      },
+      "rip_trees": {
+        "under": "Du pleier å undervurdere tredekket langs breddene.",
+        "over": "Du pleier å overvurdere tredekket langs breddene."
+      },
+      "water_foam": {
+        "under": "Du pleier å overse skum på vannet. Se etter hvite flekker som ikke beveger seg med krusningene.",
+        "over": "Du pleier å registrere mer skum enn det er. Noen få små flekker teller som til stede, ikke utbredt."
+      },
+      "larval_posture": {
+        "swap": "Sjekk vinkelen fra siden: larver av Culex-typen henger ned fra overflaten, larver av Anopheles-typen ligger flatt langs den."
+      },
+      "generic": "Da fasitsvaret var {{ref}}, svarte du {{ans}}."
+    }
   }
 }

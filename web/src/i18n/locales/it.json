@@ -18,7 +18,7 @@
     "label": "Principale",
     "home": "Home",
     "checkin": "Controllo del torrente",
-    "calibrate": "Esercitati",
+    "calibrate": "Esercitazione",
     "feed": "Il mio contributo",
     "city": "Vista città",
     "about": "Come funziona"
@@ -262,5 +262,59 @@
     "result_striped_aedes_type": "Tipo zanzara tigre (simile ad Aedes albopictus). Solo un esperto può confermare la specie.",
     "result_plain_culex_type": "Marrone uniforme, tipo Culex",
     "result_not_sure": "Non sono sicuro"
+  },
+  "calib": {
+    "heading": "Esercitazione",
+    "intro": "Rispondi a {{n}} domande veloci su disegni di torrenti e larve. Confrontiamo le tue risposte con quelle di riferimento e ti mostriamo dove il tuo occhio vede diversamente. Ci vogliono circa cinque minuti.",
+    "why": "Ognuno vede i torrenti in modo un po' diverso. Sapere come tendi a rispondere permette alla città di pesare ogni segnalazione in modo equo. Il tuo livello non limita mai quello che puoi segnalare.",
+    "referenceNote": "I disegni sono generati a partire dalle risposte, quindi la risposta è fissata per costruzione. Nessuna IA li ha etichettati. Sono sintetici e in attesa di revisione da parte del gruppo di esperti del team.",
+    "start": "Inizia l'esercitazione",
+    "progress": "Domanda {{current}} di {{total}}",
+    "imageAlt": "Disegno di riferimento {{id}}",
+    "q_larval_posture": "Come stanno a riposo in superficie le larve in questo bicchiere?",
+    "posture_angled": "Appese inclinate",
+    "posture_flat": "Distese",
+    "finish": "Vedi i miei risultati",
+    "resultsHeading": "I tuoi risultati",
+    "agreement": "Punteggio di accordo (kappa di Cohen): {{kappa}}",
+    "kappaHelp": "1 vuol dire che hai indovinato tutte le risposte di riferimento. 0 vuol dire non meglio del caso.",
+    "tierLabel": "Il tuo livello di osservatore: {{tier}}",
+    "tier_new": "Nuovo",
+    "tier_calibrated": "Calibrato",
+    "tier_trusted": "Affidabile",
+    "tierHelp": "Calibrato da 0,4 e Affidabile da 0,7. Il livello stabilisce quanto pesano le tue risposte quando più persone controllano lo stesso sito.",
+    "perQuestion": "Per domanda",
+    "question": "Domanda",
+    "kappa": "Kappa",
+    "matched": "Corrispondenti",
+    "feedbackHeading": "A cosa fare attenzione la prossima volta",
+    "noFeedback": "Hai indovinato tutte le risposte di riferimento. Ottimo occhio!",
+    "lookAgain": "Riguarda {{id}}: {{rationale}}",
+    "answeredVs": "Hai risposto {{ans}}; la risposta di riferimento è {{ref}}.",
+    "again": "Esercitati di nuovo",
+    "saved": "Il tuo livello è stato salvato.",
+    "savedOffline": "Sei offline, quindi per ora il tuo livello è salvato solo su questo dispositivo.",
+    "fb": {
+      "bank_CC": {
+        "under": "Tendi a considerare naturali le rive anche quando si vede un rivestimento duro. Cerca bordi dritti e giunture tra i blocchi, anche sotto il muschio.",
+        "over": "Hai indicato alcune rive naturali come cemento. Pietre in una rete metallica (gabbioni) e terra non sono cemento."
+      },
+      "flow_NP": {
+        "under": "Tendi a non notare l'acqua ferma. Cerca acqua piatta e scura, foglie galleggianti e riflessi lungo i bordi.",
+        "over": "Tendi a vedere acqua ferma dove invece si muove. Piccole onde bianche e increspature vogliono dire che l'acqua scorre."
+      },
+      "rip_trees": {
+        "under": "Tendi a sottovalutare la copertura degli alberi lungo le rive.",
+        "over": "Tendi a sopravvalutare la copertura degli alberi lungo le rive."
+      },
+      "water_foam": {
+        "under": "Tendi a non notare la schiuma sull'acqua. Cerca chiazze bianche che non si muovono con le increspature.",
+        "over": "Tendi a segnalare più schiuma di quella che c'è. Poche chiazze piccole contano come presente, non esteso."
+      },
+      "larval_posture": {
+        "swap": "Controlla l'angolo di lato: le larve di tipo Culex pendono dalla superficie, quelle di tipo Anopheles stanno distese lungo di essa."
+      },
+      "generic": "Quando la risposta di riferimento era {{ref}}, hai risposto {{ans}}."
+    }
   }
 }
